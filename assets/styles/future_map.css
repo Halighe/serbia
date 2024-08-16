@@ -1,0 +1,214 @@
+body{
+    min-height: 100vh;
+}
+.title_block{
+    margin: 0 auto;
+    background-size: 100% ;
+    background-position: top;
+    background-image: url("/img/map_bg.svg");
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    min-height: 825px;
+    max-width: 1440px;
+}
+.main__section{
+
+}
+.section-subtitle{
+    text-align: center;
+    font-size: 64px;
+}
+.section-text{
+    text-align: center;
+    max-width: 830px;
+    margin: 0 auto;
+}
+
+
+.map_block{
+    background:
+            url('img/left_lines_bg.png'),
+            url('img/right_lines_bg.png') ;
+
+}
+.tab_map{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+.tab_map_wrapper{
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.tab_map img{
+    padding-right: 20px;
+}
+.map_wrapper{
+    position: relative;
+    width: 100%;
+    height: 830px;
+}
+#map{
+    z-index: 1;
+    margin: 0 auto;
+    position: absolute;
+    width: 1440px;
+    left: 1px;
+    height: 800px;
+    top: 1px;
+    width: 1432px;
+    overflow: hidden;
+    right: 0px;
+
+}
+
+.container.map_wrapper{
+    padding: 0;
+}
+.map_block svg {
+    position: absolute; /* Позволяет SVG накладываться на карту */
+    top: 0;
+    left: 0;
+    fill: transparent;
+    z-index: 2; /* Убедитесь, что SVG выше, чем карта */
+    pointer-events: none;
+}
+
+.icon-marker {
+
+}
+
+.tab_map__checkbox {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.tab_map__button {
+    display: flex; /* Делаем метки блочными элементами */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--orange-color);
+    border-radius: 6px;
+    color: white;
+}
+
+.tab_map__checkbox:checked + .tab_map__button {
+    background-color: rgba(255, 170, 0, 0.48); /* Цвет фона при выборе */
+}
+
+.tab_map__button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 170, 0, 0.2) /* Цвет фона при наведении */
+}
+
+
+
+.help-modal-btn{
+    position: absolute;
+    right: 5rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 60px;
+    max-height: 60px;
+}
+.help-modal{
+    display: none;
+    position: absolute;
+    right: 4.2rem;
+    top: 0.4rem;
+    cursor: pointer;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    max-width: 360px;
+    max-height: 191px;
+}
+.help-modal p{
+    position: absolute;
+    left: 9px;
+    top: 1.4rem;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 360px;
+    max-height: 191px;
+    color: white ;
+}
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+
+/*detail */
+.detail-modal{
+    position: relative;
+    display: none;
+    max-width: 556px ;
+    height: 45px;
+    z-index: 10;
+}
+.detail-modal__bg{
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
+.detail-modal__body{
+    padding-left: 40px;
+    position: absolute;
+    top: 0px;
+    z-index: 6;
+    max-width: 438px;
+    color: white;
+}
+.modal__body__img{
+    width: 100%;
+    height: 100%;
+    max-width: 438px;
+    max-height: 244px;
+    background: white;
+    margin: 40px 0px 20px 0px
+}
+
+.modal__body__img img{
+    width: 100%;
+    height: 100%;
+    min-height: 244px;
+}
+#closeDetail{
+    position: relative;
+    z-index: 100;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.font-24{
+    font-size: 24px;
+    line-height: 20px;
+}
+.font-20{
+    font-size: 20px;
+    line-height: 20px;
+}
+.font-16{
+    font-size: 16px;
+    line-height: 20px;
+}
+.pt-10{
+    padding-top: 10px;
+}
+.pb-10{
+    padding-bottom: 10px;
+}
+.pb-40{
+    padding-bottom: 40px;
+}

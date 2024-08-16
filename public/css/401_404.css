@@ -1,0 +1,141 @@
+.body-401 {
+  background-image: url(../img/401-background.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.boby-404 {
+  background-image: url(../img/404-background.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-block-401 {
+  padding: 20px 40px 30px 40px;
+  overflow: hidden;
+}
+
+.main-block-404 {
+  padding: 20px 40px 30px 40px;
+  overflow: hidden;
+}
+
+.p401-img {
+  position: relative;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+
+.p404-img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.p404-img-img {
+  position: relative;
+}
+
+.p401-btn {
+  padding: 24px 117.5px;
+  color: var(--white-color);
+  border: 2px solid var(--orange-color);
+  border-radius: 6px;
+}
+
+.p404-stripes-pic {
+  width: 10vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+.p404-stripes-pic img {
+  width: 100%;
+}
+
+.p404 {
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1440px) {
+  .p404-img-img {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .p404-img-img {
+    width: 450px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .p401-btn {
+    padding: 22px 76px;
+  }
+
+  .p404-img-img {
+    width: 450px;
+    bottom: -30px;
+  }
+
+  .p404-img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 890px) {
+  .p404-img-img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 800px) {
+  .p404-img-img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .p404-img-img {
+    width: auto;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-block-401 {
+    background-image: url(../img/401-background-tablet.webp);
+    background-size: cover;
+  }
+
+  .p401 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .p401-img {
+    margin-right: 0;
+  }
+
+  .p404-img-img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .p401-btn {
+    padding: 14px 37px;
+  }
+
+  .main-block-401 {
+    padding: 12px 20px 7px 20px;
+  }
+
+  .p404-img-img {
+    width: auto;
+  }
+}

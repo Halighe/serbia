@@ -1,0 +1,44 @@
+<svg style="display: none;">
+        <symbol id="figure" viewBox="0 0 120 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0H120L108 14H0L12 0Z" fill="#AA00FF" />
+        </symbol>
+
+        <symbol id="arrow" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25.5 2L3.00016 24.6666" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"
+                    stroke-linejoin="round" />
+                <path d="M26.3335 24.6666L26.3335 1.33325L1.3335 1.33325" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linecap="square" />
+        </symbol>
+
+        <symbol id="figure-orange" viewBox="0 0 120 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 0H120L108 14H0L12 0Z" fill="#FFAA00" />
+        </symbol>
+
+        <symbol id="frame" viewBox="0 0 325 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <clippath id="clip-path">
+                <path
+                     d="M40.1216 1.29288L39.4145 0.585786L40.1216 1.29289L25.2931 16.1213C25.1056 16.3089 25.0002 16.5632 25.0002 16.8284V117.079C25.0002 117.873 24.6858 118.634 24.1257 119.196L1.29175 142.12C1.10507 142.308 1.00024 142.562 1.00024 142.826V237.172C1.00024 237.437 1.10559 237.691 1.29315 237.879L24.1202 260.706C24.6841 261.27 25.0002 262.035 24.9989 262.832L24.7839 396.998C24.7831 397.551 25.231 398 25.7839 398H209.292H323C323.553 398 324 397.552 324 397V379.235V198.808V154.009V48.8284C324 48.5632 323.895 48.3089 323.707 48.1213L276.879 1.2929C276.691 1.10536 276.437 1 276.172 1H40.8287C40.5634 1 40.3091 1.10536 40.1216 1.29288Z"
+                    stroke="url(#paint0_linear_1482_16310)" stroke-width="2" />
+                <path d="M0.000244141 40V122L10.0002 112V30L0.000244141 40Z" fill="#FFAA00" />
+                <path d="M10.0002 268V399H0.000244141V258L10.0002 268Z" fill="#FFAA00" />
+                <path d="M220.773 385L195.706 400H325V385H220.773Z" fill="#FFAA00" fill-opacity="0.01" />
+            </clippath>
+        </symbol>
+
+         <symbol id="control-back" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="2.5" cy="2.5" r="2"
+                    transform="matrix(4.37114e-08 1 1 -4.37114e-08 0.638672 4.05664)" />
+            <circle cx="2.5" cy="2.5" r="2" transform="matrix(4.37114e-08 1 1 -4.37114e-08 6.81445 0.5)" />
+            <circle cx="2.5" cy="2.5" r="2" transform="matrix(4.37114e-08 1 1 -4.37114e-08 7 8.42383)" />
+        </symbol>
+
+        <symbol id="control-forward" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8.85681" cy="6.55664" r="2" transform="rotate(90 8.85681 6.55664)" />
+            <circle cx="2.68103" cy="3" r="2" transform="rotate(90 2.68103 3)" />
+            <circle cx="2.49548" cy="10.9238" r="2" transform="rotate(90 2.49548 10.9238)" />
+        </symbol>
+
+        <symbol id="line" viewBox="0 0 2 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.00012 1L1.00012 17" stroke="white" stroke-linecap="round" />
+        </symbol>
+</svg>

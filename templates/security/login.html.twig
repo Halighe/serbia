@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block body %}  
+
+    <div style="
+      margin: 0 auto;
+      width: 972px;
+      height: 605px;
+      justify-content: end;
+      align-items: center;
+      position: relative;
+      color: white;
+    ">
+      <div style="
+        width: 422px;
+        margin: 100px auto;
+        {# margin-right: 60px; #}
+      ">
+        <hi style="
+          font-family: Wadik;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 26.54px;
+          background: linear-gradient(50deg, #ffaa00, #aa00ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-align: center;
+          width: 100%;
+          margin-bottom: 28px;
+        ">ВХОД ДЛЯ АДМИНИСТРАТОРА</hi>
+        <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="auth__input-label">
+                Вы вошли как {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Выход</a>
+            </div>
+        {% endif %}
+          <label class="auth__input-label" for="username">Имя</label>
+          <div class="auth__input-border">
+            <input class="form-control" style="
+                  background: #0e0214;
+                  border-radius: 6px;
+                  width: 100%;
+                  border: none;
+                  box-sizing: border-box;
+                  padding: 22px 16px;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 20px;
+                  color: white;
+            " placeholder="Введите имя" type="text" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="username" required autofocus>
+          </div>
+          <label class="auth__input-label" for="password">Пароль</label>
+          <div class="auth__input-border">
+            <input type="password" class="form-control" style="
+                  background: #0e0214;
+                  border-radius: 6px;
+                  width: 100%;
+                  border: none;
+                  box-sizing: border-box;
+                  padding: 22px 16px;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 20px;
+                  color: white;
+            " placeholder="Введите пароль" name="_password" id="password" autocomplete="current-password" required>
+          </div>
+          <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+          <button class="auth__button btn btn-lg btn-primary" type="submit">Войти</button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

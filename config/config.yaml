@@ -1,0 +1,14 @@
+fos_ck_editor:
+    default_config: my_config
+    configs:
+        my_config:
+            toolbar: [ ["Source", "-", "Save"], "/", ["Anchor"], "/", ["Maximize"] ]
+            uiColor:                "#000000"
+            filebrowserUploadRoute: "my_route"
+            extraPlugins:           "wordcount"
+services:
+    dbal.session_init.listener:
+        class: Doctrine\DBAL\Event\Listeners\MysqlSessionInit
+        tags:
+            - { name: doctrine.event_listener, event: postConnect }
+	    # ...
