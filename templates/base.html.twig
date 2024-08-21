@@ -3,30 +3,209 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-  
+        
+        <link rel="icon" href="img/favicon.png" type="image/x-icon">
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock importmap %}
-            {# <script type="module">
-                import from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
-            </script> #}
-            {# <script type="module">
-                import from 'https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js';
-            </script> #}
-            {# <script type="module">
-                import '{{ asset('/js/script.js') }}';
-            </script>
-            <script type="module">
-                import '{{ asset('/js/menu-modals.js') }}';
-            </script>             #}
         {% endblock javascripts %}
     </head>
     <body>
+
+      <!-- Модальное окно регистрации -->
+  <div class="reg">
+    <div class="reg__modal">
+      <div class="reg__mask">
+        <div class="reg__close"></div>
+        <div class="reg__info-container">
+          <h1 class="reg__title">ОТКРОЙ МИР НОВЫХ ВОЗМОЖНОСТЕЙ</h1>
+          <h3 class="reg__text">При авторизации вы получите сертификат участника, программу мероприятий и
+            эксклюзивные бонусы. Успейте забрать ваш ключ к новым знаниям, навыкам и незабываемым впечатлениям!</h3>
+          <div class="reg__robot-image"></div>
+          <div class="reg__info-figure"></div>
+        </div>
+        <form class="reg__form" id="regform" autocomplete="off" novalidate="novalidate">
+          <label class="reg__input-label">Ф.И.О.</label>
+          <div class="reg__input-border">
+            <label class="input__invisible-shield">
+              <input class="reg__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namereg" id="namereg"
+                maxlength="100" required>
+              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="reg__input-label">Email</label>
+          <div class="reg__input-border">
+            <label class="input__invisible-shield">
+              <input class="reg__input input__clear" placeholder="Введите Email" type="email" maxlength="256"
+                name="emailreg" id="emailreg" required>
+              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="reg__input-label">Телефон</label>
+          <div class="reg__input-border">
+            <label class="input__invisible-shield">
+              <input class="reg__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonereg"
+                id="phonereg" required>
+              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="reg__input-label">Город</label>
+          <div class="reg__input-border">
+            <label class="input__invisible-shield">
+              <input class="reg__input reg__input-city" placeholder="Выберите город" id="cityreg" type="text" name="cityreg"
+                required>
+            </label>
+            <img class="input-figure city-button" src="./img/arrow-down-white.svg" alt="кнопка" />
+            <ul class="reg-select reg-select-city reg-select-hidden" name="cities">
+              <li class="reg-select-option" data-value="Город 1">Город 1</li>
+              <li class="reg-select-option" data-value="Город 2">Город 2</li>
+              <li class="reg-select-option" data-value="Город 3">Город 3</li>
+              <li class="reg-select-option" data-value="Город 4">Город 4</li>
+            </ul>
+          </div>
+          <label class="reg__input-label">Категория</label>
+          <div class="reg__input-border">
+            <label class="input__invisible-shield">
+              <input class="reg__input reg__input-cat" placeholder="Выберите категорию" id="catreg" type="text" name="catreg"
+                required>
+            </label>
+            <img class="input-figure cat-button" src="./img/arrow-down-white.svg" alt="кнопка" />
+            <ul class="reg-select-cat reg-select-cat-hidden" name="cathegory">
+              <li class="reg-select-cat-option" data-value="Школьник">Школьник</li>
+              <li class="reg-select-cat-option" data-value="Студент">Студент</li>
+              <li class="reg-select-cat-option" data-value="Преподаватель">Преподаватель</li>
+              <li class="reg-select-cat-option" data-value="Другая категория">Другая категория</li>
+            </ul>
+          </div>
+          <label class="reg__input-label">Наименование учебного заведения</label>
+          <div class="reg__input-border">
+            <label class="input__invisible-shield">
+              <input class="reg__input reg__input-360 input__clear"
+                placeholder="Введите наименование учебного заведения" type="text" name="schoolreg" id="schoolreg"
+                maxlength="156" required>
+              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="reg__input-label">Вам есть 14 лет?</label>
+          <div class="reg__radio-container reg__radio-container-first">
+            <label class="reg__radio-label">
+              <input class="reg__radio" id="disable" name="age" type="radio">
+              <span class="reg__fake-radio"></span>
+              <span class="reg__input-label-rad">Да</span>
+            </label>
+          </div>
+          <div class="reg__radio-container reg__radio-enable">
+            <label class="reg__radio-label">
+              <input class="reg__radio" id="enable" name="age" type="radio" checked>
+              <span class="reg__fake-radio"></span>
+              <span class="reg__input-label-rad">Нет</span>
+            </label>
+          </div>
+          <label class="reg__input-label reg__input-label-last">ФИО представителя
+            <div class="reg__input-border reg__input-border-last">
+              <label class="input__invisible-shield">
+                <input class="reg__input reg__input-profname input__clear" placeholder="Введите ФИО представителя"
+                  type="text" name="profnamereg" id="profnamereg" maxlength="100" required>
+                <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+              </label>
+            </div>
+          </label>
+
+          <div class="reg__checkbox-container">
+            <label class="reg__checkbox-label">
+              <input class="reg__checkbox" type="checkbox" id="checkboxreg" name="checkboxreg" required>
+              <span class="reg__fake-checkbox"></span>
+              <span class="reg__checkbox-text">Соглашаюсь с условиями <span class="reg__checkbox-text-span">Политики
+                  конфиденциальности,
+                  Согласия на обработку персональных данных</span> и <span class="reg__checkbox-text-span">Согласия
+                  Пользователя на обработку персональных
+                  данных</span></span>
+            </label>
+          </div>
+          <div class="reg__button-container">
+            <button class="reg__button" type="submit">Зарегистрироваться</button>
+            <div class="reg__button-figure"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+
+    <div class="reg__notice-container">
+    <div class="reg__notice">
+      <div class="reg__notice-close"></div>
+      <h1 class="reg__notice-title">ВЫ УСПЕШНО ЗАРЕГИСТРИРОВАЛИСЬ</h1>
+      <span class="reg__notice-text">В ближайшее время на вашу электронную почту придёт письмо с логином и паролем для
+        входа в
+        аккаунт. Проверьте папку «Входящие» или «Спам», чтобы получить доступ к личному кабинету.</span>
+      <img class="reg__notice-robot" src="img/robot-phone.svg" alt="">
+    </div>
+
+  </div>
+
+  <!-- Модальное окно бургер-меню -->
+  <div class="burger-menu">
+    <div class="header-burger flex">
+      <div class="burger-logo-block flex">
+        <a href="index.php" class="logo">
+          <img src="img/logo_mobile.svg" alt="logo">
+        </a>
+        <a href="https://rs.gov.ru/" class="logo" target="_blank">
+          <img src="img/logo-ros.png" class="burger-logo2" alt="logo">
+        </a>
+        <a href="https://concord.ac/" class="logo" target="_blank">
+          <img src="img/logo-sodruzestvo.png" class="burger-logo3" alt="logo">
+        </a>
+      </div>
+      <button class="btn-reset burger-close">
+        <img src="img/close.svg" alt="">
+      </button>
+    </div>
+
+    <div class="main-burger">
+      <ul class="list-reset burger-list">
+        <li class="burger-item">
+          <a href="#" class="burger__link">Карта будущего</a>
+        </li>
+        <li class="burger-item">
+          <a href="tests.html" class="burger__link">Профтест</a>
+        </li>
+        <li class="burger-item">
+          <a href="materials.php" class="burger__link">Материалы</a>
+        </li>
+        <li class="burger-item">
+          <a href="#" class="burger__link">Контакты</a>
+        </li>
+      </ul>
+
+      <button class="btn-reset btn btn-color burger__btn flex">Войти</button>
+    </div>
+
+    <div class="burger-footer flex">
+      <div class="footer_contacts">
+        <a class="burger_contacts_text phone-burger flex" href="tel:+74951651508">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M15.052 20.133C13.612 20.08 9.531 19.516 5.257 15.243C0.984 10.969 0.421 6.88897 0.367 5.44797C0.287 3.25197 1.969 1.11897 3.912 0.285971C4.14598 0.184938 4.4022 0.146472 4.65553 0.174347C4.90886 0.202222 5.15059 0.29548 5.357 0.444971C6.957 1.61097 8.061 3.37497 9.009 4.76197C9.21758 5.0667 9.30677 5.43752 9.25956 5.80377C9.21235 6.17002 9.03204 6.5061 8.753 6.74797L6.802 8.19697C6.70774 8.26504 6.64139 8.365 6.61528 8.47829C6.58916 8.59159 6.60505 8.71051 6.66 8.81297C7.102 9.61597 7.888 10.812 8.788 11.712C9.689 12.612 10.941 13.45 11.8 13.942C11.9077 14.0024 12.0345 14.0193 12.1543 13.9892C12.274 13.9591 12.3777 13.8842 12.444 13.78L13.714 11.847C13.9475 11.5368 14.2919 11.329 14.6752 11.2672C15.0584 11.2053 15.4508 11.2941 15.77 11.515C17.177 12.489 18.819 13.574 20.021 15.113C20.1826 15.3209 20.2854 15.5684 20.3187 15.8296C20.3519 16.0908 20.3144 16.3562 20.21 16.598C19.373 18.551 17.255 20.214 15.052 20.133Z"
+              fill="white" />
+          </svg>
+          +7 (495) 165-15-08</a>
+      </div>
+      <div class="footer_contacts">
+        <a class="burger_contacts_text flex" href="mailto:vr-rs@concord.ac">
+          <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M2.5 16C1.95 16 1.47933 15.8043 1.088 15.413C0.696667 15.0217 0.500667 14.5507 0.5 14V2C0.5 1.45 0.696 0.979333 1.088 0.588C1.48 0.196666 1.95067 0.000666667 2.5 0H18.5C19.05 0 19.521 0.196 19.913 0.588C20.305 0.98 20.5007 1.45067 20.5 2V14C20.5 14.55 20.3043 15.021 19.913 15.413C19.5217 15.805 19.0507 16.0007 18.5 16H2.5ZM10.5 9L18.5 4V2L10.5 7L2.5 2V4L10.5 9Z"
+              fill="white" />
+          </svg>
+          vr-rs@concord.ac</a>
+      </div>
+    </div>
+  </div>
 
     <!-- Модальное окно авторизации -->
   <div class="auth">
@@ -34,18 +213,88 @@
       <div class="auth__close"></div>
       <div class="auth__container">
         <hi class="auth__title">АВТОРИЗАЦИЯ</hi>
-        <form class="auth__form">
+        <form class="auth__form" id="authform" autocomplete="off">
           <label class="auth__input-label">E-mail</label>
           <div class="auth__input-border">
-            <input class="auth__input" placeholder="Введите E-mail">
+            <label class="input__invisible-shield">
+              <input class="auth__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailauth" id="emailauth" required>
+              <img class="input-figure input-figure-hidden input-figure-auth" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
           </div>
           <label class="auth__input-label">Пароль</label>
           <div class="auth__input-border">
-            <input class="auth__input" placeholder="Введите пароль">
-          </div>
+            <label class="input__invisible-shield">
+              <input class="auth__input input__pass" placeholder="Введите пароль" type="password" minlength="6"
+                maxlength="64" id="passauth" name="passauth" required>
+            </label>
+            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
+            </div>
           <a class="auth__miss-pass">Забыли пароль?</a>
           <span class="auth__text">Еще нет аккаунта? <a class="auth__link-reg">Зарегистрироваться</a></span>
-          <button class="auth__button">Войти</button>
+           <button type="submit" class="auth__button">Войти</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно восстановления пароля-->
+  <div class="pass__modal-z">
+    <div class="pass__modal">
+      <div class="pass__close"></div>
+      <div class="pass__container-email">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <h3 class="pass__text">Введите почту привязанную к аккаунту</h3>
+        <form class="pass__form" id="passform" autocomplete="off">
+          <label class="pass__input-label">E-mail</label>
+          <div class="pass__input-border">
+            <label class="input__invisible-shield">
+              <input class="pass__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="email" id="email" required>
+              <img class="input-figure input-figure-hidden input-figure-auth" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <button type="submit" class="pass__button">Далее</button>
+        </form>
+      </div>
+
+
+      <div class="pass__container-code">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <h3 class="pass__text">Введите код с почты</h3>
+        <form class="pass__form" id="codeform" autocomplete="off">
+          <div class="pass__input-border">
+            <label class="input__invisible-shield">
+              <input class="pass__input" id="code" placeholder="----------" minlength="10" maxlength="10" required>
+            </label>
+          </div>
+          <span class="pass__span">Мы отправили проверочный код на почту по адресу
+            <span class="pass__span-email">qwerty@yandex.ru.</span> Если сообщение не пришло, повторите попытку.</span>
+          <div class="pass__timer-container">
+            <span class="pass__code">Отправить код еще раз</span>
+            <span class="pass__timer">через 0:59</span>
+          </div>
+          <button type="submit" class="pass__button">Далее</button>
+        </form>
+      </div>
+
+      <div class="pass__container-pass">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <form class="pass__form" id="passwords" autocomplete="off">
+          <label class="pass__input-label pass__input-label-pass">Пароль</label>
+          <div class="pass__input-border pass__input-border-pass">
+            <label class="input__invisible-shield">
+              <input class="pass__input" placeholder="Введите пароль" type="password" minlength="6" maxlength="64" id="newpass-passform" name="newpass-passform" required>
+            </label>
+            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
+          </div>
+          <div class="pass__input-border pass__input-border-pass">
+            <label class="input__invisible-shield">
+              <input class="pass__input" id="repnewpass-passform" placeholder="Повторите пароль" type="password" minlength="6" maxlength="64" name="repnewpass-passform" required>
+            </label>
+            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
+          </div>
+          <button type="submit" class="pass__button">Сохранить</button>
         </form>
       </div>
     </div>
@@ -58,31 +307,46 @@
       <div class="fb__container">
         <h1 class="fb__title">НЕ НАШЛИ ОТВЕТА НА СВОЙ ВОПРОС?</h1>
         <h3 class="fb__text">Воспользуйтесь формой, задайте вопрос, и мы лично свяжемся с вами в ближайшее время.</h3>
-        <form class="fb__form">
+        <form class="fb__form" id="fb-form" autocomplete="off">
           <label class="fb__input-label">Ф.И.О.*</label>
           <div class="fb__input-border">
-            <input class="fb__input" placeholder="Введите Ф.И.О">
+            <label class="input__invisible-shield">
+              <input class="fb__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namefb" id="namefb"
+                maxlength="100" required>
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
           </div>
           <label class="fb__input-label">E-mail*</label>
           <div class="fb__input-border">
-            <input class="fb__input" placeholder="Введите E-mail">
+            <label class="input__invisible-shield">
+              <input class="fb__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailfb" id="emailfb" required>
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
           </div>
           <label class="fb__input-label">Телефон*</label>
           <div class="fb__input-border">
-            <input class="fb__input" placeholder="Введите телефон">
+            <label class="input__invisible-shield">
+              <input class="fb__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonefb" id="phonefb"
+                required>
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
           </div>
           <label class="fb__input-label">Задать вопрос *</label>
           <div class="fb__input-border">
-            <textarea class="fb__input fb__input-textarea"></textarea>
+             <label class="input__invisible-shield">
+              <textarea class="fb__input fb__input-textarea" type="text" name="textarea" id="textarea" maxlength="4000"
+                required></textarea>
+            </label>
           </div>
           <label class="fb__checkbox-label">
-            <input class="fb__checkbox" type="checkbox">
+            <input class="fb__checkbox" type="checkbox" id="checkbox1" required>
             <span class="fb__fake-checkbox"></span>
             <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">Политики
                 конфиденциальности</span></span>
           </label>
           <label class="fb__checkbox-label fb__checkbox-label-second">
-            <input class="fb__checkbox" type="checkbox">
+            <input class="fb__checkbox" type="checkbox" id="checkbox2" required>
             <span class="fb__fake-checkbox"></span>
             <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">
                 Согласия на обработку персональных данных, Согласия Пользователя на обработку персональных данных
@@ -92,8 +356,10 @@
         </form>
       </div>
     </div>
+  </div>
 
-    <div class="fb__notice fb__notice-display-none">
+  <div class="fb__notice-container">
+    <div class="fb__notice">
       <div class="fb__notice-close"></div>
       <h1 class="fb__notice-title">СПАСИБО!</h1>
       <span class="fb__notice-text">Мы ценим каждое обращение и ответим в ближайшее время на e-mail</span>
@@ -101,12 +367,9 @@
   </div>
 
     <section class="main-block">
-    {# <?php
-    include 'components/header/header.php';
-    ?> #}
       <header class="header container flex">
             <div class="logo-block flex">
-                <a href="/index.php" class="logo">
+                <a href="/" class="logo">
                 <picture>
                     <source srcset="img/logo_mobile.svg" media="(max-width: 730px)">
                     <source srcset="img/logo_tablet.svg" media="(max-width: 1024px)">
@@ -139,13 +402,13 @@
                 </ul>
                 <ul class="nav__list nav__list-hidden opacity list-reset flex">
                 <li class="nav__item">
-                    <a href="/index.php#program" class="nav__link">Программа</a>
+                    <a href="/#program" class="nav__link">Программа</a>
                 </li>
                 <li class="nav__item">
-                    <a href="/index.php#video" class="nav__link">Запись трансляции</a>
+                    <a href="/#video" class="nav__link">Запись трансляции</a>
                 </li>
                 <li class="nav__item">
-                    <a href="/index.php#partners" class="nav__link">Партнеры</a>
+                    <a href="/#partners" class="nav__link">Партнеры</a>
                 </li>
                 </ul>
             </nav>
@@ -160,7 +423,7 @@
       </header>
       {% set url = app.request.uri %}
       {# {{url}} #}
-      {% if (url == 'http://127.0.0.1:8000/index.php/'or url == 'http://127.0.0.1:8000/')  %}
+      {% if (url == 'http://127.0.0.1:8000//'or url == 'http://127.0.0.1:8000/')  %}
         {% block banner %}
     <div class="hero container flex">
       <div class="hero-content">

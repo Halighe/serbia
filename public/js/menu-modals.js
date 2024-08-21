@@ -1,5 +1,4 @@
 // Кнопка разварачивания меню
-const body = document.body;
 const navClick = document.querySelector(".nav__click");
 const navListHidden = document.querySelector(".nav__list-hidden");
 const navListVisible = document.querySelector(".nav__list-visible");

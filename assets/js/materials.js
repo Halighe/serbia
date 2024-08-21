@@ -1,8 +1,15 @@
+const body = document.body;
+
 // Вкладки (табы)
 const tabs = document.querySelectorAll(".materials_cards");
 const contents = document.querySelectorAll(".materials_content");
 
 for (let i = 0; i < tabs.length; i++) {
+  if (i == 0) {
+    tabs[i].classList.add("materials_cards--active");
+    contents[i].classList.add("materials_content--active");
+  }
+
   tabs[i].addEventListener("click", (event) => {
     document.querySelectorAll(".materials_cards").forEach((el) => {
       if (el.classList.contains("materials_cards--active")) {

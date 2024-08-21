@@ -1,25 +1,3 @@
-<?php
-  // $url = 'http://localhost/api/materials/';
-  // $curl = curl_init();
-  // curl_setopt($curl, CURLOPT_URL, $url);
-  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  // $out = curl_exec($curl);
-  // curl_close($curl);
-
-  // var_dump($out);
-  // $curl = curl_init(); 
-  // curl_setopt($curl, CURLOPT_URL, $url); 
-  // curl_setopt($curl, CURLOPT_POST, 1); 
-  // // curl_setopt($curl, CURLOPT_POSTFIELDS, urldecode(http_build_query($url_params))); 
-  // // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
-  // // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); 
-  // $result = curl_exec($curl); 
-  // curl_close($curl); 
-  // $userInfo = json_decode($result, true); 
-  // // $userInfo = file_get_contents($url);
-  // var_dump($userInfo);
-  // // var_dump($result);
-?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -34,6 +12,7 @@
   <link rel="stylesheet" href="css/media.css" />
   <link rel="stylesheet" href="css/modals.css">
   <link rel="stylesheet" href="css/materials.css" />
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -235,6 +214,11 @@
               <input class="reg__radio" name="age" type="radio">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Тренды робототехники в России</span>
+            </label>
+            <label class="reg__radio-label caption-label">
+              <input class="reg__radio" name="age" type="radio">
+              <span class="reg__fake-radio"></span>
+              <span class="caption-text">Образовательные материалы</span>
             </label>
           </div>
         </div>

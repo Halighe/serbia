@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\{User, Review, Partners, Participant, Material, Feedback, University, Program};
+use App\Entity\{User, Review, Partners, Participant, Material, Feedback, University, Program, Broadcast, Profile};
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -36,6 +36,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Обратная связь', 'fas fa-comments', Feedback::class);
         yield MenuItem::linkToCrud('Университеты', 'fas fa-comments', University::class);
         yield MenuItem::linkToCrud('Программа', 'fas fa-comments', Program::class);
+        yield MenuItem::linkToCrud('Трансляции', 'fas fa-comments', Broadcast::class);
+        yield MenuItem::linkToCrud('Профиль пользователей', 'fas fa-comments', Profile::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

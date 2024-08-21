@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/lk.css" />
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</head>
+
+<body>
+  <div class="profilelk">
+    <div class="profilelk__banner"></div>
+    <div class="profilelk__section">
+      <form action="#" class="profilelk__form" id="profile-form" autocomplete="off">
+        <div class="prfoilelk__avatar-container">
+          <img class="prfoilelk__avatar" src="./img/avatar.png" alt="аватар" />
+        </div>
+        <div class="profilelk__form-first-container">
+          <div class="profilelk__input-container profilelk__input-container-tablet">
+            <label class="profilelk__input-label">Ф.И.О.</label>
+            <div class="profilelk__input-border">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input input__clear" placeholder="Введите Ф.И.О." type="text" name="nameprofile" id="nameprofile"
+                  maxlength="100" required>
+                  <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+              </label>
+            </div>
+          </div>
+          <div class="profilelk__input-container profilelk__input-container-tablet">
+            <label class="profilelk__input-label">E-mail</label>
+            <div class="profilelk__input-border">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256" name="emailprofile"
+                  id="emailprofile" required>
+                  <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+              </label>
+            </div>
+          </div>
+          <div class="profilelk__input-container profilelk__input-container-tablet">
+            <label class="profilelk__input-label">Телефон</label>
+            <div class="profilelk__input-border">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input input__clear" placeholder="Введите телефон" maxlength="20" name="phoneprofile" id="phoneprofile"
+                  required>
+                  <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+              </label>
+            </div>
+          </div>
+          <div class="profilelk__input-container profilelk__input-container-tablet">
+            <label class="profilelk__input-label">Город</label>
+            <div class="profilelk__input-border">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input profilelk__input-city" placeholder="Выберите город" id="cityprofile" type="text" name="cityprofile" readonly
+                  required>
+              </label>
+              <img class="input-figure city-button" src="./img/arrow-down.svg" alt="кнопка" />
+              <ul class="reg-select reg-select-hidden" name="cities">
+                <li class="reg-select-option" data-value="Город 1">Город 1</li>
+                <li class="reg-select-option" data-value="Город 2">Город 2</li>
+                <li class="reg-select-option" data-value="Город 3">Город 3</li>
+                <li class="reg-select-option" data-value="Город 4">Город 4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="profilelk__form-second-container">
+          <div class="profilelk__input-container">
+            <label class="profilelk__input-label">ФИО представителя</label>
+            <div class="profilelk__input-border">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input input__clear" placeholder="Введите ФИО представителя" type="text" name="profnameprofile"
+                  id="profnameprofile" maxlength="100" required>
+                  <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+              </label>
+            </div>
+          </div>
+          <div class="profilelk__input-container">
+            <label class="profilelk__input-label">Категория</label>
+            <div class="profilelk__input-border">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input profilelk__input-cat" placeholder="Выберите категорию" id="catprofile" type="text" name="catprofile"
+                   required>
+              </label>
+              <img class="input-figure cat-button" src="./img/arrow-down.svg" alt="кнопка" />
+              <ul class="reg-select-cat reg-select-cat-hidden" name="cathegory">
+                <li class="reg-select-cat-option" data-value="Школьник">Школьник</li>
+                <li class="reg-select-cat-option" data-value="Студент">Студент</li>
+                <li class="reg-select-cat-option" data-value="Преподаватель">Преподаватель</li>
+                <li class="reg-select-cat-option" data-value="Другая категория">Другая категория</li>
+              </ul>
+            </div>
+          </div>
+          <div class="profilelk__input-container">
+            <label class="profilelk__input-label">Наименование учебного заведения</label>
+            <div class="profilelk__input-border profilelk__input-border-span">
+              <label class="input__invisible-shield">
+                <input class="profilelk__input profilelk__input-span input__clear"
+                  placeholder="Введите наименование учебного заведения" type="text" name="schoolprofile" id="schoolprofile"
+                  maxlength="156" required>
+                  <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="profilelk__button profilelk__button-first">Сохранить</button>
+        </div>
+        <div class="profilelk__figure"></div>
+      </form>
+    </div>
+    <div class="profilelk__pass">
+      <h1 class="profilelk__title">СМЕНА ПАРОЛЯ</h1>
+      <form class="profilelk__pass-form" id="profile-pass-form" autocomplete="off">
+        <label class="profilelk__input-label">Текущий пароль</label>
+        <div class="profilelk__input-border">
+          <label class="input__invisible-shield">
+            <input class="profilelk__input input__pass" placeholder="Введите текущий пароль" type="password" minlength="6" maxlength="64" id="passprofile" name="passprofile" required>
+          </label>
+          <img class="input-figure input-figure-eye" src="./img/password-eye.svg" alt="кнопка" />
+        </div>
+        <label class="profilelk__input-label">Новый пароль</label>
+        <div class="profilelk__input-border">
+          <label class="input__invisible-shield">
+            <input class="profilelk__input input__pass" placeholder="Новый пароль" type="password" minlength="6" maxlength="64" id="newpassprofile" name="newpassprofile" required>
+          </label>
+          <img class="input-figure input-figure-eye" src="./img/password-eye.svg" alt="кнопка" />
+        </div>
+        <div class="profilelk__input-border-pass">
+          <div class="profilelk__input-border">
+            <label class="input__invisible-shield">
+              <input class="profilelk__input input__pass" placeholder="Повторите новый пароль" type="password" minlength="6" maxlength="64" id="rep-newpassproflie" name="rep-newpassproflie" required>
+            </label>
+            <img class="input-figure input-figure-eye" src="./img/password-eye.svg" alt="кнопка" />
+          </div>
+        </div>
+        <button type="submit" class="profilelk__button profilelk__button-pass">Сохранить</button>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="./js/validation.js"></script>
+
+</html>

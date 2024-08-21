@@ -1,5 +1,4 @@
 // Кнопка разварачивания меню
-const body = document.body;
 const navClick = document.querySelector(".nav__click");
 const navListHidden = document.querySelector(".nav__list-hidden");
 const navListVisible = document.querySelector(".nav__list-visible");
@@ -9,7 +8,7 @@ const arrowDown = document.querySelector(".arrow_down");
 const navLinksHidden = document.querySelectorAll(
   ".nav__list-hidden .nav__link"
 );
-
+console.log('hop');
 navClick.addEventListener("click", (event) => {
   event.preventDefault();
   navClick.classList.toggle("open");
@@ -19,7 +18,7 @@ navClick.addEventListener("click", (event) => {
   arrowDown.classList.toggle("open");
   navText.classList.toggle("hidden");
 });
-
+console.log('hey');
 navLinksHidden.forEach((link) => {
   link.addEventListener("click", () => {
     navClick.classList.remove("open");

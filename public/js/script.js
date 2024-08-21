@@ -13,6 +13,7 @@ cardBtn.forEach((el) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
+    // console.log("Нажали");
   });
 });
 
@@ -81,6 +82,7 @@ const reviewsSlideClick = document.querySelectorAll(".reviews-slide-click"); //�
 const swiperSlide = document.querySelectorAll(".swiper-slide");
 const reviewsModal = document.querySelector(".reviews-modal-background");
 const closeButton = document.querySelector(".close-button");
+const body = document.body;
 
 // Кнопки управления видео для модалки отзывов
 const swiperSlideContent = document.querySelectorAll(".reviews-modal_left");
@@ -344,6 +346,17 @@ function handleTabletChange(e) {
 }
 mediaQuery.addListener(handleTabletChange);
 handleTabletChange(mediaQuery);
+
+// const mediaQuery2 = window.matchMedia("(max-width: 992px)");
+// function handleTabletChange2(e) {
+//   if (e.matches) {
+//     const footerCenter = document.querySelector(".footer-center");
+//     const footerRight = document.querySelector(".footer-right");
+//     footerRight.append(footerCenter);
+//   }
+// }
+// mediaQuery2.addListener(handleTabletChange2);
+// handleTabletChange2(mediaQuery2);
 
 const mediaQuery3 = window.matchMedia("(max-width: 700px)");
 function handleTabletChange3(e) {

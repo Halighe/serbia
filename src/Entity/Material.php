@@ -7,7 +7,6 @@ use App\Repository\MaterialRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MaterialRepository::class)]
-#[ApiResource]
 class Material
 {
     #[ORM\Id]

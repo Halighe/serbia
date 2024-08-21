@@ -2,23 +2,24 @@
 
 {% block title %}Материалы{% endblock %}
 {% block stylesheets %}
-    <link href="{{ asset('styles/materials.css') }}" rel="stylesheet"/> 
-{% endblock %}
-{# <script defer src="js/materials.js"></script> #}
-{# {% block stylesheets %} #}
-{# <link href="{{ asset('styles/materials.css') }}" rel="stylesheet"/>
-<script src="{{ asset('js/materials.js') }}"></script>    #}
-
-{# {% endblock %} #}
+    {# {{ parent() }} #}
+    <link href="{{ asset('styles/materials.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('styles/normalize.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/media.css') }}" rel="stylesheet" />
+    <link href="{{ asset('styles/modals.css') }}" rel="stylesheet"/>
+{% endblock stylesheets %}
+{% block javascripts %}
+    {# {{ parent() }} #}
+    <script defer src="{{ asset('js/materials.js') }}"></script> 
+    <script defer src="{{ asset('js/menu-modals.js') }}"></script> 
+{% endblock javascripts %}
 
 {% block body %}
 
 <div class="materials_img_close"> <img src="img/close.svg" alt=""></div>
 
   <section class="main-block-materials">
-    {# <?php
-    include 'components/header/header.php';
-    ?> #}
 
     <div class="materials-hero container flex">
       <div class="materials-hero-content">
@@ -78,6 +79,11 @@
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Тренды робототехники в России</span>
             </label>
+            <label class="reg__radio-label caption-label">
+              <input class="reg__radio" name="age" type="radio">
+              <span class="reg__fake-radio"></span>
+              <span class="caption-text">Образовательные материалы</span>
+            </label>
           </div>
         </div>
 
@@ -92,83 +98,7 @@
                   <p class="materials-cards-about">{{ material.shorttext }}</p>
                 </div>
               </div>
-            {% endfor %}
-              {# <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name2.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься2:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div>
-
-              <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name3.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься3:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div>
-
-              <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name4.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься4:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div>
-
-              <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name5.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься5:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div>
-
-              <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name6.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься6:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div>
-
-              <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name1.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься7:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div>
-
-              <div class="materials_cards">
-                <img class="materials-cards-img" src="img/name2.png" alt="">
-                <div>
-                  <h3 class="materials-cards-name">Есть над чем задуматься8:</h3>
-                  <p class="materials-cards-about">Есть над чем задуматься: явные признаки победы институционализации
-                    призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                    образом
-                    мышления.</p>
-                </div>
-              </div> #}
+            {% endfor %}           
 
             </div>
           </div>
@@ -176,7 +106,6 @@
           <div id="start" class="materials_information">
           {% for material in materials %}
             <div class="materials_content">
-              <!-- <div class="materials_img_close"> <img src="img/close.svg" alt=""></div> -->
 
               <div class="materials-information-about">
                 <h2 class="materials-information-title">{{ material.name }}</h2>
@@ -185,7 +114,7 @@
               <div class="materials-information-about">
                 <p class="materials-information-text">{{ material.shorttext }} </p>
                 {# <p class="materials-text-weight materials-information-text">Есть над чем задуматься:</p> #}
-                <p class="materials-information-text">{{ material.firstpart }}</p>
+                <div class="materials-information-text">{{ material.firstpart|raw }}</div>
               </div>
 
               <div class="materials-information-img">
@@ -197,7 +126,7 @@
               </div>
 
               <div class="materials-information-about information-outside">
-                <p class="materials-information-text">{{ material.secondpart }}</p>                                             
+                <div class="materials-information-text">{{ material.secondpart|raw }}</div>                                             
               </div>
 
               <div class="materials-information-img">
@@ -209,7 +138,7 @@
               </div>
 
               <div class="materials-information-about information-outside">                
-                <p class="materials-information-text">{{ material.thirdpart }}</p>                
+                <div class="materials-information-text">{{ material.thirdpart|raw }}</div>                
               </div>
 
               <div class="materials-information-end">
@@ -223,115 +152,22 @@
               <div class="details-bottom flex opacity">
                 <ul class="details-list list-reset">
                   <li class="details-item">
-                    <a href="uploads/materials/files/{{ material.pdf }}" class="details-link" target="_blank">Открыть файл</a>
+                    <a href="uploads/files/{{ material.pdf }}" class="details-link" 
+                    target="_blank">Открыть файл</a>
                   </li>
                   <li class="details-item">
-                    <a href="uploads/materials/files/{{ material.ptx }}" class="details-link" target="_blank">Открыть презентацию</a>
+                    <a href="uploads/files/{{ material.ptx }}" class="details-link" 
+                    target="_blank">Открыть презентацию</a>
                   </li>
                 </ul>
               </div>
             </div>
           {% endfor %}
-            {# <div class="materials_content">
-              <!-- <div class="materials_img_close"> <img src="img/close.svg" alt=""></div> -->
-
-              <div class="materials-information-about">
-                <h2 class="materials-information-title">Заголовок 2</h2>
-              </div>
-
-              <div class="materials-information-about">
-                <p class="materials-information-text">Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления. </p>
-                <p class="materials-information-text">Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления. Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления. </p>
-              </div>
-
-              <div class="materials-information-img">
-                <img class="materials_foto" src="img/foto_1.jpg" alt="">
-              </div>
-
-              <div class="materials-information-img_link">
-                <a class="materials-information-photo_caption" href="#" target="_blank">Рисунок 1</a>
-              </div>
-
-              <div class="materials-information-about">
-                <p class="materials-information-text">Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления.</p>
-                <p class="materials-information-text">Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления. Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления.</p>
-                <p class="materials-information-text">Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления. Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления. Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления.</p>
-                <p class="materials-information-text">Есть над чем задуматься: явные признаки победы институционализации
-                  призывают нас к новым свершениям, которые, в свою очередь, должны быть ограничены исключительно
-                  образом
-                  мышления.</p>
-              </div>
-
-              <div class="materials-information-end">
-                <a href="#start" class="materials-information-link">К началу статьи</a>
-                <div class="details-top flex">
-                  <p class="details-title">Читать подробно</p>
-                  <i class="arrow_down-white"></i>
-                </div>
-              </div>
-
-              <div class="details-bottom flex opacity">
-                <ul class="details-list list-reset">
-                  <li class="details-item">
-                    <a href="#" class="details-link" target="_blank">Открыть файл</a>
-                  </li>
-                  <li class="details-item">
-                    <a href="#" class="details-link" target="_blank">Открыть презентацию</a>
-                  </li>
-                </ul>
-              </div>
-            </div> #}
-
-            {# <div class="materials_content">Вкладка 3</div>
-            <div class="materials_content">Вкладка 4</div>
-            <div class="materials_content">Вкладка 5</div>
-            <div class="materials_content">Вкладка 6</div>
-            <div class="materials_content">Вкладка 7</div>
-            <div class="materials_content">Вкладка 8</div> #}
+            
           </div>
           
         </div>
       </div>
     </section>
-{# <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/OSPanel/home/serbia/src/Controller/MaterialController.php</code></li>
-        <li>Your template at <code>C:/OSPanel/home/serbia/templates/material/index.html.twig</code></li>
-    </ul>
-</div> #}
 {% endblock %}

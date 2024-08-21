@@ -4,12 +4,11 @@ body{
 .title_block{
     margin: 0 auto;
     background-size: 100% ;
-    background-position: top;
+    background-position: bottom;
     background-image: url("/img/map_bg.svg");
     background-repeat: no-repeat;
     padding-top: 20px;
-    min-height: 825px;
-    max-width: 1440px;
+    min-height: 1000px;
 }
 .main__section{
 
@@ -155,6 +154,7 @@ body{
     max-width: 556px ;
     height: 45px;
     z-index: 10;
+    cursor: pointer;
 }
 .detail-modal__bg{
     position: relative;
@@ -183,7 +183,37 @@ body{
     height: 100%;
     min-height: 244px;
 }
+/* add - modal */
+
+.add-modal{
+    display: none;
+    z-index: 10;
+    position: relative;
+    background: #AA00FF;
+    border-radius: 6px;
+}
+.add-modal p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    max-width: 320px;
+    color: white;
+    text-align: center;
+    max-height: 66px;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-left: 2.4rem;
+}
+.add-modal img{
+    position: absolute;
+    top: 50%;                   /* Ставим верхнюю границу на 50% высоты родителя */
+    left: -20px;                  /* Ставим левую границу на 50% ширины родителя */
+    transform: translateY(-50%) /* Сдвигаем изображение на половину его высоты и ширины */
+}
 #closeDetail{
+    cursor: pointer;
     position: relative;
     z-index: 100;
 }

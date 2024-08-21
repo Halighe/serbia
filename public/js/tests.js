@@ -421,7 +421,6 @@ const toStart = document.getElementById('to_start');
 const entry = document.getElementById('entry');
 //  РЕНДЕР ВОПРОСОВ В ДОМ
 const renderQuestions=(index)=>{
-    renderInd(index+1);
     questions.dataset.currentStep = index;
     xds.style.display="none";
     kekw.style.display="none";
@@ -491,9 +490,6 @@ const renderWrong5=()=>{
     count.innerHTML =`Профтест`;
 };
 
-const renderInd=(currentStep)=>{
-count.innerHTML =`Профтест : ${currentStep}/${DATA.length}`
-}
 
 // ЗАПОЛНЕНИЕ МАССИВА ОТВЕТАМИ
 quiz.addEventListener('change',(event)=>{

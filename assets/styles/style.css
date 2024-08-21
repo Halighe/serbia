@@ -877,6 +877,11 @@ nav li[aria-current="page"] {
   cursor: pointer;
 }
 
+.reviews-slide-click_img {
+  width: 325px;
+  height: 400px;
+}
+
 .close-button-wrap {
   margin-bottom: 5px;
   padding-right: 85px;
@@ -1051,13 +1056,13 @@ nav li[aria-current="page"] {
   scroll-snap-type: none;
 }
 
-.reviews-modal_text {
+.reviews-text_wrap p {
   font-size: 16px;
   line-height: 20px;
   color: var(--white-color);
 }
 
-.reviews-modal_text:not(:last-child) {
+.reviews-text_wrap p:not(:last-child) {
   margin-bottom: 8px;
 }
 
