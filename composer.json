@@ -13,8 +13,8 @@
         "doctrine/doctrine-bundle": "^2.12",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.1",
+        "dompdf/dompdf": "^3.0",
         "easycorp/easyadmin-bundle": "4.x-dev",
-        "friendsofsymfony/ckeditor-bundle": "^2.5",
         "jokerov/oauth2-mailru": "^1.0",
         "nelmio/cors-bundle": "^2.4",
         "phpdocumentor/reflection-docblock": "^5.4",
@@ -86,7 +86,6 @@
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "ckeditor:install": "symfony-cmd",
             "importmap:install": "symfony-cmd"
         },
         "post-install-cmd": [

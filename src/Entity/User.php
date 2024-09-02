@@ -99,6 +99,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->id . ' ' . $this->username;
+    }
+
     /**
      * @see UserInterface
      */

@@ -1,10 +1,97 @@
+// Модалка авторизации открытие/закрытие
+// Бургер меню
+// const btnMenu = document.querySelector(".menu-btn");
+// const burgerMenu = document.querySelector(".burger-menu");
+// const burgerClose = document.querySelector(".burger-close");
+
+// btnMenu.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   burgerMenu.classList.toggle("appear");
+// });
+
+// burgerClose.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   burgerMenu.classList.remove("appear");
+// });
+// const btnBurger = document.querySelector(".burger__btn");
+// const btnHeader = document.querySelector(".header__btn");
+// const auth = document.querySelector(".auth");
+// const authClose = document.querySelector(".auth__close");
+
+// btnHeader.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   auth.style.display = "flex";
+//   body.classList.add("noscroll");
+// });
+
+btnBurger.addEventListener("click", (e) => {
+  e.preventDefault();
+  // auth.style.display = "flex";
+  body.classList.add("noscroll");
+});
+// const btnBurger = document.querySelector(".burger__btn");
+const btnHeader = document.querySelector('.header__btn');
+
+// btnHeader.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   window.location.href = 'login.html';
+// });
+
+btnBurger.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = 'login.html';
+});
+
+// Модалка регистрации открытие/закрытие
+const btnHero = document.querySelector(".hero-btn");
+const btnCard = document.querySelectorAll(".card-btn");
+const reg = document.querySelector(".reg");
+const regClose = document.querySelector(".reg__close");
+const regButton = document.querySelector('.reg__button')
+
+btnHero.addEventListener("click", (e) => {
+  e.preventDefault();
+  reg.style.display = "flex";
+  body.classList.add("overflow-body");
+});
+
+btnCard.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    reg.style.display = "flex";
+    body.classList.add("overflow-body");
+  });
+});
+
+regClose.addEventListener("click", (e) => {
+  e.preventDefault();
+  reg.style.display = "none";
+  body.classList.remove("overflow-body");
+});
+
+// Модалка обратной связи открытие/закрытие
+// const btnFooter = document.querySelector(".footer__btn");
+// const fb = document.querySelector(".fb");
+// const fbClose = document.querySelector(".fb__close");
+
+// btnFooter.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   fb.style.display = "flex";
+//   body.classList.add("overflow-body");
+// });
+
+// fbClose.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   fb.style.display = "none";
+//   body.classList.remove("overflow-body");
+// });
 
 //Valid reg form
 let regValidation = new JustValidate('#regform', {
   focusInvalidField: false,
 });
 
-regValidation.addField('#namereg', [
+regValidation.addField('#participant_fio', [
   {
     rule: 'required',
     errorMessage: 'Введите Ф.И.О.'
@@ -20,7 +107,7 @@ regValidation.addField('#namereg', [
     errorMessage: "Фамилия не может содержать больше 100 символов",
   },
 ])
-  .addField('#emailreg', [
+  .addField('#participant_email', [
     {
       rule: 'required',
       errorMessage: 'Введите Email'
@@ -35,7 +122,7 @@ regValidation.addField('#namereg', [
       errorMessage: "E-mail не может содержать больше 256 символов",
     },
   ])
-  .addField('#phonereg', [
+  .addField('#participant_phone', [
     {
       rule: "required",
       errorMessage: "Введите ваш телефон",
@@ -51,19 +138,19 @@ regValidation.addField('#namereg', [
       errorMessage: "Номер телефона не может содержать больше 18 символов",
     },
   ])
-  .addField('#cityreg', [
+  .addField('#participant_city', [
     {
       rule: 'required',
       errorMessage: 'Выберите город'
     }
   ])
-  .addField('#catreg', [
+  .addField('#participant_category', [
     {
       rule: 'required',
       errorMessage: 'Выберите категорию'
     }
   ])
-  .addField('#schoolreg', [
+  .addField('#participant_school', [
     {
       rule: 'required',
       errorMessage: 'Введите наименование учебного заведения'
@@ -79,7 +166,7 @@ regValidation.addField('#namereg', [
       errorMessage: "Наименование учебного заведения не может содержать больше 156 символов",
     },
   ])
-  .addField('#profnamereg', [
+  .addField('#participant_representative', [
     {
       rule: 'required',
       errorMessage: 'Введите Ф.И.О. представителя'
@@ -104,47 +191,9 @@ regValidation.addField('#namereg', [
   .onSuccess((e) => {
     e.preventDefault()
     reg.style.display = "none";
-    regNotice.style.display = "flex";
+    window.location.href = 'regthanks.html';
   })
 
-let authValidation = new JustValidate('#authform', {
-  focusInvalidField: false,
-});
-
-authValidation.addField('#emailauth', [
-  {
-    rule: 'required',
-    errorMessage: 'Введите Email'
-  },
-  {
-    rule: "email",
-    errorMessage: "Введите корректный E-mail",
-  },
-  {
-    rule: "maxLength",
-    value: 256,
-    errorMessage: "E-mail не может содержать больше 256 символов",
-  },
-])
-  .addField('#passauth', [
-    {
-      rule: 'required',
-      errorMessage: 'Введите пароль'
-    },
-    {
-      rule: "maxLength",
-      value: 64,
-      errorMessage: "Пароль не может содержать больше 64 символов",
-    },
-    {
-      rule: "minLength",
-      value: 6,
-      errorMessage: "Пароль не может содержать меньше 6 символов",
-    }
-  ])
-  .onSuccess((e) => {
-    e.preventDefault()
-  })
 
 // валидация формы обратной связи
 const inputWithClearFb = document.querySelectorAll('.input__clear-fb')
@@ -153,7 +202,7 @@ let fbValidation = new JustValidate('#fb-form', {
   focusInvalidField: false,
 });
 
-fbValidation.addField('#namefb', [
+fbValidation.addField('#feedback_form_name', [
   {
     rule: 'required',
     errorMessage: 'Введите Ф.И.О.'
@@ -169,7 +218,7 @@ fbValidation.addField('#namefb', [
     errorMessage: "Фамилия не может содержать больше 100 символов",
   },
 ])
-  .addField('#emailfb', [
+  .addField('#feedback_form_email', [
     {
       rule: 'required',
       errorMessage: 'Введите Email'
@@ -184,7 +233,7 @@ fbValidation.addField('#namefb', [
       errorMessage: "E-mail не может содержать больше 256 символов",
     },
   ])
-  .addField('#phonefb', [
+  .addField('#feedback_form_phone', [
     {
       rule: "required",
       errorMessage: "Введите ваш телефон",
@@ -200,7 +249,7 @@ fbValidation.addField('#namefb', [
       errorMessage: "Номер телефона не может содержать больше 18 символов",
     },
   ])
-  .addField('#textarea', [
+  .addField('#feedback_form_question', [
     {
       rule: 'required',
       errorMessage: 'Введите текст',
@@ -225,7 +274,7 @@ fbValidation.addField('#namefb', [
   ])
   .onSuccess((e) => {
     e.preventDefault()
-    fbNotice.style.display = "flex";
+    window.location.href = 'fbthanks.html';
     fb.style.display = "none";
     inputWithClearFb.forEach((item) => {
       clearFields(item);
@@ -233,21 +282,6 @@ fbValidation.addField('#namefb', [
   });
 
 
-const passwordBtns = document.querySelectorAll(".input-figure-eye");
-const inputPasswords = document.querySelectorAll(".input__pass");
-
-for (let i = 0; i < passwordBtns.length; i++) {
-  passwordBtns[i].addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const inputPassword = inputPasswords[i];
-    if (inputPassword.getAttribute("type") === "password") {
-      inputPassword.setAttribute("type", "text");
-    } else {
-      inputPassword.setAttribute("type", "password");
-    }
-  });
-}
 //Кнопка очистки инпута
 function updateButtonVisibility(input) {
   const button = input.nextElementSibling;
@@ -321,21 +355,21 @@ for (let i = 0; i < li_item_cat.length; i = i + 1) {
 
 //радокнопка снимает/навешивает required
 
-const radioDisable = document.getElementById('disable')
+const radioDisable = document.getElementById('participant_adult')
 const radioEnable = document.getElementById('enable')
 const inputProfname = document.querySelector('.reg__input-profname')
 
 if (radioDisable) {
   radioDisable.addEventListener('click', function () {
     inputProfname.removeAttribute('required')
-    regValidation.removeField('#profname')
+    regValidation.removeField('#participant_representative')
   })
 }
 
 if (radioEnable) {
   radioEnable.addEventListener('click', function () {
     inputProfname.setAttribute('required', 'required')
-    regValidation.addField('#profname', [
+    regValidation.addField('#participant_representative', [
       {
         rule: 'required',
         errorMessage: 'Введите Ф.И.О. представителя'
@@ -353,207 +387,3 @@ if (radioEnable) {
     ])
   })
 }
-
-// Модалка авторизации открытие/закрытие
-const btnBurger = document.querySelector(".burger__btn");
-const btnHeader = document.querySelector(".header__btn");
-const auth = document.querySelector(".auth");
-const authClose = document.querySelector(".auth__close");
-
-btnHeader.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "flex";
-  body.classList.add("noscroll");
-});
-
-btnBurger.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "flex";
-  body.classList.add("noscroll");
-});
-
-authClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "none";
-  body.classList.remove("noscroll");
-});
-
-// Модалка регистрации открытие/закрытие
-const btnHero = document.querySelector(".hero-btn");
-const btnCard = document.querySelectorAll(".card-btn");
-const reg = document.querySelector(".reg");
-const regClose = document.querySelector(".reg__close");
-const regNoticeClose = document.querySelector('.reg__notice-close')
-const regButton = document.querySelector('.reg__button')
-const regNotice = document.querySelector('.reg__notice-container')
-
-btnHero.addEventListener("click", (e) => {
-  e.preventDefault();
-  reg.style.display = "flex";
-  body.classList.add("overflow-body");
-});
-
-btnCard.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    e.preventDefault();
-    reg.style.display = "flex";
-    body.classList.add("overflow-body");
-  });
-});
-
-regClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  reg.style.display = "none";
-  body.classList.remove("overflow-body");
-});
-
-regNoticeClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  regNotice.style.display = "none";
-  body.classList.remove("overflow-body");
-});
-
-// Модалка обратной связи открытие/закрытие
-const btnFooter = document.querySelector(".footer__btn");
-const fb = document.querySelector(".fb");
-const fbClose = document.querySelector(".fb__close");
-const fbNotice = document.querySelector('.fb__notice-container')
-const fbNoticeClose = document.querySelector('.fb__notice-close')
-
-btnFooter.addEventListener("click", (e) => {
-  e.preventDefault();
-  fb.style.display = "flex";
-  body.classList.add("overflow-body");
-});
-
-fbClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  fb.style.display = "none";
-  body.classList.remove("overflow-body");
-});
-
-fbNoticeClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  fbNotice.style.display = "none";
-  body.classList.remove("overflow-body");
-});
-
-
-
-// Модалка "Забли пароль"
-
-const missPassButton = document.querySelector('.auth__miss-pass')
-const passModal = document.querySelector('.pass__modal-z')
-const passModalEmail = document.querySelector('.pass__container-email')
-
-const passModalCode = document.querySelector('.pass__container-code')
-
-const passModalPasswords = document.querySelector('.pass__container-pass')
-
-const passModalClose = document.querySelector('.pass__close')
-
-missPassButton.addEventListener('click', (e) => {
-  auth.style.display = "none";
-  passModal.style.display = "flex";
-  passModalEmail.style.display = "flex";
-})
-
-passModalClose.addEventListener('click', (e) => {
-  body.classList.remove("noscroll");
-  passModal.style.display = "none";
-  passModalCode.style.display = "none";
-})
-
-// PassForms
-
-let passValidation = new JustValidate('#passform', {
-  focusInvalidField: false,
-});
-
-passValidation.addField('#emailpassform', [
-  {
-    rule: 'required',
-    errorMessage: 'Введите Email'
-  },
-  {
-    rule: "email",
-    errorMessage: "Введите корректный E-mail",
-  },
-  {
-    rule: "maxLength",
-    value: 256,
-    errorMessage: "E-mail не может содержать больше 256 символов",
-  },
-])
-  .onSuccess((e) => {
-    e.preventDefault()
-    passModalEmail.style.display = "none";
-    passModalCode.style.display = "flex";
-  })
-
-
-let codeValidation = new JustValidate('#codeform', {
-  focusInvalidField: false,
-});
-
-codeValidation.addField('#code', [
-  {
-    rule: 'required',
-    errorMessage: ' '
-  },
-])
-  .onSuccess((e) => {
-    e.preventDefault()
-    passModalCode.style.display = "none";
-    passModalPasswords.style.display = "flex";
-  })
-
-
-let passwordsValidation = new JustValidate('#passwords', {
-  focusInvalidField: false,
-});
-
-passwordsValidation.addField('#newpass-passform', [
-  {
-    rule: 'required',
-    errorMessage: 'Введите новый пароль'
-  },
-  {
-    rule: "maxLength",
-    value: 64,
-    errorMessage: "Новый пароль не может содержать больше 64 символов",
-  },
-  {
-    rule: "minLength",
-    value: 6,
-    errorMessage: "Новый пароль не может содержать меньше 6 символов",
-  }
-])
-  .addField('#repnewpass-passform', [
-    {
-      rule: 'required',
-      errorMessage: 'Повторите новый пароль'
-    },
-    {
-      validator: (value, fields) => {
-        if (
-          fields['#newpass'] &&
-          fields['#repnewpass'].elem
-        ) {
-          const repeatPasswordValue =
-            fields['#newpass'].elem.value;
-
-          return value === repeatPasswordValue;
-        }
-
-        return true;
-      },
-      errorMessage: 'Пароли не совпадают',
-    }
-  ])
-  .onSuccess((e) => {
-    e.preventDefault()
-    body.classList.remove("noscroll");
-    passModal.style.display = "none";
-    passModalPasswords.style.display = "none";
-  })

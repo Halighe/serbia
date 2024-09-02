@@ -1,26 +1,98 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-    <link href="{{ asset('styles/normalize.css') }}" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
-    <link href="{{ asset('styles/style.css') }}" rel="stylesheet"/> 
-    <link href="{{ asset('styles/lk.css') }}" rel="stylesheet"/>
-{% endblock stylesheets %}
 
-{% block title %}Профиль{% endblock %}
+ {% block stylesheets %}
+  {{ parent() }}
+  {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" /> #}
+  <link href="{{ asset('styles/lk.css') }}" rel="stylesheet" />
+  {# <link href="{{ asset('styles/media.css') }}" rel="stylesheet" />
+  <link href="{{ asset('styles/headerlk.css') }}" rel="stylesheet" /> #}
+{% endblock stylesheets %} 
+
+{% block javascripts %}
+  {{ parent() }}     
+  {# <script defer src="{{ asset('js/menu-modals.js') }}"></script> #}
+  <script defer src="{{ asset('js/headerlk.js') }}"></script> 
+    
+    {# <script defer src="js/validationMain.js"></script>                             #}
+{% endblock javascripts %}
 
 {% block body %}
+<!-- Модальное окно обратной связи -->
+  <div class="fb">
+    <div class="fb__modal">
+      <div class="fb__close"></div>
+      <div class="fb__container">
+        <h1 class="fb__title">НЕ НАШЛИ ОТВЕТА НА СВОЙ ВОПРОС?</h1>
+        <h3 class="fb__text">Воспользуйтесь формой, задайте вопрос, и мы лично свяжемся с вами в ближайшее время.</h3>
+        {{ form_start(formFeed) }}
+        <div class="fb__form" id="fb-form" autocomplete="off">
+          <label class="fb__input-label">Ф.И.О.*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+              {# <input class="fb__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namefb" id="namefb"
+                maxlength="100" required> #}
+                {{ form_row(formFeed.name) }}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">E-mail*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formFeed.email) }}
+              {# <input class="fb__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailfb" id="emailfb" required> #}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">Телефон*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formFeed.phone) }}
+              {# <input class="fb__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonefb" id="phonefb"
+                required> #}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">Задать вопрос *</label>
+          <div class="fb__input-border">
+             <label class="input__invisible-shield">
+              {# <textarea class="fb__input fb__input-textarea" type="text" name="textarea" id="textarea" maxlength="4000"
+                required></textarea> #}
+              {{ form_row(formFeed.question) }}
+            </label>
+          </div>
+          <label class="fb__checkbox-label">
+            <input class="fb__checkbox" type="checkbox" id="checkbox1" required>
+            <span class="fb__fake-checkbox"></span>
+            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">Политики
+                конфиденциальности</span></span>
+          </label>
+          <label class="fb__checkbox-label fb__checkbox-label-second">
+            <input class="fb__checkbox" type="checkbox" id="checkbox2" required>
+            <span class="fb__fake-checkbox"></span>
+            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">
+                Согласия на обработку персональных данных, Согласия Пользователя на обработку персональных данных
+              </span></span>
+          </label>
+          <button class="fb__button" type="submit">Задать вопрос</button>
+        </div>
+        {{ form_end(formFeed) }}
+      </div>
+    </div>
+  </div>
+  
 <div class="mainlk">
     <div class="mainlk__first-section">
       <div class="mainlk__first-section-container">
         <h1 class="mainlk__title mainlk__title-first">О МЕРОПРИЯТИИ</h1>
         <h3 class="mainlk__text mainlk__text-first">Более подробную информацию о всех мероприятиях «Дней робототехники и
           инновационных образовательных технологий» вы можете скачать ниже. </h3>
-        <a href="uploads/files/{{ profile.program }}" class="mainlk__button-container mainlk__button-container-first" target="_blank">
+        <a href="uploads/files/{{ profile.0.0.program }}" class="mainlk__button-container mainlk__button-container-first" target="_blank">
           <button class="mainlk__button">Программа</button>
           <div class="mainlk__button-figure"></div>
         </a>
-        <a class="mainlk__button-link" href="uploads/files/{{ profile.certificate }}" target="_blank">
+        <a class="mainlk__button-link" href="uploads/profiles/{{ profile.0.certificate }}" target="_blank">
           <span class="mainlk__button-text">Сертификат</span>
           <div class="mainlk__button-frame"></div>
         </a>
@@ -39,7 +111,7 @@
         <h1 class="mainlk__title mainlk__title-second">СПИСОК РЕКОМЕНДУЕМЫХ УЧЕБНЫХ ЗАВЕДЕНИЙ</h1>
         <h3 class="mainlk__text mainlk__text-second">Персонализированные рекомендации по ведущим
           учебным заведениям. Нажмите кнопку ниже, чтобы скачать свой список!</h3>
-        <a href="uploads/files/{{ profile.alluniversities }}" class="mainlk__button-container mainlk__button-container-second" target="_blank">
+        <a href="uploads/files/{{ profile.0.alluniversities }}" class="mainlk__button-container mainlk__button-container-second" target="_blank">
           <button class="mainlk__button mainlk__button-second">Скачать</button>
           <div class="mainlk__button-figure"></div>
         </a>
@@ -70,7 +142,7 @@
         <li class="mainlk__card mainlk__card-1">
           <h2 class="mainlk__card-title">РОБОТОТЕХНИКА</h2>
           <span class="mainlk__card-text">Список учебных заведений в России с направлением «Робототехника»</span>
-          <a href="uploads/files/{{ profile.robuniversities }}" class="mainlk__card-button-container" target="_blank">
+          <a href="uploads/files/{{ profile.0.robuniversities }}" class="mainlk__card-button-container" target="_blank">
             <button class="mainlk__card-button">Скачать</button>
             <div class="mainlk__card-button-figure"></div>
           </a>
@@ -79,7 +151,7 @@
           <h2 class="mainlk__card-title">VR</h2>
           <span class="mainlk__card-text">Список учебных заведений в России с направлением «Виртуальная
             реальность»</span>
-          <a href="uploads/files/{{ profile.vruniversities }}" class="mainlk__card-button-container"  target="_blank">
+          <a href="uploads/files/{{ profile.0.vruniversities }}" class="mainlk__card-button-container"  target="_blank">
             <button class="mainlk__card-button">Скачать</button>
             <div class="mainlk__card-button-figure"></div>
           </a>
@@ -88,7 +160,7 @@
           <h2 class="mainlk__card-title">AR</h2>
           <span class="mainlk__card-text">Список учебных заведений в России с направлением «Дополненная
             реальность»</span>
-          <a href="uploads/files/{{ profile.aruniversities }}" class="mainlk__card-button-container"  target="_blank">
+          <a href="uploads/files/{{ profile.0.aruniversities }}" class="mainlk__card-button-container"  target="_blank">
             <button link="uploads/files/" class="mainlk__card-button">Скачать</button>
             <div class="mainlk__card-button-figure"></div>
           </a>

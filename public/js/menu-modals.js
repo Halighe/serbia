@@ -63,27 +63,27 @@ burgerClose.addEventListener("click", (e) => {
 
 // Модалка авторизации
 const btnBurger = document.querySelector(".burger__btn");
-const btnHeader = document.querySelector(".header__btn");
-const auth = document.querySelector(".auth");
-const authClose = document.querySelector(".auth__close");
+// const btnHeader = document.querySelector(".header__btn");
+// const auth = document.querySelector(".auth");
+// const authClose = document.querySelector(".auth__close");
 
-btnHeader.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "flex";
-  body.classList.add("noscroll");
-});
+// btnHeader.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   auth.style.display = "flex";
+//   body.classList.add("noscroll");
+// });
 
 btnBurger.addEventListener("click", (e) => {
   e.preventDefault();
-  auth.style.display = "flex";
+  // auth.style.display = "flex";
   body.classList.add("noscroll");
 });
 
-authClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "none";
-  body.classList.remove("noscroll");
-});
+// authClose.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   auth.style.display = "none";
+//   body.classList.remove("noscroll");
+// });
 
 // Модалка обратной связи
 const btnFooter = document.querySelector(".footer__btn");

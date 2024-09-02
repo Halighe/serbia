@@ -37,6 +37,12 @@ class Participant
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $representative = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $recommendation = null;
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,6 +140,30 @@ class Participant
     public function setRepresentative(?string $representative): static
     {
         $this->representative = $representative;
+
+        return $this;
+    }
+
+    public function getRecommendation(): ?string
+    {
+        return $this->recommendation;
+    }
+
+    public function setRecommendation(?string $recommendation): static
+    {
+        $this->recommendation = $recommendation;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

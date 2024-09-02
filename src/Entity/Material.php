@@ -59,6 +59,9 @@ class Material
     #[ORM\Column(length: 500, nullable: true)]
     private ?string $video = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $heading = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -240,6 +243,18 @@ class Material
     public function setVideo(?string $video): static
     {
         $this->video = $video;
+
+        return $this;
+    }
+
+    public function getHeading(): ?string
+    {
+        return $this->heading;
+    }
+
+    public function setHeading(string $heading): static
+    {
+        $this->heading = $heading;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 /* Авторизация */
 .auth {
-  display: none;
+  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
@@ -304,73 +304,6 @@
   max-height: 1500px;
   box-sizing: border-box;
   margin: 0 auto;
-}
-
-.reg__notice-container {
-  position: fixed;
-  overflow: auto;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #0e0214;
-  box-sizing: border-box;
-}
-
-.reg__notice {
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
-  height: 352px;
-  background-image: url("../img/background-notice-desktop.svg");
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  position: relative;
-  border: 2px solid #ffaa00;
-  border-radius: 6px;
-  box-sizing: border-box;
-  padding: 80px 40px;
-}
-
-.reg__notice-enable {
-  display: flex;
-}
-
-.reg__notice-close {
-  position: absolute;
-  background-image: url("../img/close.svg");
-  width: 60px;
-  height: 60px;
-  right: 20px;
-  top: 20px;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.reg__notice-robot {
-  display: none;
-}
-
-.reg__notice-title {
-  font-family: Wadik;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 39.82px;
-  background: linear-gradient(50deg, #ffaa00, #aa00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.reg__notice-text {
-  color: white;
-  font-size: 20px;
-  line-height: 24px;
-  margin-top: 40px;
 }
 
 .reg__mask {
@@ -808,30 +741,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .reg__notice {
-    width: 493px;
-    height: 274px;
-    background-image: url("../img/background-notice-tablet.svg");
-    padding: 60px 40px 40px 40px;
-  }
-
-  .reg__notice-close {
-    background-image: url("../img/Close-mini.svg");
-    width: 32px;
-    height: 32px;
-  }
-
-  .reg__notice-title {
-    font-size: 24px;
-    line-height: 26.54px;
-  }
-
-  .reg__notice-text {
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 20px;
-  }
-
   .reg__modal {
     max-width: 492px;
     margin-left: auto;
@@ -884,32 +793,6 @@
 @media screen and (max-width: 500px) {
   .reg {
     padding: 0;
-  }
-
-  .reg__notice {
-    width: 360px;
-    height: 640px;
-    background-image: url("../img/background-notice-phone.svg");
-    padding: 92px 20px 72px;
-    border: none;
-  }
-
-  .reg__notice-robot {
-    display: inline-block;
-    width: 235px;
-    height: 290px;
-    align-self: center;
-    margin-top: 40px;
-  }
-
-  .reg__notice-title {
-    font-size: 16px;
-    line-height: 17.7px;
-  }
-
-  .reg__notice-text {
-    font-size: 14px;
-    line-height: 18px;
   }
 
   .reg__modal {
@@ -986,61 +869,6 @@
   flex-direction: column;
   align-items: end;
   color: white;
-}
-
-.fb__notice-container {
-  position: fixed;
-  overflow: auto;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  display: none;
-  background-color: #0e0214;
-}
-
-.fb__notice {
-  background-image: url("../img/back-notice-feedback-desktop-.svg");
-  background-repeat: no-repeat;
-  width: 589px;
-  height: 288px;
-  padding: 80px 40px;
-  box-sizing: border-box;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border: 2px solid #ffaa00;
-}
-
-.fb__notice-close {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-image: url("../img/close.svg");
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
-.fb__notice-title {
-  font-family: Wadik;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 39.82px;
-  background: linear-gradient(50deg, #ffaa00, #aa00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.fb__notice-text {
-  color: white;
-  font-size: 20px;
-  line-height: 24px;
-  margin-top: 40px;
 }
 
 .fb__close {
@@ -1304,48 +1132,9 @@
   }
 }
 
-@media screen and (max-width: 900px) {
-  .fb__notice {
-    background-image: url("../img/back-notice-feedback-tablet.svg");
-    width: 458px;
-    height: 207px;
-    padding: 80px 40px 40px 40px;
-  }
-
-  .fb__notice-close {
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/Close-mini.svg");
-  }
-
-  .fb__notice-title {
-    font-size: 24px;
-    line-height: 26.54px;
-  }
-
-  .fb__notice-text {
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 20px;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .fb {
     padding: 0;
-  }
-
-  .fb__notice {
-    background-image: url("../img/back-notice-feedback-phone.svg");
-    width: 360px;
-    height: 640px;
-    padding: 80px 40px;
-    border: none;
-  }
-
-  .fb__notice-text {
-    font-size: 14px;
-    line-height: 18px;
   }
 
   .fb__modal {

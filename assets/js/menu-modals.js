@@ -5,10 +5,11 @@ const navListVisible = document.querySelector(".nav__list-visible");
 const nav = document.querySelector(".nav");
 const navText = document.querySelector(".nav__text");
 const arrowDown = document.querySelector(".arrow_down");
+// const body = document.body;
 const navLinksHidden = document.querySelectorAll(
   ".nav__list-hidden .nav__link"
 );
-console.log('hop');
+
 navClick.addEventListener("click", (event) => {
   event.preventDefault();
   navClick.classList.toggle("open");
@@ -18,7 +19,7 @@ navClick.addEventListener("click", (event) => {
   arrowDown.classList.toggle("open");
   navText.classList.toggle("hidden");
 });
-console.log('hey');
+
 navLinksHidden.forEach((link) => {
   link.addEventListener("click", () => {
     navClick.classList.remove("open");
@@ -63,27 +64,27 @@ burgerClose.addEventListener("click", (e) => {
 
 // Модалка авторизации
 const btnBurger = document.querySelector(".burger__btn");
-const btnHeader = document.querySelector(".header__btn");
-const auth = document.querySelector(".auth");
-const authClose = document.querySelector(".auth__close");
+// const btnHeader = document.querySelector(".header__btn");
+// const auth = document.querySelector(".auth");
+// const authClose = document.querySelector(".auth__close");
 
-btnHeader.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "flex";
-  body.classList.add("noscroll");
-});
+// btnHeader.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   auth.style.display = "flex";
+//   body.classList.add("noscroll");
+// });
 
 btnBurger.addEventListener("click", (e) => {
   e.preventDefault();
-  auth.style.display = "flex";
+  // auth.style.display = "flex";
   body.classList.add("noscroll");
 });
 
-authClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  auth.style.display = "none";
-  body.classList.remove("noscroll");
-});
+// authClose.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   auth.style.display = "none";
+//   body.classList.remove("noscroll");
+// });
 
 // Модалка обратной связи
 const btnFooter = document.querySelector(".footer__btn");
@@ -121,12 +122,13 @@ const btnCard = document.querySelectorAll(".card-btn");
 const reg = document.querySelector(".reg");
 const regClose = document.querySelector(".reg__close");
 
+if(btnHero){
 btnHero.addEventListener("click", (e) => {
   e.preventDefault();
   reg.style.display = "flex";
   body.classList.add("overflow-body");
 });
-
+}
 btnCard.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -134,9 +136,10 @@ btnCard.forEach((btn) => {
     body.classList.add("overflow-body");
   });
 });
-
+if(regClose){
 regClose.addEventListener("click", (e) => {
   e.preventDefault();
   reg.style.display = "none";
   body.classList.remove("overflow-body");
 });
+}

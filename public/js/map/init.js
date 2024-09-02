@@ -140,10 +140,10 @@ async function initMap() {
                 const marker = new YMapMarker({coordinates: [item.latitude, item.longitude]}, markerElement);
                 markerElement.classList.add('cursor-pointer')
                 this._markers.push(marker);
-                markerElement.addEventListener('click',()=>{
-                    this._openDetailModal(item)
 
-                    // здесь должна открыться модалка detail-modal и вставиться данные из item
+                markerElement.addEventListener('click', () => {
+                    this._openDetailModal(item)
+                    this._openCustomPopup(item, marker);
                 })
                 map.addChild(marker)
             })
@@ -157,11 +157,10 @@ async function initMap() {
                             const marker = new YMapMarker({coordinates: [item.latitude, item.longitude]}, markerElement);
                             this._markers.push(marker);
                             markerElement.classList.add('cursor-pointer')
-                            markerElement.addEventListener('click',()=>{
+                            markerElement.addEventListener('click', () => {
                                 this._openDetailModal(item)
-
-                                // здесь должна открыться модалка detail-modal и вставиться данные из item
                             })
+
                             map.addChild(marker)
                         } else {
                             if (!elem.checked && elem.value === item.rang) {
@@ -179,9 +178,11 @@ async function initMap() {
                 })
             })
         }
+
         _openDetailModal(item) {
             const modal = document.querySelector('.detail-modal');
             const modalContent = modal.querySelector('.modal__body__img img');
+            const customPopup = document.querySelector('.add-modal');
 
             // Заполнение модалки данными из item
             modal.querySelector('#modalTitle').innerText = item.title || 'Название не указано';
@@ -194,9 +195,35 @@ async function initMap() {
             // Показать модалку
             modal.style.display = 'block';
 
-            modal.addEventListener('click',()=>{
+            modal.addEventListener('click', () => {
                 modal.style.display = 'none'
+                customPopup.style.display = 'none'
             })
+
+        }
+
+        _openCustomPopup(item, marker) {
+            // Получаем координаты маркера
+            const coordinates = marker.coordinates;
+            console.log(coordinates)
+
+            // Вычисляем новые координаты для позиционирования окна справа от маркера
+            const offsetX = 0; // Смещение по оси X
+            const offsetY = 0; // Смещение по оси Y (можно изменить для вертикального смещения)
+
+            const popupCoordinates = [coordinates[0] + offsetX, coordinates[1] + offsetY];
+
+            // Создаем и отображаем ваше кастомное окно
+            const customPopup = document.querySelector('.add-modal');
+            customPopup.querySelector('p').textContent = item.title
+            customPopup.style.display = 'flex'
+            const popupMarker = new YMapMarker({coordinates: popupCoordinates}, customPopup);
+            map.addChild(popupMarker);
+
+            // Можно добавить обработчик для закрытия окна
+            customPopup.addEventListener('click', () => {
+                map.removeChild(popupMarker); // Удаляем окно при клике
+            });
         }
     }
 

@@ -474,21 +474,10 @@ const renderWrong3=()=>{
     count.innerHTML =`Профтест`;
 };
 const renderWrong5=()=>{
-    questions.innerHTML = `
-    <div class="quiz-questions-item">
-                <div class="quiz-questions-item__question q-pad">Поздравляем, вы успешно прошли тестирование!</div>
-                <div class="quiz-final">Ваши результаты доступны в личном кабинете.</div>
-               <div class="quiz-final">Мы также отправили вам письмо с результатами на указанную почту.</div>
-
-            </div>
-    `;
-    info.style.display='none';
-    lk.style.display='flex';
-    btnNext.style.display='none';
-    control.classList.remove("quiz-controls");
-    control.classList.add("flex-start");
-    count.innerHTML =`Профтест`;
-};
+    quiz.style.display='none';
+        window.open('../test/thanks',"_self");
+    
+    };
 
 
 // ЗАПОЛНЕНИЕ МАССИВА ОТВЕТАМИ
@@ -496,7 +485,13 @@ quiz.addEventListener('change',(event)=>{
  if(event.target.classList.contains('answer-input')){
     localResults[event.target.name] = event.target.value;
     btnNext.disabled = false;
-    console.log(localResults);
+    document.cookie = "result=" + JSON.stringify(localResults);
+    const UserName = document.getElementById('Usname').value;
+    const UserMail = document.getElementById('Usmail').value;
+    document.cookie= "email=" + JSON.stringify(UserMail);
+    document.cookie= "name=" + JSON.stringify(UserName);
+    // console.log(UserName);
+    // console.log(UserMail);
     }
 })
 
@@ -929,6 +924,10 @@ quiz.addEventListener('click',(event)=>{
     if(event.target.classList.contains('start_btn')){
         entry.style.display ='none';
         quiz.style.display ='block';
+        // const UserName = document.getElementById('Usname').value;
+        // const UserMail = document.getElementById('Usmail').value;
+        // document.cookie= "email=" + JSON.stringify(UserMail);
+        // document.cookie= "name=" + JSON.stringify(UserName);
     }
    })
 renderCount();

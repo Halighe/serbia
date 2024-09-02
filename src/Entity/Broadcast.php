@@ -17,10 +17,10 @@ class Broadcast
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $city = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $date = null;
-
     #[ORM\Column(length: 255, nullable: true)]
+    private ?string $date = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
     private ?string $link = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -43,12 +43,12 @@ class Broadcast
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
         return $this->date;
     }
 
-    public function setDate(?\DateTimeInterface $date): static
+    public function setDate(?string $date): static
     {
         $this->date = $date;
 

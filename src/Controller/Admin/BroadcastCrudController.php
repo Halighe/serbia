@@ -20,7 +20,8 @@ class BroadcastCrudController extends AbstractCrudController
     {
         return [
             TextField::new('city'),
-            DateField::new('date')->setFormat('dd.MM.yyyy'),
+            TextField::new('date'),
+            // DateField::new('date')->setFormat('dd.MM.yyyy'),
             TextField::new('link'),
             ImageField::new('poster')->setUploadDir('public/uploads/broadcasts/')->setUploadedFileNamePattern('[contenthash].[extension]')
              ->hideOnIndex(),

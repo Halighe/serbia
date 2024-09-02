@@ -273,7 +273,7 @@ var swiperPartners = new Swiper(".swiper-partners", {
 
 // Кнопка play в трансляциях
 const broadcastPlay = document.querySelector(".broadcast-play");
-const broadcastVideo = document.querySelector(".broadcast-video");
+const broadcastVideo = document.querySelectorAll(".broadcast-video");
 const dateSelect = document.querySelector(".broadcast-select");
 
 broadcastPlay.disabled = true;
@@ -281,58 +281,50 @@ broadcastPlay.disabled = true;
 broadcastPlay.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (broadcastVideo.paused) {
-    broadcastVideo.play();
+  const selectedVideo = document.querySelector(".broadcast-video--active");
+
+  if (selectedVideo.paused) {
+    selectedVideo.play();
     broadcastPlay.classList.add("hidden");
   } else {
-    broadcastVideo.pause();
+    selectedVideo.pause();
     broadcastPlay.classList.remove("hidden");
   }
 });
 
-broadcastVideo.addEventListener("ended", function () {
-  broadcastPlay.classList.remove("hidden");
-  broadcastPlay.classList.remove("active");
-  broadcastPlay.disabled = false;
-});
-
-// Выбор видео по дате
+// Видео в трансляциях
 dateSelect.addEventListener("change", () => {
   const selectedDate = dateSelect.value;
+  const selectedVideo = document.querySelector(`#video-${selectedDate}`);
+  const currentVideo = document.querySelector(".broadcast-video--active");
 
-  let videoSource;
-  switch (selectedDate) {
-    case "october_5":
-      videoSource = "video/cathedral.mp4";
-      break;
-    case "october_6":
-      videoSource = "video/Esmeralda.mp4";
-      break;
-    case "october_8":
-      videoSource = "video/kings.mp4";
-      break;
-    case "october_9":
-      videoSource = "video/Maria.mp4";
-      break;
-    case "october_11":
-      videoSource = "video/cathedral.mp4";
-      break;
-    case "october_12":
-      videoSource = "video/Esmeralda.mp4";
-      break;
-    default:
-      videoSource = "";
+  if (currentVideo) {
+    currentVideo.pause();
   }
 
-  if (videoSource) {
-    broadcastVideo.src = videoSource;
-    broadcastPlay.classList.remove("hidden");
+  broadcastVideo.forEach((video) =>
+    video.classList.remove("broadcast-video--active")
+  );
+
+  if (selectedVideo) {
+    selectedVideo.classList.add("broadcast-video--active");
     broadcastPlay.disabled = false;
-  } else {
-    broadcastVideo.src = "";
-    broadcastPlay.classList.add("hidden");
-    broadcastPlay.disabled = true;
+
+    if (selectedVideo.paused) {
+      broadcastPlay.classList.remove("hidden");
+    } else {
+      broadcastPlay.classList.add("hidden");
+    }
   }
+  console.log(selectedVideo);
+});
+
+broadcastVideo.forEach((video) => {
+  video.addEventListener("ended", function () {
+    broadcastPlay.classList.remove("hidden");
+    broadcastPlay.classList.remove("active");
+    broadcastPlay.disabled = false;
+  });
 });
 
 // Адаптив
@@ -346,17 +338,6 @@ function handleTabletChange(e) {
 }
 mediaQuery.addListener(handleTabletChange);
 handleTabletChange(mediaQuery);
-
-// const mediaQuery2 = window.matchMedia("(max-width: 992px)");
-// function handleTabletChange2(e) {
-//   if (e.matches) {
-//     const footerCenter = document.querySelector(".footer-center");
-//     const footerRight = document.querySelector(".footer-right");
-//     footerRight.append(footerCenter);
-//   }
-// }
-// mediaQuery2.addListener(handleTabletChange2);
-// handleTabletChange2(mediaQuery2);
 
 const mediaQuery3 = window.matchMedia("(max-width: 700px)");
 function handleTabletChange3(e) {

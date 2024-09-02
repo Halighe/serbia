@@ -1,24 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Материалы{% endblock %}
 {% block stylesheets %}
-    {# {{ parent() }} #}
+    {{ parent() }}
     <link href="{{ asset('styles/materials.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('styles/normalize.css') }}" rel="stylesheet">
-    <link href="{{ asset('styles/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('styles/media.css') }}" rel="stylesheet" />
-    <link href="{{ asset('styles/modals.css') }}" rel="stylesheet"/>
 {% endblock stylesheets %}
+
 {% block javascripts %}
-    {# {{ parent() }} #}
-    <script defer src="{{ asset('js/materials.js') }}"></script> 
-    <script defer src="{{ asset('js/menu-modals.js') }}"></script> 
+    {{ parent() }}
+    {# <script defer src="{{ asset('js/menu-modals.js') }}"></script>  #}
+    <script defer src="{{ asset('js/materials.js') }}"></script>
+    <script defer src="{{ asset('js/headerlk.js') }}"></script>
+       
 {% endblock javascripts %}
 
 {% block body %}
 
-<div class="materials_img_close"> <img src="img/close.svg" alt=""></div>
+<!-- Модальное окно обратной связи -->
+  <div class="fb">
+    <div class="fb__modal">
+      <div class="fb__close"></div>
+      <div class="fb__container">
+        <h1 class="fb__title">НЕ НАШЛИ ОТВЕТА НА СВОЙ ВОПРОС?</h1>
+        <h3 class="fb__text">Воспользуйтесь формой, задайте вопрос, и мы лично свяжемся с вами в ближайшее время.</h3>
+        {{ form_start(formFeed) }}
+        <div class="fb__form" id="fb-form" autocomplete="off">
+          <label class="fb__input-label">Ф.И.О.*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+              {# <input class="fb__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namefb" id="namefb"
+                maxlength="100" required> #}
+                {{ form_row(formFeed.name) }}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">E-mail*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formFeed.email) }}
+              {# <input class="fb__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailfb" id="emailfb" required> #}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">Телефон*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formFeed.phone) }}
+              {# <input class="fb__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonefb" id="phonefb"
+                required> #}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">Задать вопрос *</label>
+          <div class="fb__input-border">
+             <label class="input__invisible-shield">
+              {# <textarea class="fb__input fb__input-textarea" type="text" name="textarea" id="textarea" maxlength="4000"
+                required></textarea> #}
+              {{ form_row(formFeed.question) }}
+            </label>
+          </div>
+          <label class="fb__checkbox-label">
+            <input class="fb__checkbox" type="checkbox" id="checkbox1" required>
+            <span class="fb__fake-checkbox"></span>
+            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">Политики
+                конфиденциальности</span></span>
+          </label>
+          <label class="fb__checkbox-label fb__checkbox-label-second">
+            <input class="fb__checkbox" type="checkbox" id="checkbox2" required>
+            <span class="fb__fake-checkbox"></span>
+            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">
+                Согласия на обработку персональных данных, Согласия Пользователя на обработку персональных данных
+              </span></span>
+          </label>
+          <button class="fb__button" type="submit">Задать вопрос</button>
+        </div>
+        {{ form_end(formFeed) }}
+      </div>
+    </div>
+  </div>
 
+<div class="materials_img_close"> <img src="img/close.svg" alt=""></div>
   <section class="main-block-materials">
 
     <div class="materials-hero container flex">
@@ -55,32 +116,32 @@
           </div>
           <div class="caption-bottom opacity">
             <label class="reg__radio-label caption-label">
-              <input class="reg__radio" name="age" type="radio" checked>
+              <input class="reg__radio" name="age" type="radio" data-category="1">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">История развития робототехники</span>
             </label>
             <label class="reg__radio-label caption-label">
-              <input class="reg__radio" name="age" type="radio">
+              <input class="reg__radio" name="age" type="radio" data-category="2">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Робототехника: прорывные технологии</span>
             </label>
             <label class="reg__radio-label caption-label">
-              <input class="reg__radio" name="age" type="radio">
+              <input class="reg__radio" name="age" type="radio" data-category="3">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Занимательная робототехника</span>
             </label>
             <label class="reg__radio-label caption-label">
-              <input class="reg__radio" name="age" type="radio">
+              <input class="reg__radio" name="age" type="radio" data-category="4">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Технологии будущего</span>
             </label>
             <label class="reg__radio-label caption-label">
-              <input class="reg__radio" name="age" type="radio">
+              <input class="reg__radio" name="age" type="radio" data-category="5">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Тренды робототехники в России</span>
             </label>
             <label class="reg__radio-label caption-label">
-              <input class="reg__radio" name="age" type="radio">
+              <input class="reg__radio" name="age" type="radio" data-category="6">
               <span class="reg__fake-radio"></span>
               <span class="caption-text">Образовательные материалы</span>
             </label>
@@ -91,7 +152,7 @@
           <div class="materials_name">
             <div class="cards-wrap">
             {% for material in materials %} 
-              <div class="materials_cards">
+              <div class="materials_cards" data-category="{{ material.heading }}">
                 <img class="materials-cards-img" src="uploads/materials/icons/{{ material.icon }}" alt="">
                 <div>
                   <h3 class="materials-cards-name">{{ material.name }}</h3>

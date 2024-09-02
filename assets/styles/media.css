@@ -303,9 +303,9 @@
     line-height: 11.06px;
   }
 
-  .reviews-text_wrap p {
-    font-size: 14px !important;
-    line-height: 18px !important;
+  .reviews-text_wrap div {
+    font-size: 14px;
+    line-height: 18px;
   }
 
   .reviews-text_wrap {
@@ -349,10 +349,6 @@
     max-width: 680px;
   }
 
-  .reviews-text_wrap p:not(:last-child) {
-    margin-bottom: 0 !important;
-  }
-
   .close-button {
     width: 32px;
   }
@@ -377,7 +373,7 @@
   }
 
   .broadcast-play {
-    top: 35%;
+    top: 45%;
   }
 
   .broadcast {
@@ -1226,6 +1222,10 @@
     width: 320px;
     order: 1;
   }
+
+  .broadcast-play {
+    top: 35%;
+}
 
   .reviews {
     margin-bottom: 160px;

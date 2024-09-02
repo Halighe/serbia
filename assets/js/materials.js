@@ -1,4 +1,4 @@
-const body = document.body;
+// const body = document.body;
 
 // Вкладки (табы)
 const tabs = document.querySelectorAll(".materials_cards");

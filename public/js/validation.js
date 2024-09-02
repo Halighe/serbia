@@ -157,11 +157,11 @@ profilePassValidation.addField('#passprofile', [
     {
       validator: (value, fields) => {
         if (
-          fields['#newpass'] &&
-          fields['#rep-newpass'].elem
+          fields['#newpassprofile'] &&
+          fields['#rep-newpassproflie'].elem
         ) {
           const repeatPasswordValue =
-            fields['#newpass'].elem.value;
+            fields['#newpassprofile'].elem.value;
 
           return value === repeatPasswordValue;
         }
@@ -240,3 +240,18 @@ for (let i = 0; i < li_item_cat.length; i = i + 1) {
     regSelectCity.classList.add('reg-select-hidden')
   }, false)
 }
+
+
+const btnMenu = document.querySelector(".menu-btn");
+const burgerMenu = document.querySelector(".burger-menu");
+const burgerClose = document.querySelector(".burger-close");
+
+btnMenu.addEventListener("click", (e) => {
+  e.preventDefault();
+  burgerMenu.classList.toggle("appear");
+});
+
+burgerClose.addEventListener("click", (e) => {
+  e.preventDefault();
+  burgerMenu.classList.remove("appear");
+});

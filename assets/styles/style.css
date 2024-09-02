@@ -12,7 +12,6 @@
   --buttonHover-color: #8200d7;
   --buttonActive-color: #6400b9;
   --lightPink-color: #ffaa0033;
-
 }
 
 a {
@@ -1054,16 +1053,12 @@ nav li[aria-current="page"] {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: none;
-}
-
-.reviews-text_wrap p {
-  font-size: 16px;
-  line-height: 20px;
   color: var(--white-color);
 }
 
-.reviews-text_wrap p:not(:last-child) {
-  margin-bottom: 8px;
+.reviews-text_wrap div {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .reviews-text_wrap::-webkit-scrollbar {
@@ -1102,6 +1097,14 @@ nav li[aria-current="page"] {
 /* Трансляции */
 .broadcast {
   margin-bottom: 120px;
+}
+
+.broadcast-video {
+  display: none;
+}
+
+.broadcast-video--active {
+  display: block;
 }
 
 .broadcast-title-wrap {

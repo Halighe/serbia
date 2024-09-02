@@ -20,8 +20,8 @@ class Program
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $address = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $date = null;
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $date = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
@@ -61,12 +61,12 @@ class Program
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
         return $this->date;
     }
 
-    public function setDate(?\DateTimeInterface $date): static
+    public function setDate(?string $date): static
     {
         $this->date = $date;
 

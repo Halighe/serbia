@@ -7,7 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\{Action, Actions, Crud, KeyValueStore
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{TextField, TextareaField, ImageField, FormField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{ChoiceField, TextField, TextareaField, ImageField, FormField};
 use EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType;
 
 class MaterialCrudController extends AbstractCrudController
@@ -30,6 +30,15 @@ class MaterialCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
+            ChoiceField::new('heading')->setChoices([
+                "История развития робототехники" => "1", 
+                "Робототехника: прорывные технологии" => "2", 
+                "Занимательная робототехника" => "3",
+                "Технологии будущего" => "4", 
+                "Тренды робототехники в России" => "5", 
+                "Образовательные материалы" => "6"
+            ])->hideOnIndex(),
+
             TextField::new('name'),
             TextareaField::new('shorttext'),
             ImageField::new('icon')->setUploadDir('public/uploads/materials/icons/')->setUploadedFileNamePattern('[contenthash].[extension]')

@@ -2,150 +2,30 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/favicon.png" type="image/x-icon">
+        {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" /> #}
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-        
-        <link rel="icon" href="img/favicon.png" type="image/x-icon">
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock importmap %}
+          {# <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+          <script defer src="{{ asset('js/script.js.js') }}"></script>
+          <script defer src="{{ asset('js/menu-modals.js') }}"></script>
+          <script defer src="{{ asset('js/headerlk.js.js') }}"></script>
+          <script src="{{ asset('js/justValidate.js') }}"></script>
+          <script src="{{ asset('js/validationMain.js') }}"></script> #}
+          {% block importmap %}{{ importmap('app') }}{% endblock importmap %} 
+                   
         {% endblock javascripts %}
+         
     </head>
+    
     <body>
-
-      <!-- Модальное окно регистрации -->
-  <div class="reg">
-    <div class="reg__modal">
-      <div class="reg__mask">
-        <div class="reg__close"></div>
-        <div class="reg__info-container">
-          <h1 class="reg__title">ОТКРОЙ МИР НОВЫХ ВОЗМОЖНОСТЕЙ</h1>
-          <h3 class="reg__text">При авторизации вы получите сертификат участника, программу мероприятий и
-            эксклюзивные бонусы. Успейте забрать ваш ключ к новым знаниям, навыкам и незабываемым впечатлениям!</h3>
-          <div class="reg__robot-image"></div>
-          <div class="reg__info-figure"></div>
-        </div>
-        <form class="reg__form" id="regform" autocomplete="off" novalidate="novalidate">
-          <label class="reg__input-label">Ф.И.О.</label>
-          <div class="reg__input-border">
-            <label class="input__invisible-shield">
-              <input class="reg__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namereg" id="namereg"
-                maxlength="100" required>
-              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="reg__input-label">Email</label>
-          <div class="reg__input-border">
-            <label class="input__invisible-shield">
-              <input class="reg__input input__clear" placeholder="Введите Email" type="email" maxlength="256"
-                name="emailreg" id="emailreg" required>
-              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="reg__input-label">Телефон</label>
-          <div class="reg__input-border">
-            <label class="input__invisible-shield">
-              <input class="reg__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonereg"
-                id="phonereg" required>
-              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="reg__input-label">Город</label>
-          <div class="reg__input-border">
-            <label class="input__invisible-shield">
-              <input class="reg__input reg__input-city" placeholder="Выберите город" id="cityreg" type="text" name="cityreg"
-                required>
-            </label>
-            <img class="input-figure city-button" src="./img/arrow-down-white.svg" alt="кнопка" />
-            <ul class="reg-select reg-select-city reg-select-hidden" name="cities">
-              <li class="reg-select-option" data-value="Город 1">Город 1</li>
-              <li class="reg-select-option" data-value="Город 2">Город 2</li>
-              <li class="reg-select-option" data-value="Город 3">Город 3</li>
-              <li class="reg-select-option" data-value="Город 4">Город 4</li>
-            </ul>
-          </div>
-          <label class="reg__input-label">Категория</label>
-          <div class="reg__input-border">
-            <label class="input__invisible-shield">
-              <input class="reg__input reg__input-cat" placeholder="Выберите категорию" id="catreg" type="text" name="catreg"
-                required>
-            </label>
-            <img class="input-figure cat-button" src="./img/arrow-down-white.svg" alt="кнопка" />
-            <ul class="reg-select-cat reg-select-cat-hidden" name="cathegory">
-              <li class="reg-select-cat-option" data-value="Школьник">Школьник</li>
-              <li class="reg-select-cat-option" data-value="Студент">Студент</li>
-              <li class="reg-select-cat-option" data-value="Преподаватель">Преподаватель</li>
-              <li class="reg-select-cat-option" data-value="Другая категория">Другая категория</li>
-            </ul>
-          </div>
-          <label class="reg__input-label">Наименование учебного заведения</label>
-          <div class="reg__input-border">
-            <label class="input__invisible-shield">
-              <input class="reg__input reg__input-360 input__clear"
-                placeholder="Введите наименование учебного заведения" type="text" name="schoolreg" id="schoolreg"
-                maxlength="156" required>
-              <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="reg__input-label">Вам есть 14 лет?</label>
-          <div class="reg__radio-container reg__radio-container-first">
-            <label class="reg__radio-label">
-              <input class="reg__radio" id="disable" name="age" type="radio">
-              <span class="reg__fake-radio"></span>
-              <span class="reg__input-label-rad">Да</span>
-            </label>
-          </div>
-          <div class="reg__radio-container reg__radio-enable">
-            <label class="reg__radio-label">
-              <input class="reg__radio" id="enable" name="age" type="radio" checked>
-              <span class="reg__fake-radio"></span>
-              <span class="reg__input-label-rad">Нет</span>
-            </label>
-          </div>
-          <label class="reg__input-label reg__input-label-last">ФИО представителя
-            <div class="reg__input-border reg__input-border-last">
-              <label class="input__invisible-shield">
-                <input class="reg__input reg__input-profname input__clear" placeholder="Введите ФИО представителя"
-                  type="text" name="profnamereg" id="profnamereg" maxlength="100" required>
-                <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-              </label>
-            </div>
-          </label>
-
-          <div class="reg__checkbox-container">
-            <label class="reg__checkbox-label">
-              <input class="reg__checkbox" type="checkbox" id="checkboxreg" name="checkboxreg" required>
-              <span class="reg__fake-checkbox"></span>
-              <span class="reg__checkbox-text">Соглашаюсь с условиями <span class="reg__checkbox-text-span">Политики
-                  конфиденциальности,
-                  Согласия на обработку персональных данных</span> и <span class="reg__checkbox-text-span">Согласия
-                  Пользователя на обработку персональных
-                  данных</span></span>
-            </label>
-          </div>
-          <div class="reg__button-container">
-            <button class="reg__button" type="submit">Зарегистрироваться</button>
-            <div class="reg__button-figure"></div>
-          </div>
-        </form>
-      </div>
-    </div>
-    </div>
-
-    <div class="reg__notice-container">
-    <div class="reg__notice">
-      <div class="reg__notice-close"></div>
-      <h1 class="reg__notice-title">ВЫ УСПЕШНО ЗАРЕГИСТРИРОВАЛИСЬ</h1>
-      <span class="reg__notice-text">В ближайшее время на вашу электронную почту придёт письмо с логином и паролем для
-        входа в
-        аккаунт. Проверьте папку «Входящие» или «Спам», чтобы получить доступ к личному кабинету.</span>
-      <img class="reg__notice-robot" src="img/robot-phone.svg" alt="">
-    </div>
-
-  </div>
 
   <!-- Модальное окно бургер-меню -->
   <div class="burger-menu">
@@ -172,18 +52,18 @@
           <a href="#" class="burger__link">Карта будущего</a>
         </li>
         <li class="burger-item">
-          <a href="tests.html" class="burger__link">Профтест</a>
+          <a href="/test" class="burger__link">Профтест</a>
         </li>
         <li class="burger-item">
-          <a href="materials.php" class="burger__link">Материалы</a>
+          <a href="/material" class="burger__link">Материалы</a>
         </li>
         <li class="burger-item">
           <a href="#" class="burger__link">Контакты</a>
         </li>
       </ul>
 
-      <button class="btn-reset btn btn-color burger__btn flex">Войти</button>
-    </div>
+      <button onclick="document.location='/profile'" class="btn-reset btn btn-color burger__btn flex">Войти</button>
+    </div>   
 
     <div class="burger-footer flex">
       <div class="footer_contacts">
@@ -207,39 +87,8 @@
     </div>
   </div>
 
-    <!-- Модальное окно авторизации -->
-  <div class="auth">
-    <div class="auth__modal flex">
-      <div class="auth__close"></div>
-      <div class="auth__container">
-        <hi class="auth__title">АВТОРИЗАЦИЯ</hi>
-        <form class="auth__form" id="authform" autocomplete="off">
-          <label class="auth__input-label">E-mail</label>
-          <div class="auth__input-border">
-            <label class="input__invisible-shield">
-              <input class="auth__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
-                name="emailauth" id="emailauth" required>
-              <img class="input-figure input-figure-hidden input-figure-auth" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="auth__input-label">Пароль</label>
-          <div class="auth__input-border">
-            <label class="input__invisible-shield">
-              <input class="auth__input input__pass" placeholder="Введите пароль" type="password" minlength="6"
-                maxlength="64" id="passauth" name="passauth" required>
-            </label>
-            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
-            </div>
-          <a class="auth__miss-pass">Забыли пароль?</a>
-          <span class="auth__text">Еще нет аккаунта? <a class="auth__link-reg">Зарегистрироваться</a></span>
-           <button type="submit" class="auth__button">Войти</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
   <!-- Модальное окно восстановления пароля-->
-  <div class="pass__modal-z">
+  {# <div class="pass__modal-z">
     <div class="pass__modal">
       <div class="pass__close"></div>
       <div class="pass__container-email">
@@ -298,76 +147,20 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> #}
   
-<!-- Модальное окно обратной связи -->
-  <div class="fb">
-    <div class="fb__modal">
-      <div class="fb__close"></div>
-      <div class="fb__container">
-        <h1 class="fb__title">НЕ НАШЛИ ОТВЕТА НА СВОЙ ВОПРОС?</h1>
-        <h3 class="fb__text">Воспользуйтесь формой, задайте вопрос, и мы лично свяжемся с вами в ближайшее время.</h3>
-        <form class="fb__form" id="fb-form" autocomplete="off">
-          <label class="fb__input-label">Ф.И.О.*</label>
-          <div class="fb__input-border">
-            <label class="input__invisible-shield">
-              <input class="fb__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namefb" id="namefb"
-                maxlength="100" required>
-              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="fb__input-label">E-mail*</label>
-          <div class="fb__input-border">
-            <label class="input__invisible-shield">
-              <input class="fb__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
-                name="emailfb" id="emailfb" required>
-              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="fb__input-label">Телефон*</label>
-          <div class="fb__input-border">
-            <label class="input__invisible-shield">
-              <input class="fb__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonefb" id="phonefb"
-                required>
-              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <label class="fb__input-label">Задать вопрос *</label>
-          <div class="fb__input-border">
-             <label class="input__invisible-shield">
-              <textarea class="fb__input fb__input-textarea" type="text" name="textarea" id="textarea" maxlength="4000"
-                required></textarea>
-            </label>
-          </div>
-          <label class="fb__checkbox-label">
-            <input class="fb__checkbox" type="checkbox" id="checkbox1" required>
-            <span class="fb__fake-checkbox"></span>
-            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">Политики
-                конфиденциальности</span></span>
-          </label>
-          <label class="fb__checkbox-label fb__checkbox-label-second">
-            <input class="fb__checkbox" type="checkbox" id="checkbox2" required>
-            <span class="fb__fake-checkbox"></span>
-            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">
-                Согласия на обработку персональных данных, Согласия Пользователя на обработку персональных данных
-              </span></span>
-          </label>
-          <button class="fb__button">Задать вопрос</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <div class="fb__notice-container">
-    <div class="fb__notice">
-      <div class="fb__notice-close"></div>
-      <h1 class="fb__notice-title">СПАСИБО!</h1>
-      <span class="fb__notice-text">Мы ценим каждое обращение и ответим в ближайшее время на e-mail</span>
-    </div>
-  </div>
-
-    <section class="main-block">
-      <header class="header container flex">
+{# main-block main-block-materials #}
+    {% set url = app.request.pathinfo %}
+      {# {{url}} #}
+    {# {% if (url != 'http://127.0.0.1:8000/material')  %}
+        <section class="main-block">
+    {% endif %}
+    {% if (url == 'http://127.0.0.1:8000/material')  %}
+        <section class="main-block-materials">
+    {% endif %}   #}
+      <section class="main-block">  
+          <header class="header container flex">
             <div class="logo-block flex">
                 <a href="/" class="logo">
                 <picture>
@@ -390,7 +183,7 @@
                     <a href="/future_map.php" class="nav__link" id="link-map">Карта будущего</a>
                 </li>
                 <li class="nav__item">
-                    <a href="tests.html" class="nav__link">Профтест</a>
+                    <a href="{{ path('app_test') }}" class="nav__link">Профтест</a>
                 </li>
                 <li class="nav__item">
                     <a href="{{ path('app_material') }}" class="nav__link" id="link-home">Материалы</a>
@@ -412,18 +205,39 @@
                 </li>
                 </ul>
             </nav>
-
-            <button class="btn-reset btn btn-color header__btn flex">Войти</button>
-
+            
+            {% if app.user and app.user.roles == ["ROLE_USER"] %}
+            {# {{ app.user.roles|join(', ') }} #}
+              <div class="header-profile__container header-profile__container-other--pages ">
+              <a href="/profile">
+                <img class="header-profile__avatar" src="img/avatar.png" alt="аватарка" />
+              </a>  
+                <button class="header-profile__button"></button>
+                <div class="header-profile__select">
+                  <a class="header-profile__option" href="/perspage">
+                    <img class="header-profile__option-image" src="img/profile.svg" alt="профиль"/>
+                    <span class="header-profile__option-text">Профиль</span>
+                  </a>
+                  <a class="header-profile__option"  href="/logout">
+                    <img class="header-profile__option-image" src="img/logout-black.svg" alt="выход"/>
+                    <span class="header-profile__option-text">Выход</span>
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+            {% if app.user == '' %}
+              <button onclick="document.location='/profile'" class="btn-reset btn btn-color header__btn flex">Войти</button>
+            {% endif %} 
             <div class="menu-btn hidden">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
       </header>
-      {% set url = app.request.uri %}
+     
+      {# {% set url = app.request.uri %} #}
       {# {{url}} #}
-      {% if (url == 'http://127.0.0.1:8000//'or url == 'http://127.0.0.1:8000/')  %}
+      {% if (url == '/')  %}
         {% block banner %}
     <div class="hero container flex">
       <div class="hero-content">
@@ -523,7 +337,7 @@
             </div>
 
             <div class="footer-right flex">
-                <a class="footer-links" href="/401.php">Вход в личный кабинет</a>
+                <a class="footer-links" href="/profile">Вход в личный кабинет</a>
                 <a class="footer-links" href="docs/Политика_обработки_ПДн_на_сайте_Содружество_проект.pdf" target="blank"
                    download="">Политика конфиденциальности</a>
                 <a class="footer-links" href="docs/Согласие_на_обработку_ПДн_на_сайте_Содружество_проект.pdf" target="blank"

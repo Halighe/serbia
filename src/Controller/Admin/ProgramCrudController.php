@@ -28,7 +28,8 @@ class ProgramCrudController extends AbstractCrudController
             TextField::new('address'),
             // ImageField::new('image')->setUploadDir('public/uploads/program/')->setUploadedFileNamePattern('[contenthash].[extension]')
             //  ->hideOnIndex(),
-            DateField::new('date')->setFormat('dd.MM.yyyy'),
+            // DateField::new('date')->setFormat('dd.MM.yyyy'),
+            TextField::new('date'),
             TextEditorField::new('description')->hideOnIndex(),
         ];
     }

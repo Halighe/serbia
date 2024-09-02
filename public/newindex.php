@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/media.css" />
   <link rel="stylesheet" href="css/modals.css">
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
+
 <body>
 
   <!-- Модальное окно бургер-меню -->
@@ -214,30 +216,25 @@
                     </div>
                   </div>
                   <div class="reviews-text_wrap">
-                    <p class="reviews-modal_text">
+                    <div>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
+                      важность прогресса профессионального сообщества.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -310,30 +307,25 @@
                     </div>
                   </div>
                   <div class="reviews-text_wrap">
-                    <p class="reviews-modal_text">
+                    <div>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
+                      важность прогресса профессионального сообщества.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -406,30 +398,25 @@
                     </div>
                   </div>
                   <div class="reviews-text_wrap">
-                    <p class="reviews-modal_text">
+                    <div>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
+                      важность прогресса профессионального сообщества.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -502,30 +489,25 @@
                     </div>
                   </div>
                   <div class="reviews-text_wrap">
-                    <p class="reviews-modal_text">
+                    <div>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
-                    <p class="reviews-modal_text">
+                      важность прогресса профессионального сообщества.
+                      <br>
                       Также как высокое качество позиционных исследований в значительной степени обусловливает
-                      важность
-                      прогресса профессионального сообщества.</p>
+                      важность прогресса профессионального сообщества.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -871,11 +853,11 @@
                   </svg>
 
                   <p class="card-back-address">ул. Святого Саввы, 7</p>
-                  <p class="card-back-text">Вас ждут увлекательные квесты, мастер-классы по сборке роботов и
+                  <div class="card-back-text">Вас ждут увлекательные квесты, мастер-классы по сборке роботов и
                     практические
                     занятия по разработке игры в виртуальной реальности, выставка экспонатов робототехники и
                     образовательных
-                    VR-проектов.</p>
+                    VR-проектов.</div>
 
                   <div class="card-btn-wrap">
                     <button class="btn-reset btn section-btn card-btn card-back-btn">Зарегистрироваться</button>
@@ -912,9 +894,9 @@
                   </svg>
 
                   <p class="card-back-address">ул. Святого Саввы, 7</p>
-                  <p class="card-back-text">Вас ждут мастер-классы по моделированию и сборке роботов, практическое
+                  <div class="card-back-text">Вас ждут мастер-классы по моделированию и сборке роботов, практическое
                     занятие
-                    по разработке VR-игры, интерактивный квест, выставка экспонатов робототехники и мехатроники.</p>
+                    по разработке VR-игры, интерактивный квест, выставка экспонатов робототехники и мехатроники.</div>
 
                   <div class="card-btn-wrap">
                     <button class="btn-reset btn section-btn card-btn card-back-btn">Зарегистрироваться</button>
@@ -951,9 +933,9 @@
                   </svg>
 
                   <p class="card-back-address">ул. Святого Саввы, 7</p>
-                  <p class="card-back-text">Образовательная выставка роботов и VR-проектов, интерактивные мастер-классы
+                  <div class="card-back-text">Образовательная выставка роботов и VR-проектов, интерактивные мастер-классы
                     «Собираем луноход» и «Разработка игры в виртуальной реальности», квиз «Возвращение Тессеракта»,
-                    демонстрация интерактивной карты образования России.</p>
+                    демонстрация интерактивной карты образования России.</div>
 
                   <div class="card-btn-wrap">
                     <button class="btn-reset btn section-btn card-btn card-back-btn">Зарегистрироваться</button>
@@ -978,11 +960,7 @@
                 <div id="0" class="swiper-slide reviews-slide">
                   <div class="reviews-slide-info">
                     <div class="reviews-slide-click" data-modal-slide="0">
-                      <picture>
-                        <source srcset="img/reviewCard-1-mobile.webp" media="(max-width: 700px)">
-                        <source srcset="img/reviewCard-1-tablet.webp" media="(max-width: 1024px)">
-                        <img class="reviews-slide-click_img" src="img/reviewCard-1.webp" alt="">
-                      </picture>
+                      <img class="reviews-slide-click_img" src="img/reviewCard-1.webp" alt="">
                       <div class="user-wrap flex">
                         <img src="img/avatar.png" alt="avatar">
                         <div class="user-data">
@@ -997,11 +975,7 @@
                 <div id="1" class="swiper-slide reviews-slide">
                   <div class="reviews-slide-info">
                     <div class="reviews-slide-click" data-modal-slide="1">
-                      <picture>
-                        <source srcset="img/reviewCard-2-mobile.webp" media="(max-width: 700px)">
-                        <source srcset="img/reviewCard-2-tablet.webp" media="(max-width: 1024px)">
-                        <img class="reviews-slide-click_img" src="img/reviewCard-2.webp" alt="">
-                      </picture>
+                      <img class="reviews-slide-click_img" src="img/reviewCard-2.webp" alt="">
                       <div class="user-wrap flex">
                         <img src="img/avatar.png" alt="avatar">
                         <div class="user-data">
@@ -1016,11 +990,7 @@
                 <div id="2" class="swiper-slide reviews-slide">
                   <div class="reviews-slide-info">
                     <div class="reviews-slide-click" data-modal-slide="2">
-                      <picture>
-                        <source srcset="img/reviewCard-3-mobile.webp" media="(max-width: 700px)">
-                        <source srcset="img/reviewCard-3-tablet.webp" media="(max-width: 1024px)">
-                        <img class="reviews-slide-click_img" src="img/reviewCard-3.webp" alt="">
-                      </picture>
+                      <img class="reviews-slide-click_img" src="img/reviewCard-3.webp" alt="">
                       <div class="user-wrap flex">
                         <img src="img/avatar.png" alt="avatar">
                         <div class="user-data">
@@ -1035,11 +1005,7 @@
                 <div id="3" class="swiper-slide reviews-slide">
                   <div class="reviews-slide-info">
                     <div class="reviews-slide-click" data-modal-slide="3">
-                      <picture>
-                        <source srcset="img/reviewCard-2-mobile.webp" media="(max-width: 700px)">
-                        <source srcset="img/reviewCard-2-tablet.webp" media="(max-width: 1024px)">
-                        <img class="reviews-slide-click_img" src="img/reviewCard-2.webp" alt="">
-                      </picture>
+                      <img class="reviews-slide-click_img" src="img/reviewCard-2.webp" alt="">
                       <div class="user-wrap flex">
                         <img src="img/avatar.png" alt="avatar">
                         <div class="user-data">
@@ -1084,7 +1050,28 @@
 
           <div class="broadcast-video_flex">
             <div class="broadcast-video_wrap">
-              <video class="broadcast-video" preload="metadata" poster="img/broadcast-video_poster.webp">
+              <video class="broadcast-video broadcast-video--active" preload="metadata" poster="img/broadcast-video_poster.webp" id="video-october_5">
+                <source src="video/cathedral.mp4" type="video/mp4">
+              </video>
+
+              <video class="broadcast-video" preload="metadata" poster="img/broadcast-video_poster.webp" id="video-october_6">
+                <source src="video/Esmeralda.mp4" type="video/mp4">
+              </video>
+
+              <video class="broadcast-video" preload="metadata" poster="img/broadcast-video_poster.webp" id="video-october_8">
+                <source src="video/kings.mp4" type="video/mp4">
+              </video>
+
+              <video class="broadcast-video" preload="metadata" poster="img/broadcast-video_poster.webp" id="video-october_9">
+                <source src="video/Maria.mp4" type="video/mp4">
+              </video>
+
+              <video class="broadcast-video" preload="metadata" poster="img/broadcast-video_poster.webp" id="video-october_11">
+                <source src="video/cathedral.mp4" type="video/mp4">
+              </video>
+
+              <video class="broadcast-video" preload="metadata" poster="img/broadcast-video_poster.webp" id="video-october_12">
+                <source src="video/Esmeralda.mp4" type="video/mp4">
               </video>
 
               <picture>

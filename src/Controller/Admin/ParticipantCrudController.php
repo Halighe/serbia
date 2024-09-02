@@ -7,7 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\{Action, Actions, Crud, KeyValueStore
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{TelephoneField, EmailField, TextField, ChoiceField, BooleanField};
+use EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType;
+use EasyCorp\Bundle\EasyAdminBundle\Field\{TelephoneField, EmailField, TextField, ChoiceField, BooleanField, AssociationField};
 class ParticipantCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -28,6 +29,7 @@ class ParticipantCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
+            AssociationField::new('user'),
             TextField::new('fio'),
             EmailField::new('email'),
             TelephoneField::new('phone'),
@@ -42,6 +44,11 @@ class ParticipantCrudController extends AbstractCrudController
             TextField::new('school')->hideOnIndex(),
             BooleanField::new('adult'),
             TextField::new('representative')->hideOnIndex(),
+            TextField::new('recommendation')
+                ->setFormType(FileUploadType::class)
+                ->setFormTypeOptions(['attr' => [                     // and  this function
+                            'accept' => 'application/pdf'
+                        ]])->hideOnIndex(),
         ];
     }
     

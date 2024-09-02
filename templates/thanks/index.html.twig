@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}Спасибо!{% endblock %}
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/regthanks.css" />
+  <link rel="stylesheet" href="{{ asset('styles/headerlk.css') }}" />
+  <script defer src="{{ asset('js/regthanks.js') }}"></script>
+</head>
+
+<body>
+  <div class="reg__notice-container">
+    <div class="reg__notice">
+      <div class="reg__notice-close"></div>
+      <h1 class="reg__notice-title">ВЫ УСПЕШНО ЗАРЕГИСТРИРОВАЛИСЬ</h1>
+      <span class="reg__notice-text">В ближайшее время на вашу электронную почту придёт письмо с логином и паролем для
+        входа в
+        аккаунт. Проверьте папку «Входящие» или «Спам», чтобы получить доступ к личному кабинету.</span>
+      <img class="reg__notice-robot" src="img/robot-phone.svg" alt="">
+    </div>
+  </div>
+
+</body>
+
+</html>
+
