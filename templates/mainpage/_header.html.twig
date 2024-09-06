@@ -1,0 +1,74 @@
+          <header class="header container flex">
+            <div class="logo-block flex">
+                <a href="/" class="logo">
+                <picture>
+                    <source srcset="img/logo_mobile.svg" media="(max-width: 730px)">
+                    <source srcset="img/logo_tablet.svg" media="(max-width: 1024px)">
+                    <img src="img/logo.svg" alt="logo">
+                </picture>
+                </a>
+                <a href="https://rs.gov.ru/" class="logo" target="_blank">
+                <img src="img/logo-ros.png" class="logo-2" alt="logo">
+                </a>
+                <a href="https://concord.ac/" class="logo" target="_blank">
+                <img src="img/logo-sodruzestvo.png" class="logo-3" alt="logo">
+                </a>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list nav__list-visible list-reset flex">
+                <li class="nav__item">
+                    <a href="/map" class="nav__link" id="link-map">Карта будущего</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ path('app_test') }}" class="nav__link">Профтест</a>
+                </li>
+                <li class="nav__item">
+                    <a href="{{ path('app_material') }}" class="nav__link" id="link-home">Материалы</a>
+                </li>
+                <li class="nav__item nav__click flex">
+                    <p class="nav__link nav__text flex">Еще</p>
+                    <i class="arrow_down"></i>
+                </li>
+                </ul>
+                <ul class="nav__list nav__list-hidden opacity list-reset flex">
+                <li class="nav__item">
+                    <a href="/#program" class="nav__link">Программа</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/#video" class="nav__link">Запись трансляции</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/#partners" class="nav__link">Партнеры</a>
+                </li>
+                </ul>
+            </nav>
+            
+            {% if app.user and app.user.roles == ["ROLE_USER"] %}
+            {# {{ app.user.roles|join(', ') }} #}
+              <div class="header-profile__container header-profile__container-other--pages ">
+              <a href="/profile">
+                <img class="header-profile__avatar" src="img/avatar.png" alt="аватарка" />
+              </a>  
+                <button class="header-profile__button"></button>
+                <div class="header-profile__select">
+                  <a class="header-profile__option" href="/perspage">
+                    <img class="header-profile__option-image" src="img/profile.svg" alt="профиль"/>
+                    <span class="header-profile__option-text">Профиль</span>
+                  </a>
+                  <a class="header-profile__option"  href="/logout">
+                    <img class="header-profile__option-image" src="img/logout-black.svg" alt="выход"/>
+                    <span class="header-profile__option-text">Выход</span>
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+            {% if app.user == '' %}
+              <button onclick="document.location='/profile'" class="btn-reset btn btn-color header__btn flex">Войти</button>
+            {% endif %} 
+            <div class="menu-btn hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+      </header>

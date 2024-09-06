@@ -66,13 +66,13 @@ class ParticipantType extends AbstractType
                     'Да' => true,
                     'Нет' => false,
                 ],
-                'attr' => [
+                'attr' => ['class'=> 'reg__radio'],
                 'expanded' => true,
                 'multiple'=>false,                
                 // 'name'=>'namereg',
-                // 'id'=>'namereg','class'=> 'reg__radio',
+                // 'id'=>'namereg',,
                 // 'required' =>'true',
-            ],
+            
             ])
             ->add('representative', TextType::class, [
                 'label' => false,

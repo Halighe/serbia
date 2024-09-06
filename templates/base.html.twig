@@ -4,21 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/favicon.png" type="image/x-icon">
-        {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" /> #}
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-          {# <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-          <script defer src="{{ asset('js/script.js.js') }}"></script>
-          <script defer src="{{ asset('js/menu-modals.js') }}"></script>
-          <script defer src="{{ asset('js/headerlk.js.js') }}"></script>
-          <script src="{{ asset('js/justValidate.js') }}"></script>
-          <script src="{{ asset('js/validationMain.js') }}"></script> #}
+
           {% block importmap %}{{ importmap('app') }}{% endblock importmap %} 
                    
         {% endblock javascripts %}
@@ -28,6 +20,7 @@
     <body>
 
   <!-- Модальное окно бургер-меню -->
+  {% if app.user == '' %}
   <div class="burger-menu">
     <div class="header-burger flex">
       <div class="burger-logo-block flex">
@@ -49,7 +42,7 @@
     <div class="main-burger">
       <ul class="list-reset burger-list">
         <li class="burger-item">
-          <a href="#" class="burger__link">Карта будущего</a>
+          <a href="/map" class="burger__link">Карта будущего</a>
         </li>
         <li class="burger-item">
           <a href="/test" class="burger__link">Профтест</a>
@@ -86,204 +79,78 @@
       </div>
     </div>
   </div>
-
-  <!-- Модальное окно восстановления пароля-->
-  {# <div class="pass__modal-z">
-    <div class="pass__modal">
-      <div class="pass__close"></div>
-      <div class="pass__container-email">
-        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
-        <h3 class="pass__text">Введите почту привязанную к аккаунту</h3>
-        <form class="pass__form" id="passform" autocomplete="off">
-          <label class="pass__input-label">E-mail</label>
-          <div class="pass__input-border">
-            <label class="input__invisible-shield">
-              <input class="pass__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
-                name="email" id="email" required>
-              <img class="input-figure input-figure-hidden input-figure-auth" src="./img/x-circle.svg" alt="кнопка" />
-            </label>
-          </div>
-          <button type="submit" class="pass__button">Далее</button>
-        </form>
+  {% endif %}
+{% if app.user and app.user.roles == ["ROLE_USER"] %}
+  <div class="burger-menu header-profile__burger">
+    <div class="header-burger header-profile__burger-margin flex">
+      <div class="burger-logo-block flex">
+        <a href="/index.php" class="logo">
+          <img src="img/logo_mobile.svg" alt="logo">
+        </a>
+        <a href="https://rs.gov.ru/" class="logo" target="_blank">
+          <img src="img/logo-ros.png" class="burger-logo2" alt="logo">
+        </a>
+        <a href="https://concord.ac/" class="logo" target="_blank">
+          <img src="img/logo-sodruzestvo.png" class="burger-logo3" alt="logo">
+        </a>
       </div>
-
-
-      <div class="pass__container-code">
-        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
-        <h3 class="pass__text">Введите код с почты</h3>
-        <form class="pass__form" id="codeform" autocomplete="off">
-          <div class="pass__input-border">
-            <label class="input__invisible-shield">
-              <input class="pass__input" id="code" placeholder="----------" minlength="10" maxlength="10" required>
-            </label>
-          </div>
-          <span class="pass__span">Мы отправили проверочный код на почту по адресу
-            <span class="pass__span-email">qwerty@yandex.ru.</span> Если сообщение не пришло, повторите попытку.</span>
-          <div class="pass__timer-container">
-            <span class="pass__code">Отправить код еще раз</span>
-            <span class="pass__timer">через 0:59</span>
-          </div>
-          <button type="submit" class="pass__button">Далее</button>
-        </form>
-      </div>
-
-      <div class="pass__container-pass">
-        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
-        <form class="pass__form" id="passwords" autocomplete="off">
-          <label class="pass__input-label pass__input-label-pass">Пароль</label>
-          <div class="pass__input-border pass__input-border-pass">
-            <label class="input__invisible-shield">
-              <input class="pass__input" placeholder="Введите пароль" type="password" minlength="6" maxlength="64" id="newpass-passform" name="newpass-passform" required>
-            </label>
-            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
-          </div>
-          <div class="pass__input-border pass__input-border-pass">
-            <label class="input__invisible-shield">
-              <input class="pass__input" id="repnewpass-passform" placeholder="Повторите пароль" type="password" minlength="6" maxlength="64" name="repnewpass-passform" required>
-            </label>
-            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
-          </div>
-          <button type="submit" class="pass__button">Сохранить</button>
-        </form>
-      </div>
+      <button class="btn-reset burger-close">
+        <img src="img/close.svg" alt="">
+      </button>
     </div>
-  </div> #}
-  
 
+    <div class="main-burger header-profile__main-burger">
+      <div class="header-profile__avatar-burger--container">
+        <img class="header-profile__avatar--burger" src="../../img/avatar.png" alt="аватар"/>
+        <span class="header-profile__avatar-burger--span">ИВАНОВ ИВАН ИВАНОВИЧ</span>
+      </div>
+
+      <ul class="list-reset burger-list">
+        <li class="burger-item">
+          <a href="/perspage" class="burger__link">Профиль</a>
+        </li>
+
+        <li class="burger-item">
+          <a href="/" class="burger__link">Главная</a>
+        </li>
+
+        <li class="burger-item">
+          <a href="/map" class="burger__link">Карта будущего</a>
+        </li>
+
+        <li class="burger-item">
+          <a href="/test" class="burger__link">Профтест</a>
+        </li>
+
+        <li class="burger-item">
+          <a href="#" class="burger__link">Контакты</a>
+        </li>
+      </ul>
+
+      <button onclick="document.location='/logout'" class="header-profile__exit">
+        <img class="header-profile__exit-frame" src="../../img/logout.svg" alt="выход"/>
+        <span class="header-profile__exit-span">Выйти</span>
+      </button>
+    </div>
+
+    <div class="header-profile__info">
+      <img class="header-profile__info-frame" src="../../img/Mobile.svg" alt="выход"/>
+      <span class="header-profile__info-span">+7 (495) 165-15-08</span>
+    </div>
+
+    <div class="header-profile__info header-profile__info2">
+      <img class="header-profile__info-frame" src="../../img/telegram.svg" alt="выход"/>
+      <span class="header-profile__info-span">vr-rs@concord.ac</span>
+    </div>
+  </div>
+{% endif %}
 {# main-block main-block-materials #}
     {% set url = app.request.pathinfo %}
-      {# {{url}} #}
-    {# {% if (url != 'http://127.0.0.1:8000/material')  %}
-        <section class="main-block">
-    {% endif %}
-    {% if (url == 'http://127.0.0.1:8000/material')  %}
-        <section class="main-block-materials">
-    {% endif %}   #}
-      <section class="main-block">  
-          <header class="header container flex">
-            <div class="logo-block flex">
-                <a href="/" class="logo">
-                <picture>
-                    <source srcset="img/logo_mobile.svg" media="(max-width: 730px)">
-                    <source srcset="img/logo_tablet.svg" media="(max-width: 1024px)">
-                    <img src="img/logo.svg" alt="logo">
-                </picture>
-                </a>
-                <a href="https://rs.gov.ru/" class="logo" target="_blank">
-                <img src="img/logo-ros.png" class="logo-2" alt="logo">
-                </a>
-                <a href="https://concord.ac/" class="logo" target="_blank">
-                <img src="img/logo-sodruzestvo.png" class="logo-3" alt="logo">
-                </a>
-            </div>
-
-            <nav class="nav">
-                <ul class="nav__list nav__list-visible list-reset flex">
-                <li class="nav__item">
-                    <a href="/future_map.php" class="nav__link" id="link-map">Карта будущего</a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ path('app_test') }}" class="nav__link">Профтест</a>
-                </li>
-                <li class="nav__item">
-                    <a href="{{ path('app_material') }}" class="nav__link" id="link-home">Материалы</a>
-                </li>
-                <li class="nav__item nav__click flex">
-                    <p class="nav__link nav__text flex">Еще</p>
-                    <i class="arrow_down"></i>
-                </li>
-                </ul>
-                <ul class="nav__list nav__list-hidden opacity list-reset flex">
-                <li class="nav__item">
-                    <a href="/#program" class="nav__link">Программа</a>
-                </li>
-                <li class="nav__item">
-                    <a href="/#video" class="nav__link">Запись трансляции</a>
-                </li>
-                <li class="nav__item">
-                    <a href="/#partners" class="nav__link">Партнеры</a>
-                </li>
-                </ul>
-            </nav>
-            
-            {% if app.user and app.user.roles == ["ROLE_USER"] %}
-            {# {{ app.user.roles|join(', ') }} #}
-              <div class="header-profile__container header-profile__container-other--pages ">
-              <a href="/profile">
-                <img class="header-profile__avatar" src="img/avatar.png" alt="аватарка" />
-              </a>  
-                <button class="header-profile__button"></button>
-                <div class="header-profile__select">
-                  <a class="header-profile__option" href="/perspage">
-                    <img class="header-profile__option-image" src="img/profile.svg" alt="профиль"/>
-                    <span class="header-profile__option-text">Профиль</span>
-                  </a>
-                  <a class="header-profile__option"  href="/logout">
-                    <img class="header-profile__option-image" src="img/logout-black.svg" alt="выход"/>
-                    <span class="header-profile__option-text">Выход</span>
-                  </a>
-                </div>
-              </div>
-            {% endif %}
-            {% if app.user == '' %}
-              <button onclick="document.location='/profile'" class="btn-reset btn btn-color header__btn flex">Войти</button>
-            {% endif %} 
-            <div class="menu-btn hidden">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-      </header>
-     
-      {# {% set url = app.request.uri %} #}
-      {# {{url}} #}
-      {% if (url == '/')  %}
-        {% block banner %}
-    <div class="hero container flex">
-      <div class="hero-content">
-        <div class="hero-wrap">
-          <p class="section-subtitle">Играй, учись</p>
-          <p class="section-title hero-title">Открывай</p>
-          <p class="section-title hero-title">будущее</p>
-        </div>
-
-        <div class="hero-ticket">
-          <picture>
-            <source srcset="img/heroTicket-background-mobile.png" media="(max-width: 480px)">
-            <source srcset="img/heroTicket-background-tablet.png" media="(max-width: 1024px)">
-            <img src="img/heroTicket-background.png" alt="">
-          </picture>
-
-          <p class="section-text_name section-text ">VR, AR, робототехника в твоём городе</p>
-          <p class="section-text section-text_date">октябрь 2024</p>
-        </div>
-
-        <div class="hero-btn-wrap">
-          <button class="btn-reset btn section-btn hero-btn">Зарегистрироваться</button>
-          <svg width="120" height="14" viewBox="0 0 120 14">
-            <use xlink:href="sprite.svg#figure"></use>
-          </svg>
-        </div>
-      </div>
-
-      <div class="hero-img">
-        <picture>
-          <source srcset="img/hero-robot_mobile.webp" media="(max-width: 480px)">
-          <source srcset="img/hero-robot_tablet.webp" media="(max-width: 768px)">
-          <img class="hero-img_robot" src="img/hero-robot.webp" alt="robot">
-        </picture>
-
-        <picture>
-          <source srcset="img/Serbia-mobile.png" media="(max-width: 700px)">
-          <source srcset="img/Serbia-tablet.png" media="(max-width: 768px)">
-          <img class="hero-img_title" src="img/Serbia.png" alt="">
-        </picture>
-      </div>
-    </div>
-  {% endblock banner%}
-  {% endif %}
         </section>
-        {% block body %}{% endblock body%}  
+
+        {% block body %}
+        {% endblock body%}  
+
         <footer class="footer">
     <div class="container">
         <div class="footer-top flex">

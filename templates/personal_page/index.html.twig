@@ -13,6 +13,9 @@
 {% endblock javascripts %} 
 
 {% block body %}
+{# <div class="header-profile"> #}
+{{ include('profile/_header_lk.html.twig') }}
+{# </div> #}
 <!-- Модальное окно обратной связи -->
   <div class="fb">
     <div class="fb__modal">
@@ -187,37 +190,39 @@
 
     <div class="profilelk__pass">
       <h1 class="profilelk__title">СМЕНА ПАРОЛЯ</h1>
-      {# {{ form_start(formPass) }} #}
+      {{ form_start(formPass) }}
       <form class="profilelk__pass-form" id="profile-pass-form" autocomplete="off">
         <label class="profilelk__input-label">Текущий пароль</label>
         <div class="profilelk__input-border">
-          <label class="input__invisible-shield">            
-            <input class="profilelk__input input__pass" placeholder="Введите текущий пароль" type="password"
-              minlength="6" maxlength="64" id="passprofile" name="passprofile" required>
+          <label class="input__invisible-shield">  
+          {{ form_row(formPass.password) }}          
+            {# <input class="profilelk__input input__pass" placeholder="Введите текущий пароль" type="password"
+              minlength="6" maxlength="64" id="passprofile" name="passprofile" required> #}
           </label>
           <img class="input-figure input-figure-eye" src="./img/password-eye.svg" alt="кнопка" />
         </div>
         <label class="profilelk__input-label">Новый пароль</label>
         <div class="profilelk__input-border">
           <label class="input__invisible-shield">
-            {# {{ form_row(formPass.password) }} #}
-            <input class="profilelk__input input__pass" placeholder="Новый пароль" type="password" minlength="6"
-              maxlength="64" id="newpassprofile" name="newpassprofile" required>
+            {{ form_row(formPass.newpassword) }}
+            {# <input class="profilelk__input input__pass" placeholder="Новый пароль" type="password" minlength="6"
+              maxlength="64" id="newpassprofile" name="newpassprofile" required> #}
           </label>
           <img class="input-figure input-figure-eye" src="./img/password-eye.svg" alt="кнопка" />
         </div>
         <div class="profilelk__input-border-pass">
           <div class="profilelk__input-border">
             <label class="input__invisible-shield">
-              <input class="profilelk__input input__pass" placeholder="Повторите новый пароль" type="password"
-                minlength="6" maxlength="64" id="rep-newpassproflie" name="rep-newpassproflie" required>
+            {{ form_row(formPass.repeatpassword) }}
+              {# <input class="profilelk__input input__pass" placeholder="Повторите новый пароль" type="password"
+                minlength="6" maxlength="64" id="rep-newpassproflie" name="rep-newpassproflie" required> #}
             </label>
             <img class="input-figure input-figure-eye" src="./img/password-eye.svg" alt="кнопка" />
           </div>
         </div>
         <button type="submit" class="profilelk__button profilelk__button-pass">Сохранить</button>
-      </form>
-      {# {{ form_end(formPass) }} #}
+      {# </form> #}
+      {{ form_end(formPass) }}
     </div>
   </div>
 

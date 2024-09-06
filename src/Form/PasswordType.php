@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\User;
+// use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,13 +21,29 @@ class PasswordType extends AbstractType
                 'required' =>'true',
             ],
             ])
+            ->add('newpassword', PasswordType::class, [
+                'label' => false,
+                'attr' => ['placeholder' => 'Введите новый пароль',
+                'class'=> 'profilelk__input input__pass',
+                'maxlength'=>'64',
+                'required' =>'true',
+            ],
+            ])
+            ->add('repeatpassword', PasswordType::class, [
+                'label' => false,
+                'attr' => ['placeholder' => 'Введите новый пароль',
+                'class'=> 'profilelk__input input__pass',
+                'maxlength'=>'64',
+                'required' =>'true',
+            ],
+            ])
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
+            // 'data_class' => User::class,
             'attr' => ['class' => 'profilelk__pass-form',
             'id' => 'profile-pass-form'],
         ]);

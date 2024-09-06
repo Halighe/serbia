@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/headerlk.css" />
+  <link rel="stylesheet" href="css/modals.css" />
+  <script src="js/justValidate.js"></script>
+  <script defer src="js/recovery.js"></script>
+</head>
+
+<body>
+  <!-- Модальное окно восстановления пароля-->
+  <div class="pass__modal-z">
+    <div class="pass__modal">
+      <div class="pass__close"></div>
+      <div class="pass__container-email">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <h3 class="pass__text">Введите почту привязанную к аккаунту</h3>
+        {{ form_start(formGetEmail)}}
+        {# <form class="pass__form" id="passform" autocomplete="off"> #}
+          <label class="pass__input-label">E-mail</label>
+          <div class="pass__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formGetEmail.username) }}
+              {# <input class="pass__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailpassform" id="emailpassform" required> #}
+              <img class="input-figure input-figure-hidden input-figure-auth" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <button type="submit" class="pass__button">Далее</button>
+        {# </form> #}
+         {{ form_end(formGetEmail)}}
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+     
+

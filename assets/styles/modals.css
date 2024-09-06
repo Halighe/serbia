@@ -1280,7 +1280,7 @@
 }
 
 .pass__modal-z {
-  display: none;
+  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
@@ -1293,7 +1293,8 @@
 
 .pass__modal {
   background-image: url('../img/Rec-Pass-Desktop-second.svg');
-  width: 542px;
+  max-width: 542px;
+  width: 100%;
   max-height: 640px;
   position: relative;
   margin-left: auto;
@@ -1311,6 +1312,7 @@
   position: absolute;
   top: 25px;
   right: 60px;
+  cursor: pointer;
 }
 
 .pass__container-email {
@@ -1318,7 +1320,7 @@
   margin-top: 100px;
   margin-right: 60px;
   margin-left: 60px;
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 
@@ -1327,7 +1329,7 @@
   margin-top: 100px;
   margin-right: 60px;
   margin-left: 60px;
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 
@@ -1336,7 +1338,7 @@
   margin-top: 100px;
   margin-right: 60px;
   margin-left: 60px;
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 

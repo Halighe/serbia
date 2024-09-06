@@ -18,6 +18,7 @@
 {% endblock javascripts %}
 
 {% block body %}
+{{ include('profile/_header_lk.html.twig') }}
 <!-- Модальное окно обратной связи -->
   <div class="fb">
     <div class="fb__modal">
@@ -83,6 +84,7 @@
   </div>
   
 <div class="mainlk">
+
     <div class="mainlk__first-section">
       <div class="mainlk__first-section-container">
         <h1 class="mainlk__title mainlk__title-first">О МЕРОПРИЯТИИ</h1>
@@ -111,7 +113,7 @@
         <h1 class="mainlk__title mainlk__title-second">СПИСОК РЕКОМЕНДУЕМЫХ УЧЕБНЫХ ЗАВЕДЕНИЙ</h1>
         <h3 class="mainlk__text mainlk__text-second">Персонализированные рекомендации по ведущим
           учебным заведениям. Нажмите кнопку ниже, чтобы скачать свой список!</h3>
-        <a href="uploads/files/{{ profile.0.alluniversities }}" class="mainlk__button-container mainlk__button-container-second" target="_blank">
+        <a href="uploads/recoms/{{ participant.recommendation }}" class="mainlk__button-container mainlk__button-container-second" target="_blank">
           <button class="mainlk__button mainlk__button-second">Скачать</button>
           <div class="mainlk__button-figure"></div>
         </a>

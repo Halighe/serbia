@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/headerlk.css" />
+  <link rel="stylesheet" href="css/modals.css" />
+  <script src="js/justValidate.js"></script>
+  <script defer src="js/recovery.js"></script>
+</head>
+
+<body>
+  <!-- Модальное окно восстановления пароля-->
+  <div class="pass__modal-z">
+    <div class="pass__modal">
+      <div class="pass__close"></div>
+      <div class="pass__container-email">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <h3 class="pass__text">Введите почту привязанную к аккаунту</h3>
+        <form class="pass__form" id="passform" autocomplete="off">
+          <label class="pass__input-label">E-mail</label>
+          <div class="pass__input-border">
+            <label class="input__invisible-shield">
+              <input class="pass__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailpassform" id="emailpassform" required>
+              <img class="input-figure input-figure-hidden input-figure-auth" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <button type="submit" class="pass__button">Далее</button>
+        </form>
+      </div>
+
+
+      <div class="pass__container-code">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <h3 class="pass__text">Введите код с почты</h3>
+        <form class="pass__form" id="codeform" autocomplete="off">
+          <div class="pass__input-border">
+            <label class="input__invisible-shield">
+              <input class="pass__input" id="code" name="code" placeholder="----------" minlength="10" maxlength="10"
+                required>
+            </label>
+          </div>
+          <span class="pass__span">Мы отправили проверочный код на почту по адресу
+            <span class="pass__span-email">qwerty@yandex.ru.</span> Если сообщение не пришло, повторите попытку.</span>
+          <div class="pass__timer-container">
+            <span class="pass__code">Отправить код еще раз</span>
+            <span class="pass__timer">через 0:59</span>
+          </div>
+          <button type="submit" class="pass__button">Далее</button>
+        </form>
+      </div>
+
+      <div class="pass__container-pass">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <form class="pass__form" id="passwords" autocomplete="off">
+          <label class="pass__input-label pass__input-label-pass">Пароль</label>
+          <div class="pass__input-border pass__input-border-pass">
+            <label class="input__invisible-shield">
+              <input class="pass__input input__pass" placeholder="Введите пароль" type="password" minlength="6"
+                maxlength="64" id="newpass-passform" name="newpass-passform" required>
+            </label>
+            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
+          </div>
+          <div class="pass__input-border pass__input-border-pass">
+            <label class="input__invisible-shield">
+              <input class="pass__input input__pass" id="repnewpass-passform" placeholder="Повторите пароль"
+                type="password" minlength="6" maxlength="64" name="repnewpass-passform" required>
+            </label>
+            <img class="input-figure input-figure-eye input-figure-auth" src="./img/password-eye.svg" alt="кнопка" />
+          </div>
+          <button type="submit" class="pass__button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

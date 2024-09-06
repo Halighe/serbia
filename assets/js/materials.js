@@ -108,8 +108,51 @@ detailsTop.forEach((button, index) => {
 // Рубрики
 const captionTop = document.querySelector(".caption-top");
 const captionBottom = document.querySelector(".caption-bottom");
+const radioBtn = document.querySelectorAll(".reg__radio");
 
 captionTop.addEventListener("click", function (e) {
   e.preventDefault();
   captionBottom.classList.toggle("caption-bottom-open");
+});
+
+// Фильтр рубрик
+radioBtn.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    const selectedCategory = this.dataset.category;
+
+    tabs.forEach((tab) => {
+      tab.style.display = "none";
+      tab.classList.remove("materials_cards--active");
+    });
+
+    const filteredTabs = document.querySelectorAll(
+      '.materials_cards[data-category="' + selectedCategory + '"]'
+    );
+
+    filteredTabs.forEach((tab) => {
+      tab.style.display = "flex";
+      tab.classList.remove("materials_cards--active");
+    });
+
+    if (filteredTabs.length > 0) {
+      filteredTabs[0].style.display = "flex";
+      filteredTabs[0].classList.add("materials_cards--active");
+
+      const selectedIndex = Array.from(tabs).indexOf(filteredTabs[0]);
+
+      contents.forEach((content) => {
+        content.classList.remove("materials_content--active");
+      });
+
+      contents[selectedIndex].classList.add("materials_content--active");
+
+      if (mediaQueryTablet.matches) {
+        filteredTabs[0].classList.remove("materials_cards--active");
+      }
+    } else {
+      contents.forEach((content) => {
+        content.classList.remove("materials_content--active");
+      });
+    }
+  });
 });

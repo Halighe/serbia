@@ -35,6 +35,7 @@ class MainpageController extends AbstractController
             $entityManager->flush();
 
             $recipient = $participant->getEmail();
+            // echo $recipient;
             $newuser = new User();
             $newuser->setUsername($recipient);            
             $comb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

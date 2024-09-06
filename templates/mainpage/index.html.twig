@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{# {% block stylesheets %}
+  <link href="{{ asset('styles/media.css') }}" rel="stylesheet" />
+{% endblock %} #}
+
 {% block javascripts %}
   {{ parent() }} 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script> 
-  
-  {# <script defer src="{{ asset('js/menu-modals.js') }}"></script> #}
+
   <script defer src="{{ asset('js/script.js') }}"></script>   
   <script defer src="{{ asset('js/justValidate.js') }}"></script>     
   <script defer src="{{ asset('js/headerlk.js') }}"></script> 
@@ -77,6 +80,7 @@
       </div>
     </div>
   </div>
+
    <!-- Модальное окно регистрации -->   
   <div class="reg">
     <div class="reg__modal">
@@ -158,21 +162,23 @@
               <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
             </label>
           </div>
+          
           <label class="reg__input-label">Вам есть 14 лет?</label>
-          {# {% block choice_widget %}
+          {% block choice_widget %}
             {% for child in form.adult %}
-                <div class="currency-label active">
-                    <label for="{{ child.vars.id }}" class="reg__input-label-rad">
-                        <input class="reg__radio" type="radio" id="{{ child.vars.id }}" name="{{ form.vars.id ~ '[' ~ form.adult.vars.name ~ ']' }}" required="required" class="checkbox">
-                        {{ child.vars.label }}
+                <div class="reg__radio-container reg__radio-container-first">
+                    <label for="{{ child.vars.id }}" class="reg__radio-label">
+                        <input class="reg__radio" type="radio" id="{{ child.vars.id }}" 
+                        name="{{ form.vars.id ~ '[' ~ form.adult.vars.name ~ ']' }}" required="required">
+                        {# {{ child.vars.label }} #}
                         <span class="reg__fake-radio"></span>
                         <span class="reg__input-label-rad">{{ child.vars.label }}</span>
                     </label>
                 </div>
             {% endfor %}
-          {% endblock choice_widget %} #}
-          {{ form_row(form.adult) }} 
-          <div class="reg__radio-container reg__radio-container-first">
+          {% endblock choice_widget %}
+          {# {{ form_row(form.adult) }}  #}
+          {# <div class="reg__radio-container reg__radio-container-first">
             <label class="reg__radio-label">               
               <input class="reg__radio" id="disable" name="age" type="radio">
               <span class="reg__fake-radio"></span>
@@ -185,13 +191,13 @@
               <span class="reg__fake-radio"></span>
               <span class="reg__input-label-rad">Нет</span>
             </label>
-          </div>
+          </div> #}
           <label class="reg__input-label reg__input-label-last">ФИО представителя
             <div class="reg__input-border reg__input-border-last">
               <label class="input__invisible-shield">
-              {{ form_row(form.representative) }}
-                {# <input class="reg__input reg__input-profname input__clear" placeholder="Введите ФИО представителя"
-                  type="text" name="profnamereg" id="profnamereg" maxlength="100" required> #}
+              {# {{ form_row(form.representative) }} #}
+                <input class="reg__input reg__input-profname input__clear" placeholder="Введите ФИО представителя"
+                  type="text" name="profnamereg" id="profnamereg" maxlength="100" required>
                 <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
               </label>
             </div>
@@ -370,6 +376,52 @@
   </div>
 
   <!-- ------------------------- -->  
+  <section class="main-block">
+  {{ include('mainpage/_header.html.twig') }}
+        {% block banner %}
+    <div class="hero container flex">
+      <div class="hero-content">
+        <div class="hero-wrap">
+          <p class="section-subtitle">Играй, учись</p>
+          <p class="section-title hero-title">Открывай</p>
+          <p class="section-title hero-title">будущее</p>
+        </div>
+
+        <div class="hero-ticket">
+          <picture>
+            <source srcset="img/heroTicket-background-mobile.png" media="(max-width: 480px)">
+            <source srcset="img/heroTicket-background-tablet.png" media="(max-width: 1024px)">
+            <img src="img/heroTicket-background.png" alt="">
+          </picture>
+
+          <p class="section-text_name section-text ">VR, AR, робототехника в твоём городе</p>
+          <p class="section-text section-text_date">октябрь 2024</p>
+        </div>
+
+        <div class="hero-btn-wrap">
+          <button class="btn-reset btn section-btn hero-btn">Зарегистрироваться</button>
+          <svg width="120" height="14" viewBox="0 0 120 14">
+            <use xlink:href="sprite.svg#figure"></use>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <picture>
+          <source srcset="img/hero-robot_mobile.webp" media="(max-width: 480px)">
+          <source srcset="img/hero-robot_tablet.webp" media="(max-width: 768px)">
+          <img class="hero-img_robot" src="img/hero-robot.webp" alt="robot">
+        </picture>
+
+        <picture>
+          <source srcset="img/Serbia-mobile.png" media="(max-width: 700px)">
+          <source srcset="img/Serbia-tablet.png" media="(max-width: 768px)">
+          <img class="hero-img_title" src="img/Serbia.png" alt="">
+        </picture>
+      </div>
+    </div>
+    {% endblock banner%}
+  </section>
 
   <main>
     <section class="about">

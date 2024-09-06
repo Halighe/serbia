@@ -188,11 +188,11 @@ regValidation.addField('#participant_fio', [
       errorMessage: " ",
     }
   ])
-  .onSuccess((e) => {
-    e.preventDefault()
-    reg.style.display = "none";
-    window.location.href = 'regthanks.html';
-  })
+  // .onSuccess((e) => {
+  //   e.preventDefault()
+  //   reg.style.display = "none";
+  //   window.location.href = '/app_thanks';
+  // })
 
 
 // валидация формы обратной связи
@@ -355,8 +355,8 @@ for (let i = 0; i < li_item_cat.length; i = i + 1) {
 
 //радокнопка снимает/навешивает required
 
-const radioDisable = document.getElementById('participant_adult')
-const radioEnable = document.getElementById('enable')
+const radioDisable = document.getElementById('participant_adult_0')
+const radioEnable = document.getElementById('participant_adult_1')
 const inputProfname = document.querySelector('.reg__input-profname')
 
 if (radioDisable) {

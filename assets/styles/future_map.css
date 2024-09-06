@@ -1,71 +1,118 @@
-body{
+body {
     min-height: 100vh;
 }
-.title_block{
+
+.title_block {
+    position: relative;
     margin: 0 auto;
-    background-size: 100% ;
+    background-size: cover;
     background-position: bottom;
     background-image: url("/img/map_bg.svg");
     background-repeat: no-repeat;
     padding-top: 20px;
-    min-height: 1000px;
-}
-.main__section{
+    min-height: calc(59vw - 1rem);
 
 }
-.section-subtitle{
+/*
+.bg-lines-right {
+  !*  position: absolute;
+    background-image: url(/img/waves-rigth.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 79%;
+    height: 100%;
+    bottom: calc(-30vw - 1rem);
+    right: calc(-15vw - 1rem);*!
+}
+
+
+.bg-lines-left {
+    position: absolute;
+    background-image: url(/img/waves-left.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 71%;
+    height: 100%;
+    bottom: calc(-41vw - 1rem);
+    left: calc(-29vw - 1rem);
+
+}*/
+
+
+.bg-bottom-map{
+    position: absolute;
+    background-image: url(/img/map_bg-bottom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 95%;
+    z-index: -1;
+}
+
+
+.main__section {
+
+}
+
+.section-subtitle {
     text-align: center;
     font-size: 64px;
 }
-.section-text{
+
+.section-text {
     text-align: center;
     max-width: 830px;
     margin: 0 auto;
 }
 
 
-.map_block{
-    background:
-            url('img/left_lines_bg.png'),
-            url('img/right_lines_bg.png') ;
+.map_block {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
 
 }
-.tab_map{
+
+.tab_map {
     padding-top: 10px;
     display: flex;
     justify-content: center;
     gap: 20px;
     position: relative;
 }
-.tab_map_wrapper{
-    padding-top: 60px;
+
+.tab_map_wrapper {
+    padding-top: 40px;
     padding-bottom: 40px;
 }
-.tab_map img{
+
+.tab_map img {
     padding-right: 20px;
 }
-.map_wrapper{
+
+.map_wrapper {
     position: relative;
     width: 100%;
     height: 830px;
 }
-#map{
+
+#map {
     z-index: 1;
     margin: 0 auto;
     position: absolute;
-    width: 1440px;
     left: 1px;
-    height: 800px;
+    height: 782px;
     top: 1px;
-    width: 1432px;
+    max-width: 1432px;
     overflow: hidden;
     right: 0px;
 
 }
 
-.container.map_wrapper{
+.container.map_wrapper {
     padding: 0;
 }
+
 .map_block svg {
     position: absolute; /* Позволяет SVG накладываться на карту */
     top: 0;
@@ -103,8 +150,7 @@ body{
 }
 
 
-
-.help-modal-btn{
+.help-modal-btn {
     position: absolute;
     right: 5rem;
     top: 1rem;
@@ -116,7 +162,8 @@ body{
     max-width: 60px;
     max-height: 60px;
 }
-.help-modal{
+
+.help-modal {
     display: none;
     position: absolute;
     right: 4.2rem;
@@ -128,7 +175,8 @@ body{
     max-width: 360px;
     max-height: 191px;
 }
-.help-modal p{
+
+.help-modal p {
     position: absolute;
     left: 9px;
     top: 1.4rem;
@@ -138,30 +186,34 @@ body{
     height: 100%;
     max-width: 360px;
     max-height: 191px;
-    color: white ;
+    color: white;
 }
-.d-none{
+
+.d-none {
     display: none;
 }
-.d-block{
+
+.d-block {
     display: block;
 }
 
 /*detail */
-.detail-modal{
+.detail-modal {
     position: relative;
     display: none;
-    max-width: 556px ;
+    max-width: 556px;
     height: 45px;
     z-index: 10;
     cursor: pointer;
 }
-.detail-modal__bg{
+
+.detail-modal__bg {
     position: relative;
     width: 100%;
     z-index: 5;
 }
-.detail-modal__body{
+
+.detail-modal__body {
     padding-left: 40px;
     position: absolute;
     top: 0px;
@@ -169,7 +221,8 @@ body{
     max-width: 438px;
     color: white;
 }
-.modal__body__img{
+
+.modal__body__img {
     width: 100%;
     height: 100%;
     max-width: 438px;
@@ -178,21 +231,23 @@ body{
     margin: 40px 0px 20px 0px
 }
 
-.modal__body__img img{
+.modal__body__img img {
     width: 100%;
     height: 100%;
     min-height: 244px;
 }
+
 /* add - modal */
 
-.add-modal{
+.add-modal {
     display: none;
     z-index: 10;
     position: relative;
     background: #AA00FF;
     border-radius: 6px;
 }
-.add-modal p{
+
+.add-modal p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,39 +261,236 @@ body{
     padding: 16px;
     padding-left: 2.4rem;
 }
-.add-modal img{
+
+.add-modal img {
     position: absolute;
-    top: 50%;                   /* Ставим верхнюю границу на 50% высоты родителя */
-    left: -20px;                  /* Ставим левую границу на 50% ширины родителя */
+    top: 50%; /* Ставим верхнюю границу на 50% высоты родителя */
+    left: -20px; /* Ставим левую границу на 50% ширины родителя */
     transform: translateY(-50%) /* Сдвигаем изображение на половину его высоты и ширины */
 }
-#closeDetail{
+
+#closeDetail {
     cursor: pointer;
     position: relative;
     z-index: 100;
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
 }
-.font-24{
+
+.font-24 {
     font-size: 24px;
     line-height: 20px;
 }
-.font-20{
+
+.font-20 {
     font-size: 20px;
     line-height: 20px;
 }
-.font-16{
+
+.font-16 {
     font-size: 16px;
     line-height: 20px;
 }
-.pt-10{
+
+.pt-10 {
     padding-top: 10px;
 }
-.pb-10{
+
+.pb-10 {
     padding-bottom: 10px;
 }
-.pb-40{
+
+.pb-40 {
     padding-bottom: 40px;
+}
+
+.map-bg-md {
+    display: none;
+}
+
+.btn-education-wrap {
+    font-size: 20px;
+    max-width: 530px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    max-height: 73px;
+    position: relative;
+    background: url("/img/Button_educationy.png") no-repeat ;
+}
+
+.btn-education-wrap a {
+    font-family: Inter-Medium;
+    text-transform: uppercase;
+    top: 24px;
+    left: 54px;
+    position: absolute;
+    color: #0E0214;
+}
+
+@media (max-width: 1450px) {
+
+    .map-bg-xl {
+        display: none;
+    }
+
+    .map-bg-md {
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill: transparent;
+        z-index: 2;
+        pointer-events: none;
+        display: block;
+        width: 100%;
+        height: 789px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .section-subtitle {
+        font-size: 24px;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+
+    .tab_map__button {
+        padding: 8px 16px;
+    }
+
+    .help-modal {
+        right: 0.2rem;
+    }
+
+    .help-modal img {
+        max-width: 322px;
+
+    }
+
+    .help-modal p {
+        max-width: 322px;
+        font-size: 14px;
+    }
+
+    .map_block svg {
+        max-width: 400px;
+    }
+
+    .font-24, .font-20 {
+        font-size: 14px;
+    }
+
+    .detail-modal__body {
+        padding-left: 20px;
+    }
+
+    .modal__body__img img {
+        max-width: 278px;
+    }
+    .btn-education-wrap {
+        background-size: contain;
+        max-width: 338px;
+    }
+    .btn-education-wrap a{
+        text-transform: none;
+        left: 26px;
+        top: 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 810px) {
+    .map_block svg {
+        max-width: 340px;
+    }
+
+    .modal__body__img {
+        max-width: 250px;
+    }
+
+    .font-24, .font-20 {
+        font-size: 14px;
+    }
+
+    .detail-modal__body {
+        max-width: 315px;
+    }
+
+    .help-modal-btn {
+        right: 1.5rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .title_block{
+        background-image: url(/img/map_bg_mob.svg);
+        min-height: calc(46vh - 1rem);
+    }
+    #map {
+        height: 540px
+    }
+
+    .map-bg-md {
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill: transparent;
+        z-index: 2;
+        pointer-events: none;
+        display: block;
+        width: 100%;
+        height: 540px;
+    }
+
+    .map_wrapper {
+        height: 510px;
+    }
+
+    .section-text {
+        text-align: center;
+        line-height: 18px;
+    }
+
+    .tab_map::-webkit-scrollbar {
+        display: none; /* Скрываем скроллбар */
+    }
+
+    .tab_map {
+        justify-content: start;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    .btn-education-wrap {
+        background-size: contain;
+        max-width: 320px;
+        margin-top: 60px;
+    }
+    .btn-education-wrap a{
+        text-transform: none;
+        left: 17px;
+        top: 14px;
+        font-size: 16px;
+    }
+    .bg-bottom-map{
+        height: 70%;
+    }
+
+
+
+}
+
+
+@media (max-width: 480px) {
+    .map_wrapper {
+        height: 560px;
+    }
+    .btn-education-wrap {
+        margin-top: 0;
+    }
 }

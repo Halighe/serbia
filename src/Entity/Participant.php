@@ -6,6 +6,9 @@ use App\Repository\ParticipantRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ParticipantRepository::class)]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USERNAME', fields: ['email'])]
+#[UniqueEntity(fields: ['email'], message: 'Участник с такой почтой уже зарегистрирован')]
+
 class Participant
 {
     #[ORM\Id]

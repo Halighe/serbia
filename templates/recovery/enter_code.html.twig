@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ asset('styles/normalize.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('styles/style.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('styles/headerlk.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('styles/modals.css') }}"/>
+  <script defer src="{{ asset('js/justValidate.js') }}"></script>
+  <script defer src="{{ asset('js/recovery-code.js') }}"></script>
+</head>
+
+<body>
+  <div class="pass__modal-z">
+    <div class="pass__modal">
+      <div class="pass__close"></div>
+      <div class="pass__container-code">
+        <h1 class="pass__title">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</h1>
+        <h3 class="pass__text">Введите код с почты</h3>
+        {{ form_start(formEnterCode)}}
+        {# <form class="pass__form" id="codeform" autocomplete="off"> #}
+          <div class="pass__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formEnterCode.code) }}
+              {# <input class="pass__input" id="code" name="code" placeholder="----------" minlength="10" maxlength="10" required> #}
+            </label>
+          </div>
+          <span class="pass__span">Мы отправили проверочный код на почту по адресу
+            <span class="pass__span-email">{{ email }}</span> Если сообщение не пришло, повторите попытку.</span>
+          <div class="pass__timer-container">
+            <span class="pass__code">Отправить код еще раз</span>
+            <span class="pass__timer">через 0:59</span>
+          </div>
+          <button type="submit" class="pass__button">Далее</button>
+        {# </form> #}
+        {{ form_end(formEnterCode)}}
+      </div>
+
+     </div>
+  </div>
+    </div>
+  </div>
+</body>
+</html>        
+
