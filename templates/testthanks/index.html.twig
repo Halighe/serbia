@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест завершен</title>
-    {# <link rel="stylesheet" href="../serbia/css/tests.css"> #}
-    <link href="{{ asset('styles/tests.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('styles/tests.css') }}">
 </head>
 <body>
     <header>
@@ -17,12 +15,14 @@
             <div class="quiz">
     <div class="quiz-questions-item">
         <div class="quiz-questions-item__question q-pad">Поздравляем, вы успешно прошли тестирование!</div>
-        <div class="quiz-final">Ваши результаты доступны в личном кабинете.</div>
-       <div class="quiz-final">Мы также отправили вам письмо с результатами на указанную почту.</div>
+        <div class="quiz-final">Мы отправили вам письмо с результатами на указанную почту.</div>
+       <div class="quiz-final">
+        Для того, чтобы узнать больше о профессиях и вузах, нажмите на кнопку «Карта будущего».</div>
 
     </div>
     <div class="flex-start" id="controls">
-        <a href="/profile" class="lk" id="lk"><div>Перейти в личный кабинет</div></a>
+        <a href="/map" class="lk show"><div>Карта будущего</div></a>
+        <a href="/" class="ek show"><div>Завершить</div></a>
     </div>
 </div>
 </div>

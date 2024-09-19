@@ -123,12 +123,19 @@ body {
     url(../img/hero-background-2.png);
   background-repeat: no-repeat, no-repeat;
   background-position: left center, right center;
-  background-size: contain, contain;
+  background-size: contain, 40% 100%;
   overflow: hidden;
 }
 
 .logo-block {
+  height: fit-content;
+  align-items: center;
   gap: 20px;
+}
+
+.logo-block .logo:nth-child(2) img {
+  width: 40px;
+  height: 40px;
 }
 
 .nav {
@@ -347,7 +354,7 @@ nav li[aria-current="page"] {
 
 .section-text_date {
   position: absolute;
-  top: 40px;
+  top: 28px;
   max-width: 92px;
   right: 20px;
 }
@@ -581,7 +588,7 @@ nav li[aria-current="page"] {
 }
 
 .card-1 .card-front {
-  background-image: url(../img/card-1-front.webp);
+  background-image: url(../../img/card-1-front.webp);
 }
 
 .card-2 .card-front {
@@ -694,7 +701,7 @@ nav li[aria-current="page"] {
 
 /* Обратная сторона карточек */
 .program-back-city {
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   font-size: 20px;
   line-height: 22.12px;
 }
@@ -714,7 +721,6 @@ nav li[aria-current="page"] {
 .card-back-btn {
   font-size: 24px;
   line-height: 28.13px;
-  text-transform: uppercase;
 }
 
 .card-back {
@@ -743,10 +749,17 @@ nav li[aria-current="page"] {
 }
 
 .card-back-address {
-  margin-bottom: 20px;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 20px;
   color: var(--white-color);
+}
+
+.card-back-address:last-of-type {
+  margin-bottom: 12px;
+}
+
+.card-back-address span {
+  font-weight: 600;
 }
 
 .card-back-text {
@@ -769,6 +782,7 @@ nav li[aria-current="page"] {
 .reviews {
   position: relative;
   margin-bottom: 275px;
+  display: none;
 }
 
 .reviews-title {
@@ -866,7 +880,7 @@ nav li[aria-current="page"] {
   background-size: contain;
 }
 
-/* Моальное окно отзывов */
+/* Модальное окно отзывов */
 .reviews-modal {
   max-width: 1038px;
   margin: 0 auto;
@@ -1097,6 +1111,7 @@ nav li[aria-current="page"] {
 /* Трансляции */
 .broadcast {
   margin-bottom: 120px;
+  display: none;
 }
 
 .broadcast-video {
@@ -1204,6 +1219,7 @@ nav li[aria-current="page"] {
   top: 0;
   left: 0;
   object-fit: contain;
+  pointer-events: none;
 }
 
 .broadcast-video_frameSvg {
@@ -1261,8 +1277,6 @@ nav li[aria-current="page"] {
 }
 
 .partners-slide {
-  padding-top: 28px;
-  padding-bottom: 32px;
   min-height: 164px;
   justify-content: center;
   align-items: center;
@@ -1270,6 +1284,10 @@ nav li[aria-current="page"] {
   border: 2px solid var(--velvet-color);
   background: rgba(170, 0, 255, 0.2);
   cursor: pointer;
+}
+
+.partners-slide img {
+  max-height: 100px;
 }
 
 .button-next-partners,
@@ -1436,16 +1454,6 @@ nav li[aria-current="page"] {
 .burger-menu.appear {
   top: 0;
   transition: top 0.6s;
-}
-
-.burger-logo2 {
-  width: 32px;
-  height: 32px;
-}
-
-.burger-logo3 {
-  width: 122px;
-  height: 32px;
 }
 
 .burger-logo-block {

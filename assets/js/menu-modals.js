@@ -5,7 +5,7 @@ const navListVisible = document.querySelector(".nav__list-visible");
 const nav = document.querySelector(".nav");
 const navText = document.querySelector(".nav__text");
 const arrowDown = document.querySelector(".arrow_down");
-// const body = document.body;
+const body = document.body;
 const navLinksHidden = document.querySelectorAll(
   ".nav__list-hidden .nav__link"
 );
@@ -64,22 +64,24 @@ burgerClose.addEventListener("click", (e) => {
 
 // Модалка авторизации
 const btnBurger = document.querySelector(".burger__btn");
-// const btnHeader = document.querySelector(".header__btn");
+const btnHeader = document.querySelector(".header__btn");
 // const auth = document.querySelector(".auth");
 // const authClose = document.querySelector(".auth__close");
 
-// btnHeader.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   auth.style.display = "flex";
-//   body.classList.add("noscroll");
-// });
-
+if(btnHeader) {
+btnHeader.addEventListener("click", (e) => {
+  e.preventDefault();
+  // auth.style.display = "flex";
+  body.classList.add("noscroll");
+});
+}
+if(btnBurger) {
 btnBurger.addEventListener("click", (e) => {
   e.preventDefault();
   // auth.style.display = "flex";
   body.classList.add("noscroll");
 });
-
+}
 // authClose.addEventListener("click", (e) => {
 //   e.preventDefault();
 //   auth.style.display = "none";

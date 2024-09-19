@@ -25,7 +25,7 @@ async function initMap() {
         ]
     );
     const markerProps = async () => {
-        const res = await axios.get('https://vr-rs.isp.sprint.1t.ru/api/universities')
+        const res = await axios.get('https://vr-rs.ru/api/universities')
         console.log(res.data)
         return res.data['hydra:member'];
     }

@@ -14,6 +14,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PersonalPageController extends AbstractController
 {
@@ -21,21 +22,23 @@ class PersonalPageController extends AbstractController
     public function index(UserPasswordHasherInterface $userPasswordHasher, Security $security, 
     EntityManagerInterface $entityManager, Request $request): Response
     {   
-        // ini_set('memory_limit', '256M');
-        // echo ini_get('memory_limit');
-        // ini_set('memory_limit', '-1');
-        // echo ini_get('memory_limit');
         $participant = new Participant();
         $formPers = $this->createForm(PeronalType::class, $participant);
         $formPers->handleRequest($request);
         $user = $this->getUser();
         $id = $user->getId();
         $participant = $entityManager->getRepository(Participant::class)->findOneBy(['user' => $id]);
-
+    
         if ($formPers->isSubmitted()) {
-                $participant = $formPers->getData();                
-                $entityManager->persist($participant);
+                $participant->setFio($formPers->get('fio')->getData());
+                $participant->setEmail($formPers->get('email')->getData());  
+                $participant->setCategory($formPers->get('category')->getData());
+                $participant->setCity($formPers->get('city')->getData()); 
+                $participant->setSchool($formPers->get('school')->getData());
+                $participant->setRepresentative($formPers->get('representative')->getData());              
+                // $entityManager->persist($participant);
                 $entityManager->flush();
+        
         }
 
         $feedback = new Feedback();

@@ -30,16 +30,16 @@ class PeronalType extends AbstractType
                 'required' =>'true',
             ],
             ])
-            ->add('phone', TextType::class, [
-                'label' => false,
-                'attr' => ['placeholder' => 'Введите телефон',
-                'class'=> 'profilelk__input input__clear',
-                'name'=>'phonereg',
-                'id'=>'phonereg',
-                'maxlength'=>'20',
-                'required' =>'true',
-            ],
-            ])
+            // ->add('phone', TextType::class, [
+            //     'label' => false,
+            //     'attr' => ['placeholder' => 'Введите телефон',
+            //     'class'=> 'profilelk__input input__clear',
+            //     'name'=>'phonereg',
+            //     'id'=>'phonereg',
+            //     'maxlength'=>'20',
+            //     'required' =>'true',
+            // ],
+            // ])
             ->add('city', TextType::class, [
                 'label' => false,
                 'attr' => ['placeholder' => 'Выберите город',
@@ -75,9 +75,10 @@ class PeronalType extends AbstractType
             // ])
             ->add('representative', TextType::class, [
                 'label' => false,
-                'attr' => ['placeholder' => 'Введите Ф.И.О представителя',
+                'attr' => ['placeholder' => 'Введите Ф.И.О. представителя',
                 'class'=> 'profilelk__input input__clear',
                 'maxlength'=>'100',
+                'required' =>'false',
             ],
             ])
         ;

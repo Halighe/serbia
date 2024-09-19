@@ -750,6 +750,7 @@ nav li[aria-current="page"] {
 }
 
 .card-back-text {
+  margin-bottom: 8px;
   font-size: 16px;
   line-height: 20px;
   color: var(--white-color);
@@ -1212,6 +1213,7 @@ nav li[aria-current="page"] {
   top: 0;
   left: 0;
   object-fit: contain;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -1261,8 +1263,6 @@ nav li[aria-current="page"] {
 }
 
 .partners-slide {
-  padding-top: 28px;
-  padding-bottom: 32px;
   min-height: 164px;
   justify-content: center;
   align-items: center;

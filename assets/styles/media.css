@@ -20,7 +20,8 @@
     text-align: left;
   }
 
-  .broadcast-video {
+  .broadcast-video,
+  .broadcast-img {
     width: 1020px;
     height: 569.69px;
   }
@@ -135,6 +136,26 @@
     padding: 0;
   }
 
+  .burger-logo-block .logo:nth-child(2) img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .burger-logo-block .logo:nth-child(3) img {
+    width: 35px;
+    height: 32px;
+  }
+
+  .burger-logo-block .logo:nth-child(4) img {
+    width: 29px;
+    height: 32px;
+  }
+
+  .burger-logo-block .logo:nth-child(5) img {
+    width: 47px;
+    height: 32px;
+  }
+
   .main-block .container {
     padding: 0;
   }
@@ -220,6 +241,10 @@
   .card-2:hover ~ .card-1 {
     filter: brightness(1);
     transition: none;
+  }
+
+  .card-2 {
+    order: 1;
   }
 
   .program-cards {
@@ -362,7 +387,8 @@
     clip-path: url(#clip-path_broadcast-tabletSmall);
   }
 
-  .broadcast-video {
+  .broadcast-video,
+  .broadcast-img {
     width: 664px;
     height: 368px;
   }
@@ -383,16 +409,6 @@
 }
 
 @media (max-width: 1024px) {
-  .logo-2 {
-    width: 40px;
-    height: 40px;
-  }
-
-  .logo-3 {
-    width: 153px;
-    height: 40px;
-  }
-
   .logo-block {
     gap: 18px;
   }
@@ -421,7 +437,7 @@
   }
 
   .section-text_date {
-    top: 29px;
+    top: 18px;
     right: 0px;
   }
 
@@ -554,8 +570,13 @@
   }
 
   .program-city {
+    margin-bottom: 10px;
     font-size: 16px;
     line-height: 17.7px;
+  }
+
+  .card-back-address:last-of-type {
+    margin-bottom: 8px;
   }
 
   .card-btn {
@@ -569,9 +590,8 @@
   }
 
   .card-back-address {
-    margin-bottom: 14px;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 18px;
   }
 
   .card-back-text {
@@ -684,8 +704,6 @@
   }
 
   .partners-slide {
-    padding-top: 32px;
-    padding-bottom: 32px;
     min-height: 168px;
   }
 
@@ -740,6 +758,26 @@
 }
 
 @media (max-width: 992px) {
+  .logo-block .logo:nth-child(2) img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-block .logo:nth-child(3) img {
+    width: 35px;
+    height: 32px;
+  }
+
+  .logo-block .logo:nth-child(4) img {
+    width: 29px;
+    height: 32px;
+  }
+
+  .logo-block .logo:nth-child(5) img {
+    width: 47px;
+    height: 32px;
+  }
+
   .footer-center {
     width: 100%;
     order: -1;
@@ -758,6 +796,7 @@
   .partners-slide img {
     display: inline-block;
     width: 60%;
+    max-height: fit-content;
   }
 }
 
@@ -857,7 +896,8 @@
     clip-path: url(#clip-path_broadcast-mobile);
   }
 
-  .broadcast-video {
+  .broadcast-video,
+  .broadcast-img {
     width: 496px;
     height: 276px;
   }
@@ -1144,13 +1184,12 @@
   }
 
   .program-city {
-    margin-bottom: 0;
+    margin-bottom: 12px;
     font-size: 14px;
     line-height: 15.48px;
   }
 
   .card-back-address {
-    margin-bottom: 12px;
     font-size: 12px;
     line-height: 16px;
   }
@@ -1209,7 +1248,8 @@
     clip-path: url(#clip-path_broadcast-mobileSmall);
   }
 
-  .broadcast-video {
+  .broadcast-video,
+  .broadcast-img {
     width: 320px;
     height: 178px;
   }
@@ -1225,7 +1265,7 @@
 
   .broadcast-play {
     top: 35%;
-}
+  }
 
   .reviews {
     margin-bottom: 160px;
@@ -1269,16 +1309,6 @@
     margin-bottom: 36px;
   }
 
-  .logo-2 {
-    width: 32px;
-    height: 32px;
-  }
-
-  .logo-3 {
-    width: 122px;
-    height: 32px;
-  }
-
   .logo-block {
     gap: 12px;
   }
@@ -1297,7 +1327,7 @@
 
   .section-text_date {
     max-width: 54px;
-    top: 18px;
+    top: 10px;
     right: 12px;
   }
 
@@ -1465,5 +1495,19 @@
     background-repeat: no-repeat;
     background-position: center bottom 130px;
     background-size: contain;
+  }
+
+  .partners-slide {
+    height: 164px;
+    min-height: 164px;
+  }
+
+  .partners-slide img {
+    width: 100%;
+    max-height: 100px;
+  }
+
+  .partners {
+    margin-bottom: 80px;
   }
 }

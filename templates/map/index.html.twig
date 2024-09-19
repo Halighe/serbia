@@ -20,7 +20,69 @@
 
 {% block body %}
 
-
+<!-- Модальное окно обратной связи -->
+  <div class="fb">
+    <div class="fb__modal">
+      <div class="fb__close"></div>
+      <div class="fb__container">
+        <h1 class="fb__title">НЕ НАШЛИ ОТВЕТА НА СВОЙ ВОПРОС?</h1>
+        <h3 class="fb__text">Воспользуйтесь формой, задайте вопрос, и мы лично свяжемся с вами в ближайшее время.</h3>
+        {{ form_start(formFeed) }}
+        <div class="fb__form" id="fb-form" autocomplete="off">
+          <label class="fb__input-label">Ф.И.О.*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+              {# <input class="fb__input input__clear" placeholder="Введите Ф.И.О" type="text" name="namefb" id="namefb"
+                maxlength="100" required> #}
+                {{ form_row(formFeed.name) }}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">E-mail*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formFeed.email) }}
+              {# <input class="fb__input input__clear" placeholder="Введите E-mail" type="email" maxlength="256"
+                name="emailfb" id="emailfb" required> #}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">Телефон*</label>
+          <div class="fb__input-border">
+            <label class="input__invisible-shield">
+            {{ form_row(formFeed.phone) }}
+              {# <input class="fb__input input__clear" placeholder="Введите телефон" maxlength="20" name="phonefb" id="phonefb"
+                required> #}
+              <img class="input-figure input-figure-fb input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
+            </label>
+          </div>
+          <label class="fb__input-label">Задать вопрос *</label>
+          <div class="fb__input-border">
+             <label class="input__invisible-shield">
+              {# <textarea class="fb__input fb__input-textarea" type="text" name="textarea" id="textarea" maxlength="4000"
+                required></textarea> #}
+              {{ form_row(formFeed.question) }}
+            </label>
+          </div>
+          <label class="fb__checkbox-label">
+            <input class="fb__checkbox" type="checkbox" id="checkbox1" required>
+            <span class="fb__fake-checkbox"></span>
+            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">Политики
+                конфиденциальности</span></span>
+          </label>
+          <label class="fb__checkbox-label fb__checkbox-label-second">
+            <input class="fb__checkbox" type="checkbox" id="checkbox2" required>
+            <span class="fb__fake-checkbox"></span>
+            <span class="fb__checkbox-text">Соглашаюсь с условиями <span class="fb__checkbox-text-span">
+                Согласия на обработку персональных данных, Согласия Пользователя на обработку персональных данных
+              </span></span>
+          </label>
+          <button class="fb__button" type="submit">Задать вопрос</button>
+        </div>
+        {{ form_end(formFeed) }}
+      </div>
+    </div>
+  </div>
 
 <body>
 <!-- Модальное окно бургер-меню -->
@@ -173,7 +235,7 @@
             </span>
             <div class="help-modal">
                 <img src="./img/container_info.svg" alt="info_block">
-                <p>Пользоваться картой легко и удобно: достаточно указать направление обучения и тип учебного заведения,
+                <p>Пользоваться картой легко и удобно: достаточно указать направление обучения,
                     и карта покажет их расположение в России. Выбери место обучения в нужном регионе, и карта
                     предоставит краткую информацию о нем.</p>
             </div>

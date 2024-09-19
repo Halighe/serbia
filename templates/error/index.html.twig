@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}  
+  <link rel="stylesheet" href="{{ asset('styles/401_404.css') }}"/>
+  {# <link rel="icon" href="img/favicon.png" type="image/x-icon"> #}
+{% endblock stylesheets %}
+{% block body %}  
+<body class="body-401">
+  <!-- ------------------------- -->
+  <section class="main-block-401">
+ {# {{ include('mainpage/_header.html.twig') }} #}
+
+    <div class="p401 container flex">
+
+      <div class="hero-content" style="animation: none;">
+        <div class="hero-wrap">
+          <p class="section-title preview-title" style="margin-bottom: 16px;">Страница</p>
+          <p class="section-title preview-title" style="margin-bottom: 64px;">Недоступна</p>
+          <p class="section-text">Пользователь с такой почтой уже зарегистрирован</p>
+        </div>
+
+
+          <button onclick="window.location.href ='/'" class="btn-reset btn p401-btn" style="width: 100%;">Вернуться на главную</button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+{% endblock body%}

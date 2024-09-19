@@ -242,16 +242,16 @@ for (let i = 0; i < li_item_cat.length; i = i + 1) {
 }
 
 
-const btnMenu = document.querySelector(".menu-btn");
-const burgerMenu = document.querySelector(".burger-menu");
-const burgerClose = document.querySelector(".burger-close");
+// const btnMenu = document.querySelector(".menu-btn");
+// const burgerMenu = document.querySelector(".burger-menu");
+// const burgerClose = document.querySelector(".burger-close");
 
-btnMenu.addEventListener("click", (e) => {
-  e.preventDefault();
-  burgerMenu.classList.toggle("appear");
-});
+// btnMenu.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   burgerMenu.classList.toggle("appear");
+// });
 
-burgerClose.addEventListener("click", (e) => {
-  e.preventDefault();
-  burgerMenu.classList.remove("appear");
-});
+// burgerClose.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   burgerMenu.classList.remove("appear");
+// });

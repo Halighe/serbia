@@ -11,7 +11,7 @@
 
 {% block javascripts %}
   {{ parent() }}     
-  {# <script defer src="{{ asset('js/menu-modals.js') }}"></script> #}
+   {#<script defer src="{{ asset('js/menu-modals.js') }}"></script> #}
   <script defer src="{{ asset('js/headerlk.js') }}"></script> 
     
     {# <script defer src="js/validationMain.js"></script>                             #}
@@ -106,7 +106,7 @@
         <img class="mainlk__image" src="img/lk-robot-desktop.svg" alt="" />
       </picture>
     </div>
-
+    {% if participant.recommendation %}
     <div class="mainlk__second-section">
       <div class="mainlk__second-figure"></div>
       <div class="mainlk__second-section-container">
@@ -120,6 +120,7 @@
       </div>
       <div class="mainlk__second-vector"></div>
     </div>
+    {% endif %}
 
     <div class="mainlk__third-section">
       <div class="mainlk__third-section-container">

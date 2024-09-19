@@ -417,7 +417,7 @@ body {
 
 .details-list {
   width: 311px;
-  padding: 20px;
+  padding: 20px !important;
   border: 2px solid #aa00ff;
   border-radius: 6px;
   background-color: #fff;

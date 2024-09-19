@@ -41,7 +41,12 @@ class RecoveryPasswordType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            // Configure your form options here
+             'attr' => [
+                'class' => 'profilelk__pass-form',
+                'autocomplete' => "off",
+                'novalidate' => "novalidate",
+                'id' => 'profile-pass-form'
+        ],
         ]);
     }
 }

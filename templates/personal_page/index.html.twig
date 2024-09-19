@@ -7,9 +7,10 @@
 
 {% block javascripts %}
   {{ parent() }}       
-  {# <script defer src="{{ asset('js/menu-modals.js') }}"></script>  #}
-  <script defer src="{{ asset('js/headerlk.js') }}"></script>     
-  {# <script defer src="js/validation.js"></script>                       #}
+  <script defer src="{{ asset('js/menu-modals.js') }}"></script>  
+  <script defer src="{{ asset('js/headerlk.js') }}"></script>
+  <script defer src="{{ asset('js/justValidate.js') }}"></script>  
+  <script defer src="{{ asset('js/validation.js') }}"></script> 
 {% endblock javascripts %} 
 
 {% block body %}
@@ -83,6 +84,9 @@
   <div class="profilelk">
     <div class="profilelk__banner"></div>
     <div class="profilelk__section">
+        {# {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %} #}
     {{ form_start(formPers) }}
       {# <form action="#" class="profilelk__form" id="profile-form" autocomplete="off"> #}
         <div class="prfoilelk__avatar-container">
@@ -111,17 +115,17 @@
               </label>
             </div>
           </div>
-          <div class="profilelk__input-container profilelk__input-container-tablet">
-            <label class="profilelk__input-label">Телефон</label>
-            <div class="profilelk__input-border">
-              <label class="input__invisible-shield">
-                {{ form_row(formPers.phone, {"value" : participant.phone }) }}
-                {# <input class="profilelk__input input__clear" placeholder="Введите телефон" maxlength="20"
-                  name="phoneprofile" id="phoneprofile" value="{{ participant.phone }}" required> #}
-                <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />
-              </label>
-            </div>
-          </div>
+          {#<div class="profilelk__input-container profilelk__input-container-tablet">#}
+          {#  <label class="profilelk__input-label">Телефон</label>#}
+          {#  <div class="profilelk__input-border">#}
+          {#    <label class="input__invisible-shield">#}
+          {#      {{ form_row(formPers.phone, {"value" : participant.phone }) }}#}
+          {# <input class="profilelk__input input__clear" placeholder="Введите телефон" maxlength="20"#}
+          {#        name="phoneprofile" id="phoneprofile" value="{{ participant.phone }}" required> #}
+          {#      <img class="input-figure input-figure-hidden" src="./img/x-circle.svg" alt="кнопка" />#}
+          {#    </label>#}
+          {#  </div>#}
+          {#</div>#}
           <div class="profilelk__input-container profilelk__input-container-tablet">
             <label class="profilelk__input-label">Город</label>
             <div class="profilelk__input-border">
@@ -130,12 +134,10 @@
                 {# <input class="profilelk__input profilelk__input-city" placeholder="Выберите город" id="cityprofile"
                   type="text" name="cityprofile" value="{{ participant.city }}" readonly required> #}
               </label>
-              <img class="input-figure city-button" src="./img/arrow-down.svg" alt="кнопка" />
+              <img class="input-figure city-button" src="./img/arrow-down-white.svg" alt="кнопка" />
               <ul class="reg-select reg-select-hidden" name="cities">
-                <li class="reg-select-option" data-value="Город 1">Город 1</li>
-                <li class="reg-select-option" data-value="Город 2">Город 2</li>
-                <li class="reg-select-option" data-value="Город 3">Город 3</li>
-                <li class="reg-select-option" data-value="Город 4">Город 4</li>
+                <li class="reg-select-option" data-value="Белград, 31 октября — Русский дом">Белград, 31 октября — Русский дом</li>
+                <li class="reg-select-option" data-value="Белград, 6 ноября — Русский дом">Белград, 6 ноября — Русский дом</li>
               </ul>
             </div>
           </div>
@@ -160,7 +162,7 @@
                 {# <input class="profilelk__input profilelk__input-cat" placeholder="Выберите категорию" id="catprofile"
                   type="text" name="catprofile" value="{{ participant.category }}" required> #}
               </label>
-              <img class="input-figure cat-button" src="./img/arrow-down.svg" alt="кнопка" />
+              <img class="input-figure cat-button" src="./img/arrow-down-white.svg" alt="кнопка" />
               <ul class="reg-select-cat reg-select-cat-hidden" name="cathegory">
                 <li class="reg-select-cat-option" data-value="Школьник">Школьник</li>
                 <li class="reg-select-cat-option" data-value="Студент">Студент</li>

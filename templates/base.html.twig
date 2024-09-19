@@ -6,6 +6,7 @@
         <link rel="icon" href="img/favicon.png" type="image/x-icon">
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+        <script defer src="{{ asset('js/menu-modals.js') }}"></script>
         {% block stylesheets %}
         {% endblock %}
 
@@ -49,9 +50,6 @@
         </li>
         <li class="burger-item">
           <a href="/material" class="burger__link">Материалы</a>
-        </li>
-        <li class="burger-item">
-          <a href="#" class="burger__link">Контакты</a>
         </li>
       </ul>
 
@@ -102,7 +100,7 @@
     <div class="main-burger header-profile__main-burger">
       <div class="header-profile__avatar-burger--container">
         <img class="header-profile__avatar--burger" src="../../img/avatar.png" alt="аватар"/>
-        <span class="header-profile__avatar-burger--span">ИВАНОВ ИВАН ИВАНОВИЧ</span>
+        <span class="header-profile__avatar-burger--span">{{ app.user.username }}</span>
       </div>
 
       <ul class="list-reset burger-list">
@@ -120,10 +118,6 @@
 
         <li class="burger-item">
           <a href="/test" class="burger__link">Профтест</a>
-        </li>
-
-        <li class="burger-item">
-          <a href="#" class="burger__link">Контакты</a>
         </li>
       </ul>
 

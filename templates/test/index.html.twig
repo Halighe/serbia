@@ -6,13 +6,14 @@
     <title>Профтест</title>
     <link rel="stylesheet" href="{{ asset('styles/tests.css') }}">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <script src="{{ asset('js/justValidate.js') }}"></script>
 </head>
 <body>
     <header>
         <a href="/" class="return"><p >Вернуться на главную</p></a>
         <p class="count" id="count">Профтест</p>
     </header>
-    <main>
+        <main>
     <div class="whole">
       <div class="entry" id="entry">
         <div class="left_side">
@@ -20,24 +21,32 @@
           Узнай себя — выбери направление!
         </h1>
         <p class="test_about">Тест помогает подобрать привлекательное для вас направление обучения по направлениям «Мехатроника и робототехника», «Дополненная и виртуальная реальность» в российском вузе.</p>
-        <div class="robot_mob"><img src="../img/robot_1.svg" alt=""></div>
+        <div class="robot_mob"><img src="img/robot_1.svg" alt=""></div>
         <div class="start_btn" id="to_start">
         </div> 
       </div>
        <div class="right_side">
-        <img src="../img/robot.svg" alt="" class="robot">
+        <img src="img/robot.svg" alt="" class="robot">
        </div>
       </div>
     <div class="quiz" id="quiz">
+    <form id="Testform"> 
         <div class="info" id="info_text"><p class="info_text" >Прочитайте утверждение. Выберите один из предложенных вариантов ответов и нажмите кнопку «Далее»</p></div>
         <div class="reg-info" id="xds">
             <p class="info_text" id="info_text">Поскольку вопросы теста учитывают начальный уровень образования тестируемого, просим предварительно указать некоторые сведения о себе.</p>  
-              <div class="quiz-st">ВАШЕ ИМЯ: </div>
-              <input type="text" placeholder="Имя" class="input_reg" id="Usname">
-              <div class="quiz-st">ВАША ПОЧТА </div>
-              <input type="text" placeholder="Введите E-mail" class="input_reg" id="Usmail">
+              <div class="need_mar">
+            <div class="quiz-st">ВАШЕ ИМЯ: </div>
+             <input type="text" placeholder="Имя" class="input_reg" id="us_naming">
+               <div id="first_error"></div>
+              </div>
+              <div class="need_mar">
+               <div class="quiz-st">ВАША ПОЧТА </div>
+              <input type="text" placeholder="Введите E-mail" class="input_reg" id="us_mail">
+              <div id="second_error"></div>
+              </div>  
               <div class="quiz-st">ВАШЕ ОБРАЗОВАНИЕ</div>
               <form action="#" class="form_mar" >
+              <div id="checkboxes_full">
             <p class="forma">
               <input type="radio" id="test1" name="radio-group">
               <label for="test1" class="lform">9 классов школы</label>
@@ -54,21 +63,24 @@
               <input type="radio" id="test4" name="radio-group">
               <label for="test4" class="lform">бакалавриат</label>
             </p>
+          </div>
           </form>
               </div>
     <div class="quiz-questions" id="questions"></div>
     <div class="quiz-controls" id="controls">
         <button class="btn-next" id="btn-next">Далее</button>
-        <button class="btn-start" id="kekw">Далее</button>
-        <a href="" class="lk" id="lk"><div>Перейти в личный кабинет</div></a>
+        <button class="btn-start" id="kekw" type="submit" form="Testform">Далее</button>
+        <a href="/profile" class="lk" id="lk"><div>Перейти в личный кабинет</div></a>
         <!-- <a href=""class="end" id="end"><div>Завершить</div></a> -->
     </div>
+  </form>
 </div>
 </div>
 </main>
 <footer>
-  <a href="" class="return_footer"><p >Вернуться на главную</p></a>
+  <a href="/" class="return_footer"><p >Вернуться на главную</p></a>
 </footer>
     <script src="{{ asset('js/tests.js') }}"></script>
+    <script src="{{ asset('js/validationTest.js') }}"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ParticipantRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: ParticipantRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USERNAME', fields: ['email'])]
@@ -19,13 +20,13 @@ class Participant
     #[ORM\Column(length: 255)]
     private ?string $fio = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 25)]
-    private ?string $phone = null;
+    // #[ORM\Column(length: 25, nullable: true)]
+    // private ?string $phone = null;
 
-    #[ORM\Column(length: 50, nullable: true)]
+    #[ORM\Column(length: 100, nullable: true)]
     private ?string $city = null;
 
     #[ORM\Column(length: 50, nullable: true)]
@@ -75,17 +76,17 @@ class Participant
         return $this;
     }
 
-    public function getPhone(): ?string
-    {
-        return $this->phone;
-    }
+    // public function getPhone(): ?string
+    // {
+    //     return $this->phone;
+    // }
 
-    public function setPhone(string $phone): static
-    {
-        $this->phone = $phone;
+    // public function setPhone(string $phone): static
+    // {
+    //     $this->phone = $phone;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getCity(): ?string
     {

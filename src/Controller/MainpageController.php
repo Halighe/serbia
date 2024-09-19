@@ -8,6 +8,7 @@ use App\Repository\ReviewRepository;
 use App\Repository\PartnersRepository;
 use App\Repository\ProgramRepository;
 use App\Repository\BroadcastRepository;
+use App\Repository\ParticipantRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -21,21 +22,18 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class MainpageController extends AbstractController
 {
     #[Route('/', name: 'app_mainpage')]
-    public function index(ReviewRepository $reviewRepository, PartnersRepository $partnersRepository, 
+    public function index(ParticipantRepository $participantRepository, ReviewRepository $reviewRepository, PartnersRepository $partnersRepository, 
     ProgramRepository $programsRepository, BroadcastRepository $broadcastsRepository, Request $request,
     EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher): Response
     {
         $participant = new Participant();
-        $form = $this->createForm(ParticipantType::class, $participant);
-        $form->handleRequest($request);
-        if ($form->isSubmitted()) {
-        //  && $form->isValid()
-            $participant = $form->getData();           
-            $entityManager->persist($participant);
-            $entityManager->flush();
-
-            $recipient = $participant->getEmail();
-            // echo $recipient;
+        $formPart = $this->createForm(ParticipantType::class);
+        $formPart->handleRequest($request);
+        if ($formPart->isSubmitted()) {
+        //  && $form->isValid(), $participant
+            $recipient = $formPart->get('email')->getData();
+            $check = $participantRepository->findOneBy(['email' => $recipient]);
+            if (!$check) {               
             $newuser = new User();
             $newuser->setUsername($recipient);            
             $comb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -50,9 +48,14 @@ class MainpageController extends AbstractController
             $entityManager->persist($newuser);
             $entityManager->flush();
 
+            $participant=$formPart->getData();
+            // if($formPart->get('representative')->getData() == ''){
+            //     $participant->setRepresentative('none');
+            // }
             $repository = $entityManager->getRepository(User::class);
             $getUser = $repository->findOneBy(['username' => $recipient]);
             $participant->setUser($getUser);
+            // $participant->setRecommendation('none');
             $entityManager->persist($participant);
             $entityManager->flush();
             
@@ -77,8 +80,7 @@ class MainpageController extends AbstractController
                 $mail->CharSet = "UTF-8"; // Кодировка письма
                 $mail->isHTML(true);                                  // Set email format to HTML
                 $mail->Subject = 'Добро пожаловать в новую реальность!';
-                $mail->Body    = '
-                <!DOCTYPE html>
+                $mail->Body    = '<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -242,7 +244,7 @@ class MainpageController extends AbstractController
         <div class="list_p" style="background-color: #ffffff; margin-top: 20px;">
             <p class="list_text">Напоминаем, что с подробной информацией о расписании мероприятия вы можете ознакомиться в своём личном кабинете. 👇</p>
            <div class="lk_btn">
-                 <a href="https://vr-rs.isp.sprint.1t.ru/profile" style="text-decoration: none; color: black;">Перейти в личный кабинет</a>
+                 <a href="" style="text-decoration: none; color: black;">Перейти в личный кабинет</a>
             </div>
 
         </div>
@@ -260,11 +262,16 @@ class MainpageController extends AbstractController
 
                 $mail->send();
                 // echo 'Message has been sent';
-                return $this->redirectToRoute('app_thanks');
+                // return $this->redirectToRoute('app_thanks');
+                return $this->render('thanks/index.html.twig', [
+                    'controller_name' => 'ThanksController',
+                ]);
             } catch (Exception $e) {
                 echo "Невозможно отправить. Ошибка: {$mail->ErrorInfo}";
             }            
-        }
+        }else {
+            return $this->redirectToRoute('app_error');
+    }}
 
         $feedback = new Feedback();
         $formFeed = $this->createForm(FeedbackFormType::class, $feedback);
@@ -277,15 +284,16 @@ class MainpageController extends AbstractController
             return $this->render('fbthanks/index.html.twig', [
                 'controller_name' => 'FbthanksController',
             ]);
-        }
+        } 
+    
 
         return $this->render('mainpage/index.html.twig', [
             'controller_name' => 'MainpageController',
             'reviews' => $reviewRepository->findAll(),
-            'partners' => $partnersRepository->findAll(),
+            'partners' => $partnersRepository->findBy(['active' => '1']),
             'programs' => $programsRepository->findAll(),
             'broadcasts' => $broadcastsRepository->findAll(),
-            'form' => $form,
+            'formPart' => $formPart,
             'formFeed' => $formFeed,
         ]);
     }      

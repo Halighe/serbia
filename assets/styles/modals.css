@@ -447,6 +447,10 @@
   display: none;
 }
 
+.reg__input-label-last-enable {
+  display: inline-block;
+}
+
 .reg__input-border-last {
   margin-bottom: 0;
   margin-top: 16px;
@@ -486,10 +490,6 @@
   border-radius: 50px;
   background-color: #fff;
   transition: 0.2s;
-}
-
-.reg__radio-enable:has(:checked)+.reg__input-label-last {
-  display: inline-block;
 }
 
 .reg__radio:checked+.reg__fake-radio::before {
@@ -603,7 +603,7 @@
 .reg-select {
   position: absolute;
   background-color: white;
-  height: 184px;
+  max-height: 184px;
   box-sizing: border-box;
   padding: 4px;
   width: 100%;
@@ -641,7 +641,7 @@
 .reg-select-cat {
   position: absolute;
   background-color: white;
-  height: 188px;
+  max-height: 188px;
   box-sizing: border-box;
   padding: 4px;
   width: 100%;

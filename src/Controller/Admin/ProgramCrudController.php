@@ -25,11 +25,11 @@ class ProgramCrudController extends AbstractCrudController
                 "3" => "3"
             ]),
             TextField::new('city'),
-            TextField::new('address'),
             // ImageField::new('image')->setUploadDir('public/uploads/program/')->setUploadedFileNamePattern('[contenthash].[extension]')
             //  ->hideOnIndex(),
             // DateField::new('date')->setFormat('dd.MM.yyyy'),
             TextField::new('date'),
+            TextEditorField::new('address')->hideOnIndex(),
             TextEditorField::new('description')->hideOnIndex(),
         ];
     }
