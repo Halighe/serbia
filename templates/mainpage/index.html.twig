@@ -552,170 +552,170 @@
           </div>
         </section>
 
-        {#<section class="reviews">#}
-        {#  <div class="container">#}
-        {#    <h3 class="section-title section-title-small reviews-title">Отзывы</h3>#}
+        <section class="reviews">
+          <div class="container">
+            <h3 class="section-title section-title-small reviews-title">Отзывы</h3>
 
-        {#    <!-- Swiper -->#}
-        {#    <div class="swiper swiper-review">              #}
-        {#      <div class="swiper-wrapper">    #}
-        {#        {% for review in reviews %}          #}
-        {#        <div id="{{ review.id -1 }}" class="swiper-slide reviews-slide">#}
-        {#          <div class="reviews-slide-info">#}
-        {#            <div class="reviews-slide-click" data-modal-slide="{{ review.id -1 }}">#}
-        {#              <img class="reviews-slide-click_img" src="uploads/reviews/{{ review.image }}" alt="">#}
+            <!-- Swiper -->
+            <div class="swiper swiper-review">              
+              <div class="swiper-wrapper">    
+                {% for review in reviews %}          
+                <div id="{{ review.id -1 }}" class="swiper-slide reviews-slide">
+                  <div class="reviews-slide-info">
+                    <div class="reviews-slide-click" data-modal-slide="{{ review.id -1 }}">
+                      <img class="reviews-slide-click_img" src="uploads/reviews/{{ review.image }}" alt="">
                       
-        {#              <div class="user-wrap flex">#}
-        {#                <img src="img/avatar.png" alt="avatar">#}
-        {#                <div class="user-data">#}
-        {#                  <p class="user-name">{{ review.name }}</p>#}
-        {#                  <p class="user-name user-class">{{ review.klass }}</p>#}
-        {#                </div>#}
-        {#              </div>#}
-        {#            </div>#}
-        {#          </div>#}
-        {#        </div>#}
-        {#        {% endfor %}                #}
-        {#      </div>#}
-        {#      <div class="swiper-button-next reviews-button-next"></div>#}
-        {#      <div class="swiper-button-prev reviews-button-prev"></div>#}
-        {#    </div>#}
-        {#    <!-- ------------------------ -->#}
+                      <div class="user-wrap flex">
+                        <img src="img/avatar.png" alt="avatar">
+                        <div class="user-data">
+                          <p class="user-name">{{ review.name }}</p>
+                          <p class="user-name user-class">{{ review.klass }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}                
+              </div>
+              <div class="swiper-button-next reviews-button-next"></div>
+              <div class="swiper-button-prev reviews-button-prev"></div>
+            </div>
+            <!-- ------------------------ -->
 
-        {#    <picture>#}
-        {#      <source srcset="img/review-light-mobile.webp" media="(max-width: 700px)">#}
-        {#      <source srcset="img/review-light-tablet.webp" media="(max-width: 768px)">#}
-        {#      <img class="reviews-img" src="img/review-light.webp" alt="">#}
-        {#    </picture>#}
-        {#  </div>#}
-        {#</section>#}
+            <picture>
+              <source srcset="img/review-light-mobile.webp" media="(max-width: 700px)">
+              <source srcset="img/review-light-tablet.webp" media="(max-width: 768px)">
+              <img class="reviews-img" src="img/review-light.webp" alt="">
+            </picture>
+          </div>
+        </section>
       </div>
 
-      {#<section class="broadcast" id="video">#}
-      {#  <div class="container">#}
-      {#    <div class="broadcast-title-wrap flex">#}
-      {#      <h3 class="section-title section-title-small broadcast-title">Трансляции</h3>#}
-      {#      <label class="broadcast-label">#}
-      {#        <select class="broadcast-select" name="when">#}
-      {#          <option class="broadcast-option broadcast-option_name" value="">Прошлый эфир</option>#}
-      {#          {% for broadcast in broadcasts %}#}
-      {#          <option class="broadcast-option" value="{{broadcast.id}}">{{broadcast.city}} {{broadcast.date}} </option>#}
-      {#          {% endfor %}#}
-      {#        </select>#}
-      {#      </label>#}
-      {#    </div>#}
+      <section class="broadcast" id="video">
+        <div class="container">
+          <div class="broadcast-title-wrap flex">
+            <h3 class="section-title section-title-small broadcast-title">Трансляции</h3>
+            <label class="broadcast-label">
+              <select class="broadcast-select" name="when">
+                <option class="broadcast-option broadcast-option_name" value="">Прошлый эфир</option>
+                {% for broadcast in broadcasts %}
+                <option class="broadcast-option" value="{{broadcast.id}}">{{broadcast.city}} {{broadcast.date}} </option>
+                {% endfor %}
+              </select>
+            </label>
+          </div>
           
           
-      {#    <div class="broadcast-video_flex">#}
-      {#      <div class="broadcast-video_wrap">    #}
-      {#        <picture>#}
-      {#          <source srcset="img/broadcast-video_frame-mobileSmall.png" media="(max-width: 576px)">#}
-      {#          <source srcset="img/broadcast-video_frame-mobile.png" media="(max-width: 730px)">#}
-      {#          <source srcset="img/broadcast-video_frame-tabletSmall.png" media="(max-width: 1080px)">#}
-      {#          <source srcset="img/broadcast-video_frame-tablet.png" media="(max-width: 1440px)">#}
-      {#          <img class="broadcast-video_frame" src="img/broadcast-video_frame.png" alt="">#}
-      {#        </picture>#}
+          <div class="broadcast-video_flex">
+            <div class="broadcast-video_wrap">    
+              <picture>
+                <source srcset="img/broadcast-video_frame-mobileSmall.png" media="(max-width: 576px)">
+                <source srcset="img/broadcast-video_frame-mobile.png" media="(max-width: 730px)">
+                <source srcset="img/broadcast-video_frame-tabletSmall.png" media="(max-width: 1080px)">
+                <source srcset="img/broadcast-video_frame-tablet.png" media="(max-width: 1440px)">
+                <img class="broadcast-video_frame" src="img/broadcast-video_frame.png" alt="">
+              </picture>
               
-      {#          <img class="broadcast-img" src="img/broadcast-video_poster.webp" style="position: absolute;" alt=""> #}
+                <img class="broadcast-img" src="img/broadcast-video_poster.webp" style="position: absolute;" alt=""> 
 
-      {#         {% for broadcast in broadcasts %}    #}
-      {#        <iframe class="broadcast-video" id="video-{{broadcast.id}}" src="{{broadcast.link}}?rel=0&showinfo=0&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>              #}
-      {#      {% endfor %}#}
+               {% for broadcast in broadcasts %}    
+              <iframe class="broadcast-video" id="video-{{broadcast.id}}" src="{{broadcast.link}}?rel=0&showinfo=0&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>              
+            {% endfor %}
 
-      {#        <button class="broadcast-play btn-reset">#}
-      {#          <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">#}
-      {#            <defs>#}
-      {#              <lineargradient id="hover-play-gradient" x1="5" y1="69.9998" x2="135.454" y2="69.9998"#}
-      {#                gradientUnits="userSpaceOnUse">#}
-      {#                <stop stop-color="#FFAA00" />#}
-      {#                <stop offset="1" stop-color="#AA00FF" />#}
-      {#              </lineargradient>#}
-      {#              <lineargradient id="active-play-gradient" x1="5" y1="69.9998" x2="135.454" y2="69.9998"#}
-      {#                gradientUnits="userSpaceOnUse">#}
-      {#                <stop stop-color="#EB9600" />#}
-      {#                <stop offset="1" stop-color="#9600EB" />#}
-      {#              </lineargradient>#}
-      {#            </defs>#}
-      {#            <path#}
-      {#              d="M5 74.9409C5 110.872 34.1278 140 70.0587 140C81.0683 140 91.4392 137.265 100.529 132.438L110.412 135.882C110.412 135.882 119.37 127.192 121.941 124.353C124.091 121.977 132.647 112.823 132.647 112.823L128.529 103.502C132.749 94.8801 135.117 85.1871 135.117 74.9409C135.117 74.1137 135.102 73.29 135.071 72.4703H123.588C120.294 104.588 102.176 124.353 74.1763 127.647V121.882L51.9411 119.411L50.294 124.353C40.852 119.378 35.1561 115.034 28.0588 107.058L23.1176 112C41.435 130.499 58.5293 135.882 83.2351 134.235C39.5882 144.117 -7.35291 101.294 15.7059 47.7645L11.7172 46.1174C7.41695 54.805 5 64.5907 5 74.9409Z" />#}
-      {#            <path#}
-      {#              d="M17.3533 74.1175H12.4121C14.0592 47.7646 30.5297 26.3529 54.412 18.9411L63.4708 0C71.1571 0.549018 89.8237 1.64705 89.8237 1.64705L84.059 23.8823C49.4708 18.9411 20.6474 37.8823 17.3533 74.1175Z" />#}
-      {#            <path d="M91.3906 13.1777L100.078 16.7836L95.103 28.7685L86.4159 25.1627L91.3906 13.1777Z" />#}
-      {#            <path d="M105.326 19.5564L113.199 24.7025L106.1 35.5644L98.2266 30.4183L105.326 19.5564Z" />#}
-      {#            <path d="M119.654 29.6474L124.539 34.6049L115.296 43.7125L110.411 38.7551L119.654 29.6474Z" />#}
-      {#            <path d="M128.303 42.8252L131.723 48.8866L120.421 55.2634L117.001 49.202L128.303 42.8252Z" />#}
-      {#            <path d="M134.746 57.6474L135.454 61.9985L122.646 64.0836L121.938 59.7324L134.746 57.6474Z" />#}
-      {#            <path#}
-      {#              d="M86.485 77.6141L62.6237 91.4591C60.5987 92.6328 58 91.2116 58 88.8453V61.1553C58 58.7928 60.595 57.3678 62.6237 58.5453L86.485 72.3903C86.9456 72.6533 87.3285 73.0334 87.5949 73.4921C87.8612 73.9508 88.0015 74.4718 88.0015 75.0022C88.0015 75.5326 87.8612 76.0536 87.5949 76.5123C87.3285 76.971 86.9456 77.3511 86.485 77.6141Z" />#}
-      {#          </svg>#}
-      {#        </button>#}
-      {#      </div>#}
+              <button class="broadcast-play btn-reset">
+                <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <lineargradient id="hover-play-gradient" x1="5" y1="69.9998" x2="135.454" y2="69.9998"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFAA00" />
+                      <stop offset="1" stop-color="#AA00FF" />
+                    </lineargradient>
+                    <lineargradient id="active-play-gradient" x1="5" y1="69.9998" x2="135.454" y2="69.9998"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#EB9600" />
+                      <stop offset="1" stop-color="#9600EB" />
+                    </lineargradient>
+                  </defs>
+                  <path
+                    d="M5 74.9409C5 110.872 34.1278 140 70.0587 140C81.0683 140 91.4392 137.265 100.529 132.438L110.412 135.882C110.412 135.882 119.37 127.192 121.941 124.353C124.091 121.977 132.647 112.823 132.647 112.823L128.529 103.502C132.749 94.8801 135.117 85.1871 135.117 74.9409C135.117 74.1137 135.102 73.29 135.071 72.4703H123.588C120.294 104.588 102.176 124.353 74.1763 127.647V121.882L51.9411 119.411L50.294 124.353C40.852 119.378 35.1561 115.034 28.0588 107.058L23.1176 112C41.435 130.499 58.5293 135.882 83.2351 134.235C39.5882 144.117 -7.35291 101.294 15.7059 47.7645L11.7172 46.1174C7.41695 54.805 5 64.5907 5 74.9409Z" />
+                  <path
+                    d="M17.3533 74.1175H12.4121C14.0592 47.7646 30.5297 26.3529 54.412 18.9411L63.4708 0C71.1571 0.549018 89.8237 1.64705 89.8237 1.64705L84.059 23.8823C49.4708 18.9411 20.6474 37.8823 17.3533 74.1175Z" />
+                  <path d="M91.3906 13.1777L100.078 16.7836L95.103 28.7685L86.4159 25.1627L91.3906 13.1777Z" />
+                  <path d="M105.326 19.5564L113.199 24.7025L106.1 35.5644L98.2266 30.4183L105.326 19.5564Z" />
+                  <path d="M119.654 29.6474L124.539 34.6049L115.296 43.7125L110.411 38.7551L119.654 29.6474Z" />
+                  <path d="M128.303 42.8252L131.723 48.8866L120.421 55.2634L117.001 49.202L128.303 42.8252Z" />
+                  <path d="M134.746 57.6474L135.454 61.9985L122.646 64.0836L121.938 59.7324L134.746 57.6474Z" />
+                  <path
+                    d="M86.485 77.6141L62.6237 91.4591C60.5987 92.6328 58 91.2116 58 88.8453V61.1553C58 58.7928 60.595 57.3678 62.6237 58.5453L86.485 72.3903C86.9456 72.6533 87.3285 73.0334 87.5949 73.4921C87.8612 73.9508 88.0015 74.4718 88.0015 75.0022C88.0015 75.5326 87.8612 76.0536 87.5949 76.5123C87.3285 76.971 86.9456 77.3511 86.485 77.6141Z" />
+                </svg>
+              </button>
+            </div>
 
-      {#      <!-- Для обрезки видео -->#}
-      {#      <svg class="broadcast-video_frameSvg" width="1360" height="760" viewBox="0 0 1360 760" fill="none"#}
-      {#        xmlns="http://www.w3.org/2000/svg">#}
-      {#        <clippath id="clip-path_broadcast">#}
-      {#          <path#}
-      {#            d="M397.524 705.287C396.198 703.83 394.319 703 392.349 703H47.4853C46.1592 703 44.8874 702.473 43.9498 701.536L2.46447 660.05C1.52678 659.113 1 657.841 1 656.515V117.501C1 116.167 1.53278 114.889 2.47988 113.95L58.4655 58.4491C59.4019 57.5208 60.6671 57 61.9856 57H630.384C632.33 57 634.189 56.1895 635.513 54.7632L683.952 2.59774C684.898 1.57891 686.226 1 687.616 1H1298C1300.76 1 1303 3.23857 1303 6V205.483C1303 207.361 1303.76 209.161 1305.1 210.477L1357.5 261.95C1358.46 262.89 1359 264.175 1359 265.517V754C1359 756.761 1356.76 759 1354 759H448.651C447.244 759 445.902 758.407 444.954 757.367L397.524 705.287Z"#}
-      {#            stroke="#FFAA00" stroke-width="2" />#}
-      {#          <path d="M101 760H412L384 732H73L101 760Z" fill="#FFAA00" />#}
-      {#          <path d="M115 0H649L621 28H87L115 0Z" fill="#FFAA00" />#}
-      {#          <path d="M1332 197L1360 225V0H1332V197Z" fill="#FFAA00" />#}
-      {#        </clippath>#}
-      {#      </svg>#}
+            <!-- Для обрезки видео -->
+            <svg class="broadcast-video_frameSvg" width="1360" height="760" viewBox="0 0 1360 760" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <clippath id="clip-path_broadcast">
+                <path
+                  d="M397.524 705.287C396.198 703.83 394.319 703 392.349 703H47.4853C46.1592 703 44.8874 702.473 43.9498 701.536L2.46447 660.05C1.52678 659.113 1 657.841 1 656.515V117.501C1 116.167 1.53278 114.889 2.47988 113.95L58.4655 58.4491C59.4019 57.5208 60.6671 57 61.9856 57H630.384C632.33 57 634.189 56.1895 635.513 54.7632L683.952 2.59774C684.898 1.57891 686.226 1 687.616 1H1298C1300.76 1 1303 3.23857 1303 6V205.483C1303 207.361 1303.76 209.161 1305.1 210.477L1357.5 261.95C1358.46 262.89 1359 264.175 1359 265.517V754C1359 756.761 1356.76 759 1354 759H448.651C447.244 759 445.902 758.407 444.954 757.367L397.524 705.287Z"
+                  stroke="#FFAA00" stroke-width="2" />
+                <path d="M101 760H412L384 732H73L101 760Z" fill="#FFAA00" />
+                <path d="M115 0H649L621 28H87L115 0Z" fill="#FFAA00" />
+                <path d="M1332 197L1360 225V0H1332V197Z" fill="#FFAA00" />
+              </clippath>
+            </svg>
 
-      {#      <svg class="broadcast-video_frameSvg" width="1020" height="570" viewBox="0 0 1020 570" fill="none"#}
-      {#        xmlns="http://www.w3.org/2000/svg">#}
-      {#        <clippath id="clip-path_broadcast-tablet">#}
-      {#          <path#}
-      {#            d="M333.716 567.713L298.143 528.675C297.148 527.583 295.739 526.961 294.262 526.961H35.614C34.6194 526.961 33.6655 526.565 32.9623 525.863L1.84835 494.766C1.14509 494.063 0.75 493.11 0.75 492.116V88.0773C0.75 87.0773 1.14959 86.1194 1.85991 85.4155L43.8491 43.8127C44.5514 43.1168 45.5003 42.7265 46.4892 42.7265H472.788C474.247 42.7265 475.642 42.1189 476.635 41.0498L512.964 1.94716C513.674 1.18346 514.67 0.749512 515.712 0.749512H973.5C975.57 0.749512 977.25 2.42752 977.25 4.49745V154.028C977.25 155.435 977.812 156.785 978.825 157.771L1018.12 196.355C1018.84 197.059 1019.25 198.022 1019.25 199.028V565.19C1019.25 567.259 1017.57 568.937 1015.5 568.937H336.488C335.433 568.937 334.427 568.493 333.716 567.713Z"#}
-      {#            stroke="#FFAA00" stroke-width="2" />#}
-      {#          <path d="M75.75 569.687H309L288 548.699H54.75L75.75 569.687Z" fill="#FFAA00" />#}
-      {#          <path d="M86.25 0H486.75L465.75 20.9885H65.25L86.25 0Z" fill="#FFAA00" />#}
-      {#          <path d="M999 147.669L1020 168.657V0H999V147.669Z" fill="#FFAA00" />#}
-      {#        </clippath>#}
-      {#      </svg>#}
+            <svg class="broadcast-video_frameSvg" width="1020" height="570" viewBox="0 0 1020 570" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <clippath id="clip-path_broadcast-tablet">
+                <path
+                  d="M333.716 567.713L298.143 528.675C297.148 527.583 295.739 526.961 294.262 526.961H35.614C34.6194 526.961 33.6655 526.565 32.9623 525.863L1.84835 494.766C1.14509 494.063 0.75 493.11 0.75 492.116V88.0773C0.75 87.0773 1.14959 86.1194 1.85991 85.4155L43.8491 43.8127C44.5514 43.1168 45.5003 42.7265 46.4892 42.7265H472.788C474.247 42.7265 475.642 42.1189 476.635 41.0498L512.964 1.94716C513.674 1.18346 514.67 0.749512 515.712 0.749512H973.5C975.57 0.749512 977.25 2.42752 977.25 4.49745V154.028C977.25 155.435 977.812 156.785 978.825 157.771L1018.12 196.355C1018.84 197.059 1019.25 198.022 1019.25 199.028V565.19C1019.25 567.259 1017.57 568.937 1015.5 568.937H336.488C335.433 568.937 334.427 568.493 333.716 567.713Z"
+                  stroke="#FFAA00" stroke-width="2" />
+                <path d="M75.75 569.687H309L288 548.699H54.75L75.75 569.687Z" fill="#FFAA00" />
+                <path d="M86.25 0H486.75L465.75 20.9885H65.25L86.25 0Z" fill="#FFAA00" />
+                <path d="M999 147.669L1020 168.657V0H999V147.669Z" fill="#FFAA00" />
+              </clippath>
+            </svg>
 
-      {#      <svg class="broadcast-video_frameSvg" width="664" height="368" viewBox="0 0 664 368" fill="none"#}
-      {#        xmlns="http://www.w3.org/2000/svg">#}
-      {#        <clippath id="clip-path_broadcast-tabletSmall">#}
-      {#          <path#}
-      {#            d="M199.202 341.507L198.904 341.073H198.378H197.35H16.7612L1 322.856V55.1921L28.9126 28.9268H307.331H308.236H308.702L309.001 28.5699L309.613 27.8422L331.315 2H630.108V91.878V92.7489V93.1141L630.343 93.3933L630.883 94.0342L630.885 94.0365L663 132.381V342.073V368H395.874H217.406L199.819 342.404L199.202 341.507Z"#}
-      {#            stroke="#FFAA00" stroke-width="2" />#}
-      {#          <path d="M27.5 369L196.082 369L187 355H18.0817L27.5 369Z" fill="#FFAA00" />#}
-      {#          <path d="M50.8939 0H311.5L299.451 14H38.7018L50.8939 0Z" fill="#FFAA00" />#}
-      {#          <path d="M645.9 88.6752L663.982 110.002V0H645.9V88.6752Z" fill="#FFAA00" />#}
-      {#        </clippath>#}
-      {#      </svg>#}
+            <svg class="broadcast-video_frameSvg" width="664" height="368" viewBox="0 0 664 368" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <clippath id="clip-path_broadcast-tabletSmall">
+                <path
+                  d="M199.202 341.507L198.904 341.073H198.378H197.35H16.7612L1 322.856V55.1921L28.9126 28.9268H307.331H308.236H308.702L309.001 28.5699L309.613 27.8422L331.315 2H630.108V91.878V92.7489V93.1141L630.343 93.3933L630.883 94.0342L630.885 94.0365L663 132.381V342.073V368H395.874H217.406L199.819 342.404L199.202 341.507Z"
+                  stroke="#FFAA00" stroke-width="2" />
+                <path d="M27.5 369L196.082 369L187 355H18.0817L27.5 369Z" fill="#FFAA00" />
+                <path d="M50.8939 0H311.5L299.451 14H38.7018L50.8939 0Z" fill="#FFAA00" />
+                <path d="M645.9 88.6752L663.982 110.002V0H645.9V88.6752Z" fill="#FFAA00" />
+              </clippath>
+            </svg>
 
-      {#      <svg class="broadcast-video_frameSvg" width="496" height="276" viewBox="0 0 496 276" fill="none"#}
-      {#        xmlns="http://www.w3.org/2000/svg">#}
-      {#        <clippath id="clip-path_broadcast-mobile">#}
-      {#          <path d="M20.5422 276H146.471L139.687 265.528H13.5068L20.5422 276Z" fill="#FFAA00" />#}
-      {#          <path d="M38.0171 0H232.687L223.686 10.4715H28.9098L38.0171 0Z" fill="#FFAA00" />#}
-      {#          <path d="M482.479 66.3262L495.987 82.2779V0H482.479V66.3262Z" fill="#FFAA00" />#}
-      {#          <path#}
-      {#            d="M147.418 255.86H148.186L148.646 256.531L162.007 276H295.713H496V255.86V98.7445L471.835 69.8543L471.43 69.3732V68.7218V0.748047H247.14L230.705 20.3441L230.249 20.8884H229.573H21.3011L0 40.9587V241.765L12.179 255.86H147.418Z"#}
-      {#            stroke="#FFAA00" stroke-width="2" />#}
-      {#        </clippath>#}
-      {#      </svg>#}
+            <svg class="broadcast-video_frameSvg" width="496" height="276" viewBox="0 0 496 276" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <clippath id="clip-path_broadcast-mobile">
+                <path d="M20.5422 276H146.471L139.687 265.528H13.5068L20.5422 276Z" fill="#FFAA00" />
+                <path d="M38.0171 0H232.687L223.686 10.4715H28.9098L38.0171 0Z" fill="#FFAA00" />
+                <path d="M482.479 66.3262L495.987 82.2779V0H482.479V66.3262Z" fill="#FFAA00" />
+                <path
+                  d="M147.418 255.86H148.186L148.646 256.531L162.007 276H295.713H496V255.86V98.7445L471.835 69.8543L471.43 69.3732V68.7218V0.748047H247.14L230.705 20.3441L230.249 20.8884H229.573H21.3011L0 40.9587V241.765L12.179 255.86H147.418Z"
+                  stroke="#FFAA00" stroke-width="2" />
+              </clippath>
+            </svg>
 
-      {#      <svg class="broadcast-video_frameSvg" width="320" height="178" viewBox="0 0 320 178" fill="none"#}
-      {#        xmlns="http://www.w3.org/2000/svg">#}
-      {#        <clippath id="clip-path_broadcast-mobileSmall">#}
-      {#          <path#}
-      {#            d="M94.2736 164.859C93.7053 164.238 92.9022 163.884 92.0602 163.884H11.414C11.1495 163.884 10.8959 163.779 10.7085 163.593L1.29453 154.222C1.10599 154.035 1 153.78 1 153.514V27.7704C1 27.5029 1.10719 27.2466 1.29762 27.0586L14.1219 14.404C14.3091 14.2193 14.5614 14.1158 14.8243 14.1158H148.072C148.904 14.1158 149.698 13.7704 150.265 13.1622L161.315 1.31786C161.504 1.11512 161.769 1 162.046 1H304.824C305.376 1 305.824 1.44771 305.824 2V47.8741C305.824 48.6815 306.149 49.4548 306.726 50.0193L318.699 61.724C318.892 61.9122 319 62.1699 319 62.4391V176C319 176.552 318.552 177 318 177H105.822C105.541 177 105.274 176.882 105.084 176.675L94.2736 164.859Z"#}
-      {#            stroke="#FFAA00" stroke-width="2" />#}
-      {#          <path d="M23.7647 178H96.9412L90.353 171.442H17.1765L23.7647 178Z" fill="#FFAA00" />#}
-      {#          <path d="M27.0589 0H152.706L146.118 6.55789H20.4707L27.0589 0Z" fill="#FFAA00" />#}
-      {#          <path d="M313.412 46.1395L320 52.6974V0H313.412V46.1395Z" fill="#FFAA00" />#}
-      {#        </clippath>#}
-      {#      </svg>#}
-      {#      <!-- --------------------------- -->#}
+            <svg class="broadcast-video_frameSvg" width="320" height="178" viewBox="0 0 320 178" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <clippath id="clip-path_broadcast-mobileSmall">
+                <path
+                  d="M94.2736 164.859C93.7053 164.238 92.9022 163.884 92.0602 163.884H11.414C11.1495 163.884 10.8959 163.779 10.7085 163.593L1.29453 154.222C1.10599 154.035 1 153.78 1 153.514V27.7704C1 27.5029 1.10719 27.2466 1.29762 27.0586L14.1219 14.404C14.3091 14.2193 14.5614 14.1158 14.8243 14.1158H148.072C148.904 14.1158 149.698 13.7704 150.265 13.1622L161.315 1.31786C161.504 1.11512 161.769 1 162.046 1H304.824C305.376 1 305.824 1.44771 305.824 2V47.8741C305.824 48.6815 306.149 49.4548 306.726 50.0193L318.699 61.724C318.892 61.9122 319 62.1699 319 62.4391V176C319 176.552 318.552 177 318 177H105.822C105.541 177 105.274 176.882 105.084 176.675L94.2736 164.859Z"
+                  stroke="#FFAA00" stroke-width="2" />
+                <path d="M23.7647 178H96.9412L90.353 171.442H17.1765L23.7647 178Z" fill="#FFAA00" />
+                <path d="M27.0589 0H152.706L146.118 6.55789H20.4707L27.0589 0Z" fill="#FFAA00" />
+                <path d="M313.412 46.1395L320 52.6974V0H313.412V46.1395Z" fill="#FFAA00" />
+              </clippath>
+            </svg>
+            <!-- --------------------------- -->
 
-      {#    </div>#}
-      {#  </div>#}
-      {#</section>#}
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 

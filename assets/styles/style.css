@@ -752,10 +752,7 @@ nav li[aria-current="page"] {
   font-size: 16px;
   line-height: 20px;
   color: var(--white-color);
-}
-
-.card-back-address:last-of-type {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .card-back-address span {

@@ -212,14 +212,30 @@
 
               <div class="details-bottom flex opacity">
                 <ul class="details-list list-reset">
+                {% if (material.pdf=='') %} 
+                  <li class="details-link_disabled">
+                    <a href="uploads/files/{{ material.pdf }}" class="details-link" 
+                    target="_blank">Открыть файл</a>
+                  </li>
+                {% endif %}
+                {% if (material.pdf!='') %}
                   <li class="details-item">
                     <a href="uploads/files/{{ material.pdf }}" class="details-link" 
                     target="_blank">Открыть файл</a>
                   </li>
+                {% endif %}
+                 {% if (material.ptx!='') %}
                   <li class="details-item">
                     <a href="uploads/files/{{ material.ptx }}" class="details-link" 
                     target="_blank">Открыть презентацию</a>
                   </li>
+                {% endif %}
+                {% if (material.ptx=='') %}
+                   <li class="details-link_disabled">
+                    <a href="uploads/files/{{ material.ptx }}" class="details-link" 
+                    target="_blank">Открыть презентацию</a>
+                  </li>
+                {% endif %}
                 </ul>
               </div>
             </div>
