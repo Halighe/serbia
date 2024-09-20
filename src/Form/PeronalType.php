@@ -16,18 +16,18 @@ class PeronalType extends AbstractType
         $builder
             ->add('fio', TextType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Введите Ф.И.О',
                 'class'=> 'profilelk__input input__clear',
                 'maxlength'=>'100',
-                'required' =>'true',
             ],
             ])
             ->add('email', EmailType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Введите Email',
                 'class'=> 'profilelk__input input__clear',
                 'maxlength'=>'256',
-                'required' =>'true',
             ],
             ])
             // ->add('phone', TextType::class, [
@@ -42,24 +42,24 @@ class PeronalType extends AbstractType
             // ])
             ->add('city', TextType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Выберите город',
                 'class'=> 'profilelk__input profilelk__input-city',
-                'required' =>'true',
             ],
             ])
             ->add('category', TextType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Выберите категорию',
                 'class'=> 'profilelk__input profilelk__input-cat',
-                'required' =>'true',
             ],
             ])
             ->add('school', TextType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Введите наименование учебного заведения',
                 'class'=> 'profilelk__input profilelk__input-span input__clear',
                 'maxlength'=>'156',
-                'required' =>'true',
             ],
             ])
             // ->add('adult', ChoiceType::class, [
@@ -75,10 +75,10 @@ class PeronalType extends AbstractType
             // ])
             ->add('representative', TextType::class, [
                 'label' => false,
+                'required' => false,
                 'attr' => ['placeholder' => 'Введите Ф.И.О. представителя',
                 'class'=> 'profilelk__input input__clear',
-                'maxlength'=>'100',
-                'required' =>'false',
+                'maxlength'=>'100',                
             ],
             ])
         ;

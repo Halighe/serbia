@@ -170,7 +170,7 @@
                 <div class="reg__radio-container reg__radio-container-first">
                     <label for="{{ child.vars.id }}" class="reg__radio-label">
                         <input class="reg__radio" type="radio" id="{{ child.vars.id }}" 
-                        name="{{ formPart.vars.id ~ '[' ~ formPart.adult.vars.name ~ ']' }}">
+                        name="{{ formPart.vars.id ~ '[' ~ formPart.adult.vars.name ~ ']' }}" value="{{ child.vars.value }}">
                         <span class="reg__fake-radio"></span>
                         <span class="reg__input-label-rad">{{ child.vars.label }}</span>
                     </label>
@@ -425,7 +425,7 @@
           </li>
           <li class="about-item about-item2">
             <img src="img/card.png" alt="">
-            <p class="section-text about-text">3 дня бесплатных мастер-классов по робототехнике, vr и ar</p>
+            <p class="section-text about-text">Бесплатные мастер-классы по робототехнике, vr и ar</p>
           </li>
           <li class="about-item about-item3">
             <img src="img/card.png" alt="">

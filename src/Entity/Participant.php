@@ -8,7 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: ParticipantRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USERNAME', fields: ['email'])]
-#[UniqueEntity(fields: ['email'], message: 'Участник с такой почтой уже зарегистрирован')]
+// #[UniqueEntity(fields: ['email'], message: 'Участник с такой почтой уже зарегистрирован')]
 
 class Participant
 {

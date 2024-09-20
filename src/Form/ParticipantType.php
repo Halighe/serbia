@@ -15,19 +15,19 @@ class ParticipantType extends AbstractType
             // ->add('fio')
             ->add('fio', TextType::class, [
                 'label' => false,
+                'required' =>true,
                 'attr' => ['placeholder' => 'Введите Ф.И.О',
                 'class'=> 'reg__input input__clear',
-                // 'maxlength'=>'100',
-                // 'required' =>'true',
+                'maxlength'=>'100',
             ],
             ])
             // ->add('email')
             ->add('email', EmailType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Введите Email',
                 'class'=> 'reg__input input__clear',
-                // 'maxlength'=>'256',
-                // 'required' =>'true',
+                'maxlength'=>'100',
             ],
             ])
             // ->add('phone')
@@ -44,64 +44,48 @@ class ParticipantType extends AbstractType
             // ->add('city')
             ->add('city', TextType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Выберите город',
                 'class'=> 'reg__input reg__input-city',
-                // 'required' =>'true',
             ],
             ])
             // ->add('category')
             ->add('category', TextType::class, [
                 'label' => false,
+                'required' => true,
                 'attr' => ['placeholder' => 'Выберите категорию',
                 'class'=> 'reg__input reg__input-cat',
-                // 'required' =>'true',
             ],
             ])
             // ->add('school')
             ->add('school', TextType::class, [
                 'label' => false,
+                'required' =>true,
                 'attr' => ['placeholder' => 'Введите наименование учебного заведения',
                 'class'=> 'reg__input reg__input-360 input__clear',
-                // 'maxlength'=>'156',
-                // 'required' =>'true',
+                'maxlength'=>'100',                
             ],
             ])
             ->add('adult', ChoiceType::class, [
                 'label' => false,
                 'choices'  => [
-                    'Да' => true,
-                    'Нет' => false,
+                    'Да' => '1',
+                    'Нет' => '0',
                 ],
                 'attr' => ['class'=> 'reg__radio'],
                 'expanded' => true,
-                'multiple'=>false,                           
+                'multiple'=>false, 
+                'required' =>true,                          
             ])
             // ->add('representative')
             ->add('representative', TextType::class, [
                 'label' => false,
+                'required' =>false,  
                 'attr' => ['placeholder' => 'Введите Ф.И.О представителя',
                 'class'=> 'reg__input reg__input-profname input__clear reg__input-label-last-enable',
                 // 'maxlength'=>'100',
             ],
             ])
-
-            
-
-            // ->add('adult', ChoiceType::class, [
-            //     'label' => false,
-            //     'choices'  => [
-            //         'Да' => true,
-            //         'Нет' => false,
-            //     ],
-            //     'attr' => ['class'=> 'reg__radio'],
-            //     'expanded' => true,
-            //     'multiple'=>false,                
-            //     // 'name'=>'namereg',
-            //     // 'id'=>'namereg',,
-            //     // 'required' =>'true',
-            
-            // ])
-
         ;
     }
 
@@ -111,8 +95,8 @@ class ParticipantType extends AbstractType
             'data_class' => Participant::class,
             'attr' => [
                 'class' => 'reg__form',
-                'autocomplete' => "off",
-                'novalidate' => "novalidate",
+                // 'autocomplete' => "off",
+                // 'novalidate' => "novalidate",
                 'id' => 'regform'
         ],
         ]);
