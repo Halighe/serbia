@@ -9,7 +9,7 @@ api_platform:
         html: ['text/html']
     defaults:
         pagination_enabled: false
-        stateless: true
+        stateless: false
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
         extra_properties:

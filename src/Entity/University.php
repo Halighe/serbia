@@ -60,6 +60,15 @@ class University
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $filter = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img1 = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img2 = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img3 = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -241,6 +250,42 @@ class University
     public function setFilter(?string $filter): static
     {
         $this->filter = $filter;
+
+        return $this;
+    }
+
+    public function getImg1(): ?string
+    {
+        return $this->img1;
+    }
+
+    public function setImg1(?string $img1): static
+    {
+        $this->img1 = $img1;
+
+        return $this;
+    }
+
+    public function getImg2(): ?string
+    {
+        return $this->img2;
+    }
+
+    public function setImg2(?string $img2): static
+    {
+        $this->img2 = $img2;
+
+        return $this;
+    }
+
+    public function getImg3(): ?string
+    {
+        return $this->img3;
+    }
+
+    public function setImg3(?string $img3): static
+    {
+        $this->img3 = $img3;
 
         return $this;
     }
