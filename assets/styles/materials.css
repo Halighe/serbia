@@ -551,10 +551,10 @@ body {
 
   .details-list {
     width: 265px;
-    padding: 20px 10px;
+    padding: 20px 10px !important;
   }
 
-  .details-item {
+  .details-item, .details-link_disabled {
     padding-left: 10px;
   }
 
@@ -814,7 +814,7 @@ body {
     justify-content: center;
   }
 
-  .details-item {
+  .details-item, .details-link_disabled {
     padding-left: 20px;
   }
 

@@ -313,7 +313,7 @@
 
   .reviews-modal_right {
     padding: 12px 14px 12px 58px;
-    background-image: url(../img/review-modalFrame-right-tablet.png);
+    background-image: url("../img/review-modalFrame-right-tablet-c3cb0f9e4859959ae98fbacefd5c5ffe.png");
     background-position: left;
   }
 
@@ -525,31 +525,31 @@
 
   .program-title {
     margin-bottom: 40px;
-    background-image: url(../img/program-title-tablet.svg);
+    background-image: url("../img/program-title-tablet-2442affb5ee293f3b3cd329efbd379b7.svg");
   }
 
   .card-3 .card-front {
-    background-image: url(../img/card-3-front_tablet.webp);
+    background-image: url("../img/card-3-front_tablet-74f5972db3fcec5df7d809da195a3143.webp");
   }
 
   .card-3 .card-back {
-    background-image: url(../img/card-3-back_tablet..webp);
+    background-image: url("../img/card-3-back_tablet.-bff8f65549b2f80c576572c2578a69e1.webp");
   }
 
   .card-2 .card-front {
-    background-image: url(../img/card-2-front_tablet.webp);
+    background-image: url("../img/card-2-front_tablet-7cbfa76db6faf20ce3f7f2d67b8c2f30.webp");
   }
 
   .card-2 .card-back {
-    background-image: url(../img/card-2-back_tablet..webp);
+    background-image: url("../img/card-2-back_tablet.-0f8d20fe4a5a3134bef16512b099f041.webp");
   }
 
   .card-1 .card-front {
-    background-image: url(../img/card-front_tablet.webp);
+    background-image: url("../img/card-front_tablet-ded15c8049fae77435993f0a4e8ebb89.webp");
   }
 
   .card-1 .card-back {
-    background-image: url(../img/card-back_tablet.webp);
+    background-image: url("../img/card-back_tablet-a6bcefd7537d710f06cee34b0cd7b96e.webp");
   }
 
   .card-front {
@@ -651,43 +651,43 @@
   }
 
   .button-prev-partners:after {
-    content: url(../img/arrow-left-tablet.svg);
+    content: url("../img/arrow-left-tablet-06522f0e1c32bcb0aa9070da37484aaf.svg");
   }
 
   .button-next-partners:after {
-    content: url(../img/arrow-right-tablet.svg);
+    content: url("../img/arrow-right-tablet-f75a37c79d32cfb26fac0c8546fbdd72.svg");
   }
 
   .button-prev-partners:hover:after {
-    content: url(../img/arrow-left-tablet.svg);
+    content: url("../img/arrow-left-tablet-06522f0e1c32bcb0aa9070da37484aaf.svg");
   }
 
   .button-next-partners:hover:after {
-    content: url(../img/arrow-right-tablet.svg);
+    content: url("../img/arrow-right-tablet-f75a37c79d32cfb26fac0c8546fbdd72.svg");
   }
 
   .button-prev-partners:active:after {
-    content: url(../img/arrow-left-tablet-active.svg);
+    content: url("../img/arrow-left-tablet-active-37ee304c83df83e3d101d4d96c5712a1.svg");
   }
 
   .button-next-partners:active:after {
-    content: url(../img/arrow-right-tablet-active.svg);
+    content: url("../img/arrow-right-tablet-active-d99ef04f8e67d7ed690aa5acba2432bf.svg");
   }
 
   .reviews-modal-swiper_prev:hover:after {
-    content: url(../img/arrow-left-hover.svg);
+    content: url("../img/arrow-left-hover-42f8745213ed988e428498c2b0dde6a0.svg");
   }
 
   .reviews-modal-swiper_next:hover:after {
-    content: url(../img/arrow-right-hover.svg);
+    content: url("../img/arrow-right-hover-351a7d146530ad47373763f3993f947b.svg");
   }
 
   .reviews-modal-swiper_prev:active:after {
-    content: url(../img/arrow-left-active.svg);
+    content: url("../img/arrow-left-active-f60474251f16f66c60fed17e996e86f5.svg");
   }
 
   .reviews-modal-swiper_next:active:after {
-    content: url(../img/arrow-right-active.svg);
+    content: url("../img/arrow-right-active-bdc19b6bbf6c3149d72dfeff91a59be7.svg");
   }
 
   .swiper-buttons {
@@ -795,8 +795,7 @@
 
   .partners-slide img {
     display: inline-block;
-    width: 60%;
-    max-height: fit-content;
+    width: 80%;
   }
 }
 
@@ -840,38 +839,38 @@
   }
 
   .main-block {
-    background-image: url(../img/hero-background-tablet.webp),
-      url(../img/hero-background-2-tablet.png);
+    background-image: url("../img/hero-background-tablet-ebd5d8785e9a60a56b98c9ebbb59037b.webp"),
+      url("../img/hero-background-2-tablet-f6af86e9e0a0274414a80f48d0897ea3.png");
   }
 
   .about {
-    background-image: url(../img/about-background-tablet.png);
+    background-image: url("../img/about-background-tablet-bbb858ddd99f8e243b998e67c3425beb.png");
     background-position: right top 0px;
     background-size: auto;
   }
 
   .preview {
-    background-image: url(../img/preview-background-tablet.webp);
+    background-image: url("../img/preview-background-tablet-4c3defaa8604e5e162794505877ef01b.webp");
   }
 
   .program-review-background {
-    background-image: url(../img/programReviewBackground-tablet.webp);
+    background-image: url("../img/programReviewBackground-tablet-a97d4669c4192a7345b029b0a338755f.webp");
     background-position: left top 0;
     background-size: auto;
   }
 
   .partners-footer-background {
-    background-image: url(../img/footer-background-tablet.png);
+    background-image: url("../img/footer-background-tablet-01a69b0c77a26ec14ea0e51f6b3b7af6.png");
     background-size: auto;
   }
 
   .broadcast {
-    background-image: url(../img/broadcast-background-tablet.webp);
+    background-image: url("../img/broadcast-background-tablet-9e98e75123d1ce3fd571ad6a8ae51405.webp");
     background-position: right top -10px;
   }
 
   .reviews-modal-background {
-    background-image: url(../img/review-modal-background-tablet.webp);
+    background-image: url("../img/review-modal-background-tablet-61b2354aab06559df7407651468e69f9.webp");
   }
 
   .reviews {
@@ -937,7 +936,7 @@
   .reviews-modal_right {
     padding: 20px;
     margin-bottom: 40px;
-    background-image: url(../img/review-modalFrame-right-mobile.png);
+    background-image: url("../img/review-modalFrame-right-mobile-3c36647804afc7abc9e4ec55e5245e17.png");
     background-position: center;
   }
 
@@ -1012,7 +1011,7 @@
   }
 
   .main-block {
-    background-image: url(../img/hero-background-tablet.webp);
+    background-image: url("../img/hero-background-tablet-ebd5d8785e9a60a56b98c9ebbb59037b.webp");
     background-size: cover;
   }
 
@@ -1130,27 +1129,27 @@
 
 @media (max-width: 576px) {
   .card-3 .card-front {
-    background-image: url(../img/card-3-front_mobile.webp);
+    background-image: url("../img/card-3-front_mobile-59202991a050e84c33791a44fdf65d6e.webp");
   }
 
   .card-3 .card-back {
-    background-image: url(../img/card-3-back_mobile.webp);
+    background-image: url("../img/card-3-back_mobile-99b4fe5642ea75d766c73f8eae1ebc2e.webp");
   }
 
   .card-2 .card-front {
-    background-image: url(../img/card-2-front_mobile.webp);
+    background-image: url("../img/card-2-front_mobile-1ee25ab678c95102b9a577a24ee78ad1.webp");
   }
 
   .card-2 .card-back {
-    background-image: url(../img/card-2-back_mobile.webp);
+    background-image: url("../img/card-2-back_mobile-f27799995a339f5ddfdb05f397fd9923.webp");
   }
 
   .card-1 .card-front {
-    background-image: url(../img/card-front_mobile.webp);
+    background-image: url("../img/card-front_mobile-1eb9de6df94abefed0fc65b1351a5d88.webp");
   }
 
   .card-1 .card-back {
-    background-image: url(../img/card-back_mobile.webp);
+    background-image: url("../img/card-back_mobile-79af92c7c967f8c23c64acb444befdd8.webp");
   }
 
   .program-card {
@@ -1410,27 +1409,27 @@
   }
 
   .button-prev-partners:after {
-    content: url(../img/arrow-left.svg);
+    content: url("../img/arrow-left-3db674842a50273785d6a3f94c6564ee.svg");
   }
 
   .button-next-partners:after {
-    content: url(../img/arrow-right.svg);
+    content: url("../img/arrow-right-e876ea88232b2fbb9d0ec9635eea8fea.svg");
   }
 
   .button-prev-partners:hover:after {
-    content: url(../img/arrow-left-hover.svg);
+    content: url("../img/arrow-left-hover-42f8745213ed988e428498c2b0dde6a0.svg");
   }
 
   .button-next-partners:hover:after {
-    content: url(../img/arrow-right-hover.svg);
+    content: url("../img/arrow-right-hover-351a7d146530ad47373763f3993f947b.svg");
   }
 
   .button-prev-partners:active:after {
-    content: url(../img/arrow-left-active.svg);
+    content: url("../img/arrow-left-active-f60474251f16f66c60fed17e996e86f5.svg");
   }
 
   .button-next-partners:active:after {
-    content: url(../img/arrow-right-active.svg);
+    content: url("../img/arrow-right-active-bdc19b6bbf6c3149d72dfeff91a59be7.svg");
   }
 
   .partners-title-wrap {
@@ -1438,7 +1437,7 @@
   }
 
   .main-block {
-    background-image: url(../img/hero-background-mobile.webp);
+    background-image: url("../img/hero-background-mobile-e3dd9cc2a150fd6ea0e714fb58378dd2.webp");
     background-size: contain;
   }
 
@@ -1447,27 +1446,27 @@
   }
 
   .preview {
-    background-image: url(../img/preview-background-mobile.webp);
+    background-image: url("../img/preview-background-mobile-ebfaded02aaf9e19ac29c04f2b93cc3e.webp");
   }
 
   .program-review-background {
-    background-image: url(../img/programBackground-mobile.webp);
+    background-image: url("../img/programBackground-mobile-beaef143f4803b355a4ebc7bc3580c79.webp");
   }
 
   /* .reviews .container{
-    background-image: url(../img/reviews-background-mobile.webp);
+    background-image: url("../img/reviews-background-mobile-183bc8692ce4ca27c51e7555e28cf33d.webp");
     background-repeat: no-repeat;
   } */
 
   .partners-footer-background {
-    background-image: url(../img/footer-background-mobile.png);
+    background-image: url("../img/footer-background-mobile-07b307d2b77b10fcafe77a4b274aa2da.png");
     background-position: left bottom;
   }
 }
 
 @media (max-width: 375px) {
   .reviews-modal-background {
-    background-image: url(../img/review-modal-background-mobile.webp);
+    background-image: url("../img/review-modal-background-mobile-d2af6fff5459f68a88ef6abfb218bbeb.webp");
   }
 
   .reviews-img {
@@ -1491,7 +1490,7 @@
   }
 
   .reviews-broadcast-background {
-    background-image: url(../img/reviews-background-mobile.webp);
+    background-image: url("../img/reviews-background-mobile-183bc8692ce4ca27c51e7555e28cf33d.webp");
     background-repeat: no-repeat;
     background-position: center bottom 130px;
     background-size: contain;

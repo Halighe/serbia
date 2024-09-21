@@ -32,7 +32,7 @@ h3 {
 
 @font-face {
   font-family: "Inter-Medium";
-  src: local("Inter-Medium"), url("../fonts/Inter-Medium.woff") format("woff");
+  src: local("Inter-Medium"), url("../fonts/Inter-Medium-14a77cb8536660e54c329ff76193ab12.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -40,7 +40,7 @@ h3 {
 
 @font-face {
   font-family: "Inter-Regular";
-  src: local("Inter-Regular"), url("../fonts/Inter-Regular.woff") format("woff");
+  src: local("Inter-Regular"), url("../fonts/Inter-Regular-0e27a0c6493b049fee86083edcf4e4cf.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -48,7 +48,7 @@ h3 {
 
 @font-face {
   font-family: "Wadik";
-  src: local("Wadik"), url("../fonts/Wadik.woff") format("woff");
+  src: local("Wadik"), url("../fonts/Wadik-22be2fef4fb8aa49787060a8dad2fdb9.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -56,7 +56,7 @@ h3 {
 
 @font-face {
   font-family: "Mulish-Bold";
-  src: local("Mulish-Bold"), url("../fonts/Mulish-Bold.woff") format("woff");
+  src: local("Mulish-Bold"), url("../fonts/Mulish-Bold-c7c7e3143579062d354653d0f662e907.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -119,8 +119,8 @@ body {
 
 .main-block {
   padding: 20px 40px 30px 40px;
-  background-image: url(../img/hero-background.webp),
-    url(../img/hero-background-2.png);
+  background-image: url("../img/hero-background-46657a70639600e1e4076072683f4aa7.webp"),
+    url("../img/hero-background-2-0e7a5e746da1e2978d4d348d54a575e1.png");
   background-repeat: no-repeat, no-repeat;
   background-position: left center, right center;
   background-size: contain, 40% 100%;
@@ -246,7 +246,7 @@ nav li[aria-current="page"] {
   display: inline-block;
   width: 16px;
   height: 7px;
-  background-image: url(../img/arrow-down.svg);
+  background-image: url("../img/arrow-down-1030caebb1a47fdf11c89cbcbd6f65f4.svg");
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 14px;
@@ -409,7 +409,7 @@ nav li[aria-current="page"] {
 .about {
   padding-top: 120px;
   padding-bottom: 120px;
-  background-image: url(../img/about-background.png);
+  background-image: url("../img/about-background-6cae0e0f2315d1d50ee49453955ef115.png");
   background-repeat: no-repeat;
   background-position: right top -40px;
   background-size: contain;
@@ -434,19 +434,19 @@ nav li[aria-current="page"] {
 }
 
 .about-item1 {
-  background-image: url(../img/icon-gift.svg);
+  background-image: url("../img/icon-gift-e5b4d42505dfda78caf11287b981fa6d.svg");
 }
 
 .about-item2 {
-  background-image: url(../img/icon-star.svg);
+  background-image: url("../img/icon-star-edb39929b466698297442333d04abd8a.svg");
 }
 
 .about-item3 {
-  background-image: url(../img/icon-map.svg);
+  background-image: url("../img/icon-map-2e585ee948c3a3a1f4c47e2ae6ab6747.svg");
 }
 
 .about-item4 {
-  background-image: url(../img/icon-test.svg);
+  background-image: url("../img/icon-test-edd4511156cba9eb884f468dfb649189.svg");
 }
 
 /* баннер */
@@ -497,7 +497,7 @@ nav li[aria-current="page"] {
   margin-bottom: 60px;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-image: url(../img/preview-background.webp);
+  background-image: url("../img/preview-background-f50af29767afae92ee37867fe4437824.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -550,7 +550,7 @@ nav li[aria-current="page"] {
 
 .program-title {
   margin-bottom: 64px;
-  background-image: url(../img/program-title.svg);
+  background-image: url("../img/program-title-456f6fa012bc3380776e8e73df21c7c9.svg");
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -592,11 +592,11 @@ nav li[aria-current="page"] {
 }
 
 .card-2 .card-front {
-  background-image: url(../img/card-2-front.webp);
+  background-image: url("../img/card-2-front-3a4bc97c969026474bf20ad54c84ee4a.webp");
 }
 
 .card-3 .card-front {
-  background-image: url(../img/card-3-front.webp);
+  background-image: url("../img/card-3-front-1fb5c4240723476abca21e58f4d92cda.webp");
 }
 
 .arrow,
@@ -737,15 +737,15 @@ nav li[aria-current="page"] {
 }
 
 .card-1 .card-back {
-  background-image: url(../img/card-1-back.webp);
+  background-image: url("../img/card-1-back-396d6fad0d6a82d2d24b569f81155879.webp");
 }
 
 .card-2 .card-back {
-  background-image: url(../img/card-2-back.webp);
+  background-image: url("../img/card-2-back-9030b782cd700a1a64feae29c4fb21ad.webp");
 }
 
 .card-3 .card-back {
-  background-image: url(../img/card-3-back.webp);
+  background-image: url("../img/card-3-back-ccb12324ee5d47b6a82954818b5e1f9c.webp");
 }
 
 .card-back-address {
@@ -806,27 +806,27 @@ nav li[aria-current="page"] {
 }
 
 .swiper-button-prev:after {
-  content: url(../img/arrow-left.svg);
+  content: url("../img/arrow-left-3db674842a50273785d6a3f94c6564ee.svg");
 }
 
 .swiper-button-next:after {
-  content: url(../img/arrow-right.svg);
+  content: url("../img/arrow-right-e876ea88232b2fbb9d0ec9635eea8fea.svg");
 }
 
 .swiper-button-prev:hover:after {
-  content: url(../img/arrow-left-hover.svg);
+  content: url("../img/arrow-left-hover-42f8745213ed988e428498c2b0dde6a0.svg");
 }
 
 .swiper-button-next:hover:after {
-  content: url(../img/arrow-right-hover.svg);
+  content: url("../img/arrow-right-hover-351a7d146530ad47373763f3993f947b.svg");
 }
 
 .swiper-button-prev:active:after {
-  content: url(../img/arrow-left-active.svg);
+  content: url("../img/arrow-left-active-f60474251f16f66c60fed17e996e86f5.svg");
 }
 
 .swiper-button-next:active:after {
-  content: url(../img/arrow-right-active.svg);
+  content: url("../img/arrow-right-active-bdc19b6bbf6c3149d72dfeff91a59be7.svg");
 }
 
 /* -------------- */
@@ -871,7 +871,7 @@ nav li[aria-current="page"] {
 }
 
 .program-review-background {
-  background-image: url(../img/programReviewBackground.webp);
+  background-image: url("../img/programReviewBackground-f06e1bc650739ae29195dd5bb14c9755.webp");
   background-repeat: no-repeat;
   background-position: left top 64px;
   background-size: contain;
@@ -1024,7 +1024,7 @@ nav li[aria-current="page"] {
 
 .reviews-modal_right {
   padding: 20px 41px 20px 84px;
-  background-image: url(../img/review-modalFrame-right.png);
+  background-image: url("../img/review-modalFrame-right-f2193c2e76298ceb3f16adcbade51b00.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1095,7 +1095,7 @@ nav li[aria-current="page"] {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  background-image: url(../img/review-modal-background.webp);
+  background-image: url("../img/review-modal-background-4855349d70c15cc6c2970c359af4b1f8.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1149,7 +1149,7 @@ nav li[aria-current="page"] {
 }
 
 .choices[data-type*="select-one"]:after {
-  background-image: url(../img/arrow-down-white.svg);
+  background-image: url("../img/arrow-down-white-3176846190b2379e057d34f72365fade.svg");
   background-repeat: no-repeat;
   background-size: 24px 24px;
   border: none;
@@ -1217,6 +1217,7 @@ nav li[aria-current="page"] {
   left: 0;
   object-fit: contain;
   pointer-events: none;
+  z-index: 1;
 }
 
 .broadcast-video_frameSvg {
@@ -1254,7 +1255,7 @@ nav li[aria-current="page"] {
 
 .broadcast {
   padding-top: 175px;
-  background-image: url(../img/broadcast-background.webp);
+  background-image: url("../img/broadcast-background-28ef1f77cf94b8d60ce0e9c60674aa00.webp");
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
@@ -1305,7 +1306,7 @@ nav li[aria-current="page"] {
 }
 
 .partners-footer-background {
-  background-image: url(../img/footer-background.png);
+  background-image: url("../img/footer-background-df9793ee2ae508bb34c74648734bfbe2.png");
   background-repeat: no-repeat;
   background-position: left top -60px;
   background-size: contain;
@@ -1443,7 +1444,7 @@ nav li[aria-current="page"] {
   right: 0;
   top: -100%;
   background-color: var(--black-color);
-  background-image: url(../img/burger-background.webp);
+  background-image: url("../img/burger-background-e3dd9cc2a150fd6ea0e714fb58378dd2.webp");
   background-repeat: no-repeat;
   transition: top 0.6s;
 }
