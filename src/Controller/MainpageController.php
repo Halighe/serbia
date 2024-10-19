@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\{ParticipantType, FeedbackFormType};
 use App\Entity\{Participant, User, Feedback};
 use App\Repository\ReviewRepository;
+use App\Repository\UserRepository;
 use App\Repository\PartnersRepository;
 use App\Repository\ProgramRepository;
 use App\Repository\BroadcastRepository;
@@ -27,13 +28,21 @@ class MainpageController extends AbstractController
     EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher): Response
     {
         $participant = new Participant();
-        $formPart = $this->createForm(ParticipantType::class);
+        $formPart = $this->createForm(ParticipantType::class, $participant);
         $formPart->handleRequest($request);
         if ($formPart->isSubmitted()) {
         //  && $form->isValid(), $participant
             $recipient = $formPart->get('email')->getData();
-            $check = $participantRepository->findOneBy(['email' => $recipient]);
-            if (!$check) {               
+            // $check = $participantRepository->findOneBy(['email' => $recipient]);
+            $check = $entityManager->getRepository(Participant::class)->findOneBy(['email' => $recipient]);
+            // $check2 = $userRepository->findOneBy(['username' => $recipient]);
+            $check2 = $entityManager->getRepository(User::class)->findOneBy(['username' => $recipient]);
+            if($check2 && !$check) {
+                $entityManager->remove($check2);
+                $entityManager->flush();
+                $check2 = $entityManager->getRepository(User::class)->findOneBy(['username' => $recipient]);
+            }
+            if (!$check && !$check2) {               
             $newuser = new User();
             $newuser->setUsername($recipient);            
             $comb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -75,7 +84,7 @@ class MainpageController extends AbstractController
                 //Recipients
                 $mail->setFrom('vr-kz@concord.ac', 'VR-AR');
                 $mail->addAddress($recipient);     // Add a recipient
-
+                //$mail->addPart(new DataPart(new File('/path/to/documents/terms-of-use.pdf')));
                 // Content
                 $mail->CharSet = "UTF-8"; // Кодировка письма
                 $mail->isHTML(true);                                  // Set email format to HTML
@@ -235,16 +244,11 @@ class MainpageController extends AbstractController
                 <li>Ваш пароль: '.$plainPassword.'</li>
             </ul>
         </div>
-        <div class="list_p" style="background-color: #ffffff; margin-top: 20px;">
-            <p class="list_text">🎁 Дарим вам уникальные обои на телефон с тематикой мероприятия.
-             Скачивайте и устанавливайте их на свой экран, чтобы погрузиться в мир технического творчества и инноваций прямо с вашего устройства.</p>
-                <a href="#"><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTNkMXl4dXFmZ25lN2UyNWZlOXczdTVkdWl1bnRxeW5maDE2cXJjZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1EIkixZbH59Wr6wGsz/giphy.gif" class="gif" alt=""></a>
-
-        </div>
+        
         <div class="list_p" style="background-color: #ffffff; margin-top: 20px;">
             <p class="list_text">Напоминаем, что с подробной информацией о расписании мероприятия вы можете ознакомиться в своём личном кабинете. 👇</p>
            <div class="lk_btn">
-                 <a href="" style="text-decoration: none; color: black;">Перейти в личный кабинет</a>
+                 <a href="https://vr-rs.ru/profile" style="text-decoration: none; color: black;">Перейти в личный кабинет</a>
             </div>
 
         </div>

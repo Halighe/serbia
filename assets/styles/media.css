@@ -135,25 +135,35 @@
   .header .container {
     padding: 0;
   }
+  
+  .burger-logo-block .logo:nth-child(1) img {
+    width: 51px;
+    height: 28px;
+  }
 
   .burger-logo-block .logo:nth-child(2) img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .burger-logo-block .logo:nth-child(3) img {
-    width: 35px;
-    height: 32px;
+    width: 22px;
+    height: 28px;
   }
 
   .burger-logo-block .logo:nth-child(4) img {
-    width: 29px;
-    height: 32px;
+    width: 31px;
+    height: 28px;
   }
 
   .burger-logo-block .logo:nth-child(5) img {
-    width: 47px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .burger-logo-block .logo:nth-child(6) img {
+    width: 41px;
+    height: 28px;
   }
 
   .main-block .container {
@@ -763,17 +773,17 @@
     height: 32px;
   }
 
-  .logo-block .logo:nth-child(3) img {
+  .logo-block .logo:nth-child(4) img {
     width: 35px;
     height: 32px;
   }
 
-  .logo-block .logo:nth-child(4) img {
+  .logo-block .logo:nth-child(5) img {
     width: 29px;
     height: 32px;
   }
 
-  .logo-block .logo:nth-child(5) img {
+  .logo-block .logo:nth-child(6) img {
     width: 47px;
     height: 32px;
   }
@@ -1309,7 +1319,37 @@
   }
 
   .logo-block {
-    gap: 12px;
+     gap: 8px;
+  }
+
+  .logo-block .logo:nth-child(1) img {
+    width: 51px;
+    height: 28px;
+  }
+
+  .logo-block .logo:nth-child(2) img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-block .logo:nth-child(3) img {
+    width: 22px;
+    height: 28px;
+  }
+
+  .logo-block .logo:nth-child(4) img {
+    width: 31px;
+    height: 28px;
+  }
+
+  .logo-block .logo:nth-child(5) img {
+    width: 25px;
+    height: 28px;
+  }
+
+  .logo-block .logo:nth-child(6) img {
+    width: 41px;
+    height: 28px;
   }
 
   .section-text_name,

@@ -78,7 +78,7 @@ class PdfGeneratorController extends AbstractController
         $entityManager->persist($newParticipant);
         $entityManager->flush();
         }
-        else echo 'Такого участника не существует.';
+        // else echo 'Такого участника не существует.';
 
         $mail = new PHPMailer(true);
         try {

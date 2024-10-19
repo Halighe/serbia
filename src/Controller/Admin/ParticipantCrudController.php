@@ -32,7 +32,7 @@ class ParticipantCrudController extends AbstractCrudController
             AssociationField::new('user'),
             TextField::new('fio'),
             EmailField::new('email'),
-            TelephoneField::new('phone'),
+            //TelephoneField::new('phone'),
             TextField::new('city'),
             // TextField::new('category'),
             ChoiceField::new('category')->setChoices([

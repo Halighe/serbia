@@ -130,7 +130,7 @@ body {
 .logo-block {
   height: fit-content;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .logo-block .logo:nth-child(2) img {
@@ -1455,7 +1455,7 @@ nav li[aria-current="page"] {
 }
 
 .burger-logo-block {
-  gap: 12px;
+  gap: 8px;
 }
 
 .header-burger {

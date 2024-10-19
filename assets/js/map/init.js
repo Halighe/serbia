@@ -26,7 +26,6 @@ async function initMap() {
     );
     const markerProps = async () => {
         const res = await axios.get('https://vr-rs.ru/api/universities')
-        console.log(res.data)
         return res.data['hydra:member'];
     }
 
@@ -50,7 +49,8 @@ async function initMap() {
                 const markerElement = document.createElement('img');
                 markerElement.className = 'icon-marker';
                 markerElement.src = '/img/star.svg';
-                const marker = new YMapMarker({coordinates: [parseFloat(item.longitude.replace(/,/g, ".")),parseFloat(item.latitude.replace(/,/g, "."))]}, markerElement);
+                const marker = new YMapMarker({coordinates: [parseFloat(item.longitude.replace(/,/g, ".")),
+                parseFloat(item.latitude.replace(/,/g, "."))]}, markerElement);
                 markerElement.classList.add('cursor-pointer')
                 this._markers.push(marker);
 
@@ -64,13 +64,14 @@ async function initMap() {
                 elem.addEventListener('change', () => {
                     this._props.forEach((item) => {
                         console.log(item.filter.split(' '))
-                        if (elem.checked ) {
+                        if (elem.checked) {
                             const values = elem.value.split(' ');
-                            if (values.some(value => item.filter.includes(value))){
+                            if (values.some(value => item.filter.includes(value))) {
                                 const markerElement = document.createElement('img');
                                 markerElement.className = 'icon-marker';
                                 markerElement.src = '/img/star.svg';
-                                const marker = new YMapMarker({coordinates: [parseFloat(item.longitude.replace(/,/g, ".")),parseFloat(item.latitude.replace(/,/g, "."))]}, markerElement);
+                                const marker = new YMapMarker({coordinates: [parseFloat(item.longitude.replace(/,/g, ".")),
+                                parseFloat(item.latitude.replace(/,/g, "."))]}, markerElement);
                                 this._markers.push(marker);
                                 markerElement.classList.add('cursor-pointer')
                                 markerElement.addEventListener('click', () => {
@@ -82,7 +83,7 @@ async function initMap() {
                         } else {
                             if (!elem.checked) {
                                 const values = elem.value.split(' ');
-                                if (values.some(value => item.filter.includes(value))){
+                                if (values.some(value => item.filter.includes(value))) {
                                     const markerIndex = this._markers.findIndex(marker =>
                                         marker._props.coordinates[0] === parseFloat(item.longitude.replace(/,/g, ".")) && marker._props.coordinates[1] === parseFloat(item.latitude.replace(/,/g, "."))
                                     );
@@ -104,7 +105,28 @@ async function initMap() {
             const modal = document.querySelector('.detail-modal');
             const modalContent = modal.querySelector('.modal__body__img img');
             const customPopup = document.querySelector('.add-modal');
-
+            
+            // Массив с изображениями
+            const images = [item.img1, item.img2, item.img3];
+            let currentImageIndex = 0;
+            function loadImage() {
+                if (currentImageIndex < images.length) {
+                    const img = new Image();
+                    img.src = images[currentImageIndex];
+                    img.onload = function () {
+                        console.log('Картинка успех')
+                        modalContent.src = img.src;
+                    };
+                    img.onerror = function () {
+                        currentImageIndex++;
+                        loadImage();
+                    };
+                } else {
+                    console.log('Картинка офф')
+                    modalContent.src = 'img/default-image.jpg';
+                }
+            }
+            loadImage();
             // Заполнение модалки данными из item
             modal.querySelector('#modalCity').innerText = item.city
             modal.querySelector('#modalTitle').innerText = item.shortname || 'Название не указано';
@@ -112,7 +134,7 @@ async function initMap() {
             modal.querySelector('#modalDirection').innerText = item.direction || 'Направление не указано';
             modal.querySelector('#modalFormat').innerText = item.format || 'Формат не указан';
 
-            modalContent.src = item.image || 'img/default-image.jpg'; // Путь к изображению по умолчанию
+            // modalContent.src = item.image || 'img/default-image.jpg'; // Путь к изображению по умолчанию
 
             // Показать модалку
             modal.style.display = 'block';

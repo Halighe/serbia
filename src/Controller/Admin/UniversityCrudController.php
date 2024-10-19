@@ -42,12 +42,15 @@ class UniversityCrudController extends AbstractCrudController
             TextareaField::new('foreigners')->hideOnIndex(),
 
             FormField::addFieldset('Изображения'),
-            ImageField::new('img1')->setUploadedFileNamePattern('[contenthash].[extension]')
-                ->setUploadDir('public/uploads/university/')->hideOnIndex(),
-            ImageField::new('img2')->setUploadedFileNamePattern('[contenthash].[extension]')
-                ->setUploadDir('public/uploads/university/')->hideOnIndex(),
-            ImageField::new('img3')->setUploadedFileNamePattern('[contenthash].[extension]')
-                ->setUploadDir('public/uploads/university/')->hideOnIndex(),
+            TextField::new('img1')->hideOnIndex(),
+            TextField::new('img2')->hideOnIndex(),
+            TextField::new('img3')->hideOnIndex(),
+            // ImageField::new('img1')->setUploadedFileNamePattern('[contenthash].[extension]')
+            //     ->setUploadDir('public/uploads/university/')->hideOnIndex(),
+            // ImageField::new('img2')->setUploadedFileNamePattern('[contenthash].[extension]')
+            //     ->setUploadDir('public/uploads/university/')->hideOnIndex(),
+            // ImageField::new('img3')->setUploadedFileNamePattern('[contenthash].[extension]')
+            //     ->setUploadDir('public/uploads/university/')->hideOnIndex(),
             
         ];
     }

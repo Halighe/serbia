@@ -29,10 +29,10 @@
           </div>
           <span class="pass__span">Мы отправили проверочный код на почту по адресу
             <span class="pass__span-email">{{ email }}</span> Если сообщение не пришло, повторите попытку.</span>
-          <div class="pass__timer-container">
-            <span class="pass__code">Отправить код еще раз</span>
-            <span class="pass__timer">через 0:59</span>
-          </div>
+          {#<div class="pass__timer-container">#}
+          {#  <span class="pass__code">Отправить код еще раз</span>#}
+          {#  <span class="pass__timer">через 0:59</span>#}
+          {#</div>#}
           <button type="submit" class="pass__button">Далее</button>
         {# </form> #}
         {{ form_end(formEnterCode)}}
